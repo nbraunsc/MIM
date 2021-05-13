@@ -12,6 +12,7 @@ Welcome to MIM's documentation!
 
    getting_started
    api
+   install
 
 
 
