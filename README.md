@@ -8,6 +8,20 @@ MIM
 
 Molecular Fragmentation Code
 
+### Installation
+
+1. Download
+
+`git clone https://github.com/nbraunsc/MIM.git`\
+`cd MIM/`
+
+2. Create a conda environment which will hold all modules needed
+
+`conda create -n mim_env pip python=3.7`\
+`conda activate mim_env`\
+`pip install -r requirements`\
+
+
 ### Copyright
 
 Copyright (c) 2021, Nicole Braunscheidel
