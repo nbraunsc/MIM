@@ -19,15 +19,19 @@ Molecular Fragmentation Code
 
 2. Create a conda environment which will hold all modules needed
 
-`conda create -n mim_env pip python=3.7`\
-`conda activate mim_env`\
-`cd docs/`\
-`pip install -r requirements.txt`
+    ```
+    conda create -n mim_env pip python=3.7
+    conda activate mim_env
+    cd docs/
+    pip install -r requirements.txt
+    ```
 
 3. Install MIM package
 
-`cd ../`\
-`pip install -e .`
+    ```
+    cd ../
+    pip install -e .
+    ```
 
 
 ### Copyright
