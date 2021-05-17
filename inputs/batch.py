@@ -42,7 +42,8 @@ for i in dirlist:
             submit_name = i + "_" + string_num
             os.chdir('../../')
             if queue == 'local':
-                cmd = 'python %s %s %s %s >> run_error.txt'%(script, path, string_num, folder)
+                #cmd = 'python %s %s %s %s >> run_error.txt'%(script, path, string_num, folder)
+                cmd = 'python %s %s %s %s'%(script, path, string_num, folder)
             if queue =='slurm':
                 cmd = 'sbatch -e %s -J %s -o "%s" --export=LEVEL="%s",BATCH="%s",FOLDER="%s"  %s'%(path+"/"+submit_name+".error", submit_name, path+"/"+submit_name+".log", path, string_num, folder, script)     ##For TinkerCliffs/Huckleberry
             if queue == 'pbs':
