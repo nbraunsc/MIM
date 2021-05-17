@@ -1,3 +1,5 @@
+### Go to gh-pages branch for MIM Documentation Info
+
 # Compiling MIM's Documentation
 
 The docs for this project are built with [Sphinx](http://www.sphinx-doc.org/en/master/).
