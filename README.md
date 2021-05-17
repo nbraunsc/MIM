@@ -12,8 +12,10 @@ Molecular Fragmentation Code
 
 1. Download
 
-`git clone https://github.com/nbraunsc/MIM.git`\
-`cd MIM/`
+    ```
+    git clone https://github.com/nbraunsc/MIM.git
+    cd MIM/
+    ```
 
 2. Create a conda environment which will hold all modules needed
 
@@ -24,7 +26,7 @@ Molecular Fragmentation Code
 
 3. Install MIM package
 
-`cd ../`
+`cd ../`\
 `pip install -e .`
 
 
