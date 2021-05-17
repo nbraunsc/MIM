@@ -1,10 +1,13 @@
 dill==0.3.3
 matplotlib==3.4.1
 mendeleev==0.6.0
-mim==0
 more-itertools==8.0.2
 numpy==1.19.2
 pyberny==0.6.3
 pyscf==1.7.6
 pytest==5.3.1
 scipy==1.6.3
+
+click>=7.0
+Jinja2<3.0.0
+MarkupSafe<2.0.0

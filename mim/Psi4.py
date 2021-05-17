@@ -1,5 +1,5 @@
 import numpy as np
-import psi4
+#import psi4
 
 #psi4.core.set_output_file('output.dat', False)
 
