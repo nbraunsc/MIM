@@ -5,6 +5,7 @@ MIM
 [![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/MIM/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/MIM/branch/master)
 [![docs](https://readthedocs.org/projects/pip/badge/)](https://readthedocs.org/projects/pip/badge/?version=latest&style=plastic)
 
+[Documentation](https://nbraunsc.github.io/MIM/)
 
 Molecular Fragmentation Code
 
