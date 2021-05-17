@@ -8,8 +8,8 @@ import numpy as np
 from numpy import linalg as LA 
 from mendeleev import element
 
-#import nicolefragment
-#from nicolefragment import runpie, Molecule, fragmentation, Fragment, Pyscf
+#import mim
+#from mim import runpie, Molecule, fragmentation, Fragment, Pyscf
 
 class Fragment():
     """
