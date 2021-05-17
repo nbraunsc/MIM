@@ -10,6 +10,9 @@
 
 ## SBATCH --exclusive # this requests exclusive access to node for interactive jobs
 
+sleep 10
+hostname
+
 module reset
 module load site/tinkercliffs-rome/easybuild/setup  #only for infer
 module load site/tinkercliffs/easybuild/setup  #only for infer

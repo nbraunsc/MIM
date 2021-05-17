@@ -8,6 +8,9 @@
 #SBATCH --mail-user=nbraunsc@vt.edu
 #SBATCH --mail-type=FAIL
 
+sleep 10
+hostname
+
 module reset
 module load site/tinkercliffs-rome/easybuild/setup  
 module load site/tinkercliffs/easybuild/setup  
