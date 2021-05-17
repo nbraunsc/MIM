@@ -19,7 +19,7 @@ Molecular Fragmentation Code
 
 `conda create -n mim_env pip python=3.7`\
 `conda activate mim_env`\
-`pip install -r requirements`
+`pip install -r requirements.txt`
 
 
 ### Copyright
