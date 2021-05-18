@@ -210,34 +210,25 @@
 <h1 id="quickstart--page-root">Quick Start<a class="headerlink" href="#quickstart--page-root" title="Permalink to this headline">¶</a></h1>
 
 <h2 id="set-up">Set up<a class="headerlink" href="#set-up" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p>Make changes to input file:</p>
-<blockquote>
-<div><p>It is prefered that you edit the input file already in the <cite>inputs/</cite>,</p>
-</div></blockquote>
-</li>
+<ol class="arabic simple">
+<li><p>Make changes to input file:</p></li>
 </ol>
-<p>but you may have your own.</p>
+<p>It is prefered that you edit the input file already in the <cite>inputs/</cite>,
+but you may have your own.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd inputs/
 $ vi input_file.py
 </pre></div>
 </div>
-<ol class="arabic" start="2">
-<li><p>Obtain molecular coordinates in Chemical Markup Language (.cml):</p>
-<blockquote>
-<div><p>You will next have to put your molecular coordinates file that is a <cite>*.cml</cite> file in <cite>inputs/</cite>.</p>
-</div></blockquote>
-</li>
+<ol class="arabic simple" start="2">
+<li><p>Obtain molecular coordinates in Chemical Markup Language (.cml):</p></li>
 </ol>
-<p>We will use <cite>molecule.cml</cite> for reference.</p>
-<ol class="arabic" start="3">
-<li><p>Create a directory to store results:</p>
-<blockquote>
-<div><p>Finally, make a directory within <cite>inputs/</cite> where you would like to store all generated files.</p>
-</div></blockquote>
-</li>
+<p>You will next have to put your molecular coordinates file that is a <cite>*.cml</cite> file in <cite>inputs/</cite>.
+We will use <cite>molecule.cml</cite> for reference.</p>
+<ol class="arabic simple" start="3">
+<li><p>Create a directory to store results:</p></li>
 </ol>
-<p>We will use <cite>to_run/</cite> for reference.</p>
+<p>Finally, make a directory within <cite>inputs/</cite> where you would like to store all generated files.
+We will use <cite>to_run/</cite> for reference.</p>
 
 
 <h2 id="run">Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
@@ -250,7 +241,7 @@ $ vi input_file.py
 <h2 id="collect-results">Collect Results<a class="headerlink" href="#collect-results" title="Permalink to this headline">¶</a></h2>
 <p>Once all of your calculations have finished, you may collect all your results
 by running the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python reap to_run/
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python reap.py to_run/
 </pre></div>
 </div>
 
