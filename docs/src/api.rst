@@ -5,3 +5,5 @@ API Documentation
    :toctree: autosummary
    
     mim.canvas
+    mim.runpie
+
