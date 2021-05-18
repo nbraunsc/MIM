@@ -11,9 +11,9 @@ Welcome to MIM's documentation!
    :caption: Contents:
 
    getting_started
-   api
    install
    example
+   api
 
 
 Indices and tables
