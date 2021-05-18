@@ -4,7 +4,7 @@ API Documentation
 .. autosummary::
    :toctree: autosummary
    
-   mim.runpie
+   mim.runpie.runpie
    mim.canvas
    mim.Molecule
    mim.Primitive
