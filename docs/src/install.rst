@@ -1,5 +1,5 @@
-Installation
-=============
+Installation Instructions
+=========================
 
 1. Download::
 

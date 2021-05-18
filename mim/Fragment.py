@@ -188,7 +188,11 @@ class Fragment():
         return self.jacobian_hess
 
     def qc_backend(self):
-        """ Runs the quantum chemistry backend.
+        """ 
+        Runs the quantum chemistry backend.
+
+        This runs an energy and gradient calculation. If hessian is available
+        it will also run that.
         
         Returns
         -------
@@ -219,6 +223,14 @@ class Fragment():
         return self.energy, self.grad, hess_py  #, self.hessian#, self.apt
 
     def hess_apt(self, hess_py):
+        """
+        Runs only the hessian and atomic polar tensor calculations
+        
+        Returns
+        -------
+        self.hessian : ndarray
+        self.apt : ndarray
+        """
         
         #If not analytical hess, do numerical below
         if type(hess_py) is int:
