@@ -1,5 +1,6 @@
 def recurse(f_old, start, derivs, fraglist, signlist, sign, frags):    #1st depth and on, finding intersection
-    """ Recursive part of the pie
+    """ 
+    Recursive part of the pie
     
     Where funciton  builds layers and layers of fragments from interestions
 
@@ -17,7 +18,6 @@ def recurse(f_old, start, derivs, fraglist, signlist, sign, frags):    #1st dept
         List of coefficents
     sign : int
         New sign that is determined based on PIE
-        
     """
     
     for fj in range(start, len(fraglist)):
@@ -31,7 +31,8 @@ def recurse(f_old, start, derivs, fraglist, signlist, sign, frags):    #1st dept
                 recurse(df_new, fj, derivs, fraglist, signlist, df_newcoeff, frags)
 
 def runpie(fraglist):
-    """ Runs the principle of inculsion-exculsion
+    """ 
+    Runs the principle of inculsion-exculsion
     
     Parameters
     ----------
@@ -44,7 +45,6 @@ def runpie(fraglist):
         List of derivatives created by prinicple on inclusion-exculusion
     signlist : list
         List of coefficents (1 or -1)
-    
     """
     
     derivs = []

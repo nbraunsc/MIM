@@ -10,6 +10,8 @@ def canvas(with_attribution=True):
     """
     Placeholder function to show example docstring (NumPy format)
 
+    Testing github push from master
+
     Replace this function and doc string for your own project
 
     Parameters
