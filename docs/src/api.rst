@@ -4,15 +4,6 @@ API Documentation
 .. autosummary::
    :toctree: autosummary
    
-Quantum Chemistry Backends
---------------------------
-
-.. autosummary::
-   :toctree: autosummary
-   
-    mim.Pyscf
-    mim.Psi4
-
 Molecule
 ---------
 
