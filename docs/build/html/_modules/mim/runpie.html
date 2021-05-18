@@ -194,7 +194,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <h1 id="modules-mim-runpie--page-root">Source code for mim.runpie</h1><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">recurse</span><span class="p">(</span><span class="n">f_old</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">derivs</span><span class="p">,</span> <span class="n">fraglist</span><span class="p">,</span> <span class="n">signlist</span><span class="p">,</span> <span class="n">sign</span><span class="p">,</span> <span class="n">frags</span><span class="p">):</span>    <span class="c1">#1st depth and on, finding intersection</span>
+<div class="viewcode-block" id="recurse"><a class="viewcode-back" href="../../autosummary/mim.runpie.recurse.html#mim.runpie.recurse">[docs]</a><span></span><span class="k">def</span> <span class="nf">recurse</span><span class="p">(</span><span class="n">f_old</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">derivs</span><span class="p">,</span> <span class="n">fraglist</span><span class="p">,</span> <span class="n">signlist</span><span class="p">,</span> <span class="n">sign</span><span class="p">,</span> <span class="n">frags</span><span class="p">):</span>    <span class="c1">#1st depth and on, finding intersection</span>
     <span class="sd">""" </span>
 <span class="sd">    Recursive part of the pie</span>
 <span class="sd">    </span>
@@ -224,7 +224,7 @@
                 <span class="n">df_newcoeff</span> <span class="o">=</span> <span class="n">sign</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
                 <span class="n">signlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_newcoeff</span><span class="p">)</span>
                 <span class="n">frags</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">df_new</span><span class="p">))]</span> <span class="o">=</span> <span class="n">df_newcoeff</span>
-                <span class="n">recurse</span><span class="p">(</span><span class="n">df_new</span><span class="p">,</span> <span class="n">fj</span><span class="p">,</span> <span class="n">derivs</span><span class="p">,</span> <span class="n">fraglist</span><span class="p">,</span> <span class="n">signlist</span><span class="p">,</span> <span class="n">df_newcoeff</span><span class="p">,</span> <span class="n">frags</span><span class="p">)</span>
+                <span class="n">recurse</span><span class="p">(</span><span class="n">df_new</span><span class="p">,</span> <span class="n">fj</span><span class="p">,</span> <span class="n">derivs</span><span class="p">,</span> <span class="n">fraglist</span><span class="p">,</span> <span class="n">signlist</span><span class="p">,</span> <span class="n">df_newcoeff</span><span class="p">,</span> <span class="n">frags</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="runpie"><a class="viewcode-back" href="../../autosummary/mim.runpie.runpie.html#mim.runpie.runpie">[docs]</a><span class="k">def</span> <span class="nf">runpie</span><span class="p">(</span><span class="n">fraglist</span><span class="p">):</span>
     <span class="sd">""" </span>
