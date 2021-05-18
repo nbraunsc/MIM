@@ -14,7 +14,7 @@ Welcome to MIM's documentation!
    install
    example
    api
-
+   
 
 Indices and tables
 ==================
