@@ -3,8 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
 Welcome to MIM's documentation!
 =========================================================
+.. image:: fragment4.png
+    :scale: 40 %
+    :align: right
+    :alt: alternate text
 This is the documentation for the molecular fragmentation method called Molecules-in-Molecules (MIM). MIM is a linear scaling multi-theory method that can have an arbitrary number of levels, MIMn. Where the general idea is that each lower level of theory is attempting to correct the fragmentation error associated with the higher layer. MIM calculations are largely based on the principle of inclusion/exclusion to generate highly overlapping fragments verses disjoint fragments to better predict macromolecules properties.
 
 .. toctree::
