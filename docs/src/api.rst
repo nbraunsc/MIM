@@ -1,24 +1,21 @@
 API Documentation
 =================
 
-.. autosummary::
-   :toctree: autosummary
-   
 Molecule
 ---------
-
-.. autoclass:: Molecule
-   :members: build_prims, build_atom_dist
+.. autosummary::
    :toctree: autosummary
     
     mim.Molecule
     mim.Molecule.parse_cml
-    Molecule.parse_cml
     mim.Molecule.build_prims
     mim.Molecule.build_atom_dist
 
 Primitive
 ---------
+
+.. autosummary::
+   :toctree: autosummary
 
     mim.Primitive
 

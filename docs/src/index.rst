@@ -21,15 +21,6 @@ This is the documentation for the molecular fragmentation method called Molecule
    user_guide
    api
 
-.. automodule:: Molecule
-   :members:
-
-.. automodule:: Fragment
-   :members:
-
-.. automodule:: fragmentation
-   :members:
-
 
 Indices and tables
 ==================
