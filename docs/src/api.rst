@@ -9,7 +9,8 @@ Molecule
 
 .. autosummary::
    :toctree: autosummary
-   
+    :maxdepth: 4 
+    
     mim.Molecule
     mim.Molecule.parse_cml
     mim.Molecule.build_prims
