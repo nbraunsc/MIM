@@ -9,12 +9,7 @@ Molecule
 
 .. autosummary::
    :toctree: autosummary
-<<<<<<< HEAD
-    :maxdepth: 4 
     
-=======
-
->>>>>>> master
     mim.Molecule
     mim.Molecule.parse_cml
     Molecule.parse_cml
