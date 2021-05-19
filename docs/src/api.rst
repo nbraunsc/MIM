@@ -7,7 +7,8 @@ API Documentation
 Molecule
 ---------
 
-.. autosummary::
+.. autoclass:: Molecule
+   :members: build_prims, build_atom_dist
    :toctree: autosummary
     
     mim.Molecule
