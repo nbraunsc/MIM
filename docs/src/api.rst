@@ -19,6 +19,9 @@ Molecule
 Primitive
 ---------
 
+.. autosummary::
+   :toctree: autosummary
+
     mim.Primitive
 
 Fragmentation 

@@ -18,7 +18,6 @@ import sys
 sys.path.insert(0, os.path.abspath('../..'))
 
 import mim
-from mim import Molecule, Fragment, fragmentation, Pyscf, Psi4, runpie, Primitive
 
 # -- Project information -----------------------------------------------------
 
