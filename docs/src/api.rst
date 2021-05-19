@@ -10,6 +10,7 @@ Molecule
 .. autosummary::
    :toctree: autosummary
    
+    mim.Molecule
     mim.Molecule.parse_cml
     mim.Molecule.build_prims
     mim.Molecule.build_atom_dist
@@ -28,6 +29,7 @@ Fragmentation
 .. autosummary::
    :toctree: autosummary
 
+    mim.fragmentation
     mim.fragmentation.do_fragmentation
     mim.fragmentation.build_frags
     mim.fragmentation.find_attached
@@ -40,6 +42,7 @@ Fragments
 .. autosummary::
    :toctree: autosummary
    
+    mim.Fragment
     mim.Fragment.add_linkatoms
     mim.Fragment.qc_backend
     mim.Fragment.hess_apt
