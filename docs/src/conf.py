@@ -98,7 +98,12 @@ html_theme = 'sphinx_material'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+     #"github_button": True,
+    "repo_name": "MIM",
+    "repo_url": "https://github.com/nbraunsc/MIM/",
+    "nav_title": "MIM {0}".format(version),
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -113,7 +118,17 @@ html_theme = 'sphinx_material'
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-# html_sidebars = {}
+html_sidebars = {
+        "**": [
+        "localtoc.html",
+        "relations.html", 
+        "sourcelink.html",
+        "searchbox.html",
+        "logo-text.html",
+        "globaltoc.html",
+        "localtoc.html",
+    ],
+}
 
 
 # -- Options for HTMLHelp output ---------------------------------------------
