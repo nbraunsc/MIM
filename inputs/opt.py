@@ -6,8 +6,8 @@ from berny import Berny, geomlib
 from input_file import *
 #from sow import *
 import shutil
-import nicolefragment
-from nicolefragment import runpie, Molecule, fragmentation, Fragment, Pyscf, Psi4
+import mim
+from mim import runpie, Molecule, fragmentation, Fragment, Pyscf, Psi4
 import dill
 import glob
 import threading
@@ -32,7 +32,7 @@ if software == 'Psi4':
 if mim_levels == 1:
     frag1 = fragmentation.Fragmentation(input_molecule)
     frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
-    frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
+    frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set_high, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
     os.path.abspath(os.curdir)
     os.chdir(folder)
     level_list = os.listdir()
@@ -55,7 +55,7 @@ if mim_levels == 2:
     #""" MIM high theory, small fragments"""
     frag1 = fragmentation.Fragmentation(input_molecule)
     frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
-    frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
+    frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set_high, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
     os.path.abspath(os.curdir)
     os.chdir(folder)
     level_list = os.listdir()
@@ -76,7 +76,7 @@ if mim_levels == 2:
     #""" MIM low theory, small fragments"""
     frag2 = fragmentation.Fragmentation(input_molecule)
     frag2.do_fragmentation(fragtype=frag_type, value=frag_deg)
-    frag2.initalize_Frag_objects(theory=low_theory, basis=basis_set, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=-1)
+    frag2.initalize_Frag_objects(theory=low_theory, basis=basis_set_low, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=-1)
     os.mkdir('frag2')
     os.chdir('frag2')
     for i in range(0, len(frag2.frags)):
@@ -91,7 +91,7 @@ if mim_levels == 2:
     #""" MIM low theory, large fragments (iniffloate system)"""
     frag3 = fragmentation.Fragmentation(input_molecule)
     frag3.do_fragmentation(fragtype=frag_type, value=frag_deg_large)
-    frag3.initalize_Frag_objects(theory=low_theory, basis=basis_set, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
+    frag3.initalize_Frag_objects(theory=low_theory, basis=basis_set_low, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
     os.mkdir('frag3')
     os.chdir('frag3')
     for i in range(0, len(frag3.frags)):
@@ -150,19 +150,26 @@ def opt_fnc(newcoords, cycle):
     if queue == 'pbs':
         cmd = "python batch.py %s %s pbs.sh %s"%(str(batch_size), folder, queue)       ##For Newriver
         opt_cmd = 'qsub -N checker -v FOLDER="%s" geom_opt.sh'%(path)
+        os.system(cmd)
+        os.system(opt_cmd)
     
     if queue == 'slurm':
         cmd = 'python batch.py %s %s slurm_pbs.sh %s'%(str(batch_size), folder, queue)         ##For TinkerCliffs/Huckleberry/Infer
         opt_cmd = 'sbatch -e %s -J checker -o "%s" --export=FOLDER="%s" slurm_geom_opt.sh'%(os.getcwd()+"/checker.error", os.getcwd() + "checker.out", path)
+        os.system(cmd)
+        os.system(opt_cmd)
 
     if queue == 'local':
         cmd = 'python batch.py %s %s run.py %s'%(str(batch_size), folder, queue)
-        opt_cmd = 'pwd'
+        opt_cmd = 'python eg_reap.py %s'%(folder)
+        os.system(cmd)
+        time.sleep(10)
+        os.system(opt_cmd)
     
-    print(cmd)
-    print(opt_cmd)
-    os.system(cmd)
-    os.system(opt_cmd)
+    #print(cmd)
+    #print(opt_cmd)
+    #os.system(cmd)
+    #os.system(opt_cmd)
     etot = 0
     gtot = 0
 
@@ -196,13 +203,26 @@ for geom in optimizer:
     etot_opt = solver[0]
     grad_opt = solver[1]
 relaxed = geom
+print(relaxed.species)
+print(relaxed.coords)
+
+
+os.chdir(folder)
+coordsname = open("opt_coords.xyz", "w")
+string = str(len(relaxed.species)) + '\n'
+
+for i in range(0, len(relaxed.species)):
+    string += str(relaxed.species[i]) + " "
+    string += str(relaxed.coords[i]).replace("[", "").replace("]", "") + '\n'
+
+print(string)
+coordsname.write(string)
+coordsname.close()
 
 print("\n", "##########################", '\n', "#       Converged!       #", '\n', "##########################") 
 print('\n', "Energy = ", etot_opt)
 print('\n', "Converged_Gradient:", "\n", grad_opt)
 
-print("\n", relaxed.coords, "\n")
-os.chdir(folder)
 
 #updating coords with optimized geometry for hessian
 for atom in range(0, len(relaxed.coords)): #makes newcoords = self.molecule.atomtable

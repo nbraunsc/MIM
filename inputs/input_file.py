@@ -5,26 +5,28 @@ import sys
 mim_levels = 1
 
 #can be 'distance' or 'graphical'
+#frag_type = 'graphical'
 frag_type = 'distance' 
 
 #smaller fragmentation level
-frag_deg = 1.6
+frag_deg = 10
 
 #larger fragmentation level
-frag_deg_large = 4.4
+frag_deg_large = 2.6
 
 #Basis set for quantum calculation
-basis_set = '6-31g'
+#basis_set_high = 'ccpvdz'
+basis_set_high = 'sto-3g'
 
 #exchange-correlation functional for DFT
-xc = 'pbe'
+xc = 'LDA'
 
 #Always need to define high_theory
-high_theory = 'DFT'
+high_theory = 'RHF'
 #high_theory = 'CCSD'
 
 #Only define low_theory if mim_levels = 2
-low_theory = 'RHF'
+low_theory = 'DFT'
 
 #could be Pyscf or Psi4, and eventually Qchem, or Molcas
 #software = 'Psi4'  
@@ -37,8 +39,8 @@ stepsize = 0.001
 batch_size = 10
 
 #geometry optimization set to True or False
-opt = False
-#opt = True
+#opt = False
+opt = True
 
 #special params for primitive
 atom = 'N'
