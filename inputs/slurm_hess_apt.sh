@@ -7,7 +7,7 @@
 #SBATCH --mail-user=nbraunsc@vt.edu
 #SBATCH --mail-type=FAIL
 
-sleep 10
+sleep 20
 hostname
 
 module reset

@@ -120,8 +120,11 @@ class Pyscf():
         
         if self.theory == 'CCSD(T)':    #Couple Cluster for singles and doubles, pertub triples
             mf = scf.RHF(mol).run()
-            postmf = cc.ccsd_t(mf).run()
-            e = mf.kernel() + postmf.kernel()[0]
+            mycc = cc.CCSD(mf).run()
+            et = mycc.ccsd_t()
+            #postmf = cc.ccsd_t(mf).run()
+            #e = mf.kernel() + postmf.kernel()[0]
+            e = mycc.e_tot + et
             g=0
             #g2 = postmf.nuc_grad_method()
             #g = g2.kernel()

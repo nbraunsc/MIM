@@ -32,7 +32,7 @@ if software == 'Psi4':
 if mim_levels == 1:
     frag1 = fragmentation.Fragmentation(input_molecule)
     frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
-    frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set_high, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
+    frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set_high, qc_backend=software, xc=None, step_size=stepsize, local_coeff=1)
     os.path.abspath(os.curdir)
     os.chdir(folder)
     level_list = os.listdir()
