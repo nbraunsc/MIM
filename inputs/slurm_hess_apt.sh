@@ -6,8 +6,9 @@
 #SBATCH --account=nmayhall_group
 #SBATCH --mail-user=nbraunsc@vt.edu
 #SBATCH --mail-type=FAIL
+#SBATCH --get-user-env=30
 
-sleep 20
+sleep 30
 hostname
 
 module reset
