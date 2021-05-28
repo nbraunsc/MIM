@@ -3,13 +3,13 @@
 #SBATCH -p normal_q
 #SBATCH -N 1  # this requests 1 node, 1 core. 
 #SBATCH --mem=20G
-#SBATCH -t 01:00:00
+#SBATCH -t 10:00:00
 #SBATCH --account=nmayhall_group
 #SBATCH --mail-user=nbraunsc@vt.edu
 #SBATCH --mail-type=FAIL
 #SBATCH --get-user-env=30
 
-sleep 30
+sleep 10
 hostname
 
 module reset

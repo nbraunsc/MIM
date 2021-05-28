@@ -11,7 +11,7 @@
 
 ## SBATCH --exclusive # this requests exclusive access to node for interactive jobs
 
-sleep 30
+sleep 10
 hostname
 
 module reset

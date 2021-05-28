@@ -8,7 +8,7 @@
 #SBATCH --mail-type=FAIL
 #SBATCH --get-user-env=30
 
-sleep 30
+sleep 10
 hostname
 
 module reset

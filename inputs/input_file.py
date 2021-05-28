@@ -9,7 +9,7 @@ mim_levels = 2
 frag_type = 'distance' 
 
 #smaller fragmentation level
-frag_deg = 1.6
+frag_deg = 1.8
 
 #larger fragmentation level
 frag_deg_large = 2.6
@@ -37,16 +37,16 @@ software = 'Pyscf'
 stepsize = 0.001        
 
 #batch_size for running calculations
-batch_size = 20
+batch_size = 100
 
 #geometry optimization set to True or False
 #opt = False
 opt = True
 
 #special params for primitive
-atom = 'N'
+atom = 'Si'
 charge = -1
-spin = 3 #2S+1
+spin = 2 #2S+1
 
 #pbs/slurm/Local?
 queue = 'slurm'
