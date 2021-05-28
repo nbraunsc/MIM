@@ -45,7 +45,7 @@ for i in dirlist:
                 #cmd = 'python %s %s %s %s >> run_error.txt'%(script, path, string_num, folder)
                 cmd = 'python %s %s %s %s'%(script, path, string_num, folder)
             if queue =='slurm':
-                cmd = 'sbatch -e %s -J %s -o "%s" --export=LEVEL="%s",BATCH="%s",FOLDER="%s"  %s'%(path+"/"+submit_name+".error", submit_name, path+"/"+submit_name+".log", path, string_num, folder, script)     ##For TinkerCliffs/Huckleberry
+                cmd = 'sbatch -e %s -J %s -o "%s" --export=LEVEL="%s",BATCH="%s",FOLDER="%s"  %s'%(path+"/"+submit_name[:10]+".error", submit_name[:10], path+"/"+submit_name[:10]+".log", path, string_num, folder, script)     ##For TinkerCliffs/Huckleberry
             if queue == 'pbs':
                 cmd = 'qsub -e %s -N %s -o %s -v LEVEL="%s",BATCH="%s",FOLDER="%s" %s'%(path, submit_name, path, path, string_num, folder, script)     ##For Newriver
             

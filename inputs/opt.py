@@ -155,7 +155,7 @@ def opt_fnc(newcoords, cycle):
     
     if queue == 'slurm':
         cmd = 'python batch.py %s %s slurm_pbs.sh %s'%(str(batch_size), folder, queue)         ##For TinkerCliffs/Huckleberry/Infer
-        opt_cmd = 'sbatch -e %s -J checker -o "%s" --export=FOLDER="%s" slurm_geom_opt.sh'%(os.getcwd()+"/checker.error", os.getcwd() + "checker.out", path)
+        opt_cmd = 'sbatch -e %s -J checker -o "%s" --export=FOLDER="%s" slurm_geom_opt.sh'%(os.getcwd()+"/checker.error", os.getcwd() + "/checker.out", path)
         os.system(cmd)
         os.system(opt_cmd)
 
