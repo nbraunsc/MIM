@@ -2,7 +2,7 @@
 
 #SBATCH -p normal_q
 #SBATCH -N 1  # this requests 1 node, 1 core. 
-#SBATCH --mem=10G
+#SBATCH --mem=1G
 #SBATCH -t 01:00:00
 #SBATCH --account=nmayhall_group
 #SBATCH --mail-user=nbraunsc@vt.edu
