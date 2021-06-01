@@ -145,9 +145,9 @@ if opt == False:
     
     os.chdir('../')
     if queue == 'pbs':
-        cmd = "python batch.py %s %s pbs.sh %s"%(str(batch_size), folder, queue)       ##For Newriver
+        cmd = "python batch.py %s %s hess_apt.sh %s"%(str(batch_size), folder, queue)       ##For Newriver
     if queue == 'slurm':
-        cmd = 'python batch.py %s %s slurm_pbs.sh %s'%(str(batch_size), folder, queue)         ##For TinkerCliffs/Huckleberry/Infer
+        cmd = 'python batch.py %s %s slurm_hess_apt.sh %s'%(str(batch_size), folder, queue)         ##For TinkerCliffs/Huckleberry/Infer
     
     if queue == 'local':
         cmd = 'python batch.py %s %s run_opt.py %s'%(str(batch_size), folder, queue)

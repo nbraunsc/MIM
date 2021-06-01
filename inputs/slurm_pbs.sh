@@ -18,7 +18,7 @@ module load site/tinkercliffs/easybuild/setup
 module load Anaconda3/2020.07
 module load gcc/8.2.0
 
-source activate pyconda
+source activate mim_env
 
 cd $SLURM_SUBMIT_DIR
 

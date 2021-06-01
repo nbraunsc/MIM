@@ -26,6 +26,7 @@ for filename in os.listdir():
 
 
 for i in dirlist:
+    slurm_jobs = open("slurm_info.txt", "w+")
     os.chdir(i)
     files_dill = glob.glob('*.dill')
     if batch_size == None:
@@ -46,6 +47,14 @@ for i in dirlist:
                 cmd = 'python %s %s %s %s'%(script, path, string_num, folder)
             if queue =='slurm':
                 cmd = 'sbatch -e %s -J %s -o "%s" --export=LEVEL="%s",BATCH="%s",FOLDER="%s"  %s'%(path+"/"+submit_name[:10]+".error", submit_name[:10], path+"/"+submit_name[:10]+".log", path, string_num, folder, script)     ##For TinkerCliffs/Huckleberry
+
+                #write slurm variables to output file
+                name = "\n" + submit_name[:10] + "\n"
+                slurm_jobs.write(name)
+                info = cmd + "\n"
+                slurm_jobs.write(info)
+                slurm_jobs.close()
+
             if queue == 'pbs':
                 cmd = 'qsub -e %s -N %s -o %s -v LEVEL="%s",BATCH="%s",FOLDER="%s" %s'%(path, submit_name, path, path, string_num, folder, script)     ##For Newriver
             

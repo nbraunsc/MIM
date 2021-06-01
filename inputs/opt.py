@@ -108,6 +108,8 @@ os.chdir('../')
 
 def opt_fnc(newcoords, cycle):
     os.chdir(folder)
+    slurm_job = open("slurm_info.txt", "w")
+    slurm_job.close()
     for atom in range(0, len(newcoords)): #makes newcoords = self.molecule.atomtable
         x = list(newcoords[atom])
         obj_list[0].molecule.atomtable[atom][1:] = x
@@ -139,6 +141,9 @@ def opt_fnc(newcoords, cycle):
                 outfile.close()
         os.chdir('../')
     
+    #removing old slurm job info
+    os.remove('slurm_info.txt')
+
     print("Removing old energy.npy and grad.npy")
     npy_list = glob.glob('*.npy')
     for thing in npy_list:
@@ -166,10 +171,6 @@ def opt_fnc(newcoords, cycle):
         time.sleep(10)
         os.system(opt_cmd)
     
-    #print(cmd)
-    #print(opt_cmd)
-    #os.system(cmd)
-    #os.system(opt_cmd)
     etot = 0
     gtot = 0
 
@@ -203,9 +204,6 @@ for geom in optimizer:
     etot_opt = solver[0]
     grad_opt = solver[1]
 relaxed = geom
-print(relaxed.species)
-print(relaxed.coords)
-
 
 os.chdir(folder)
 coordsname = open("opt_coords.xyz", "w")
@@ -232,10 +230,6 @@ for atom in range(0, len(relaxed.coords)): #makes newcoords = self.molecule.atom
 for j in range(0, len(obj_list)):       #update the other frag instances if MIM2 or higher level
     obj_list[j].molecule.atomtable = obj_list[0].molecule.atomtable
     os.chdir(name_list[j])
-
-    #remove old pickled objects and status
-    #for filename in os.listdir():
-    #    os.remove(filename)
 
     #repickle fragment instances with new coords
     for i in range(0, len(obj_list[j].frags)):
