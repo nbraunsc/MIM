@@ -9,8 +9,14 @@ os.chdir(folder)
 status_list = []
 status = 0
 
+level_list = os.listdir()
+levels = []
+for level in level_list:
+    if os.path.isdir(os.path.join(level)):
+        levels.append(level)
+
 #def opt_fnc():
-for i in os.listdir():
+for i in levels:
     os.chdir(i)
     stat_files = glob.glob('*.status')
     frag_files = glob.glob('*.dill')

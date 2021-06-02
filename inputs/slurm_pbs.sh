@@ -7,10 +7,13 @@
 #SBATCH --account=nmayhall_group
 #SBATCH --mail-user=nbraunsc@vt.edu
 #SBATCH --mail-type=FAIL
-#SBATCH --get-user-env=30
+# SBATCH --get-user-env=15
 
-sleep 10
+. /etc/bashrc
 hostname
+env
+
+# sleep 10
 
 module reset
 module load site/tinkercliffs-rome/easybuild/setup  

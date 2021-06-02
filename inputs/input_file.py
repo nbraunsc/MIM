@@ -9,7 +9,7 @@ mim_levels = 2
 frag_type = 'distance' 
 
 #smaller fragmentation level
-frag_deg = 1.8
+frag_deg = 1.6
 
 #larger fragmentation level
 frag_deg_large = 2.6
@@ -37,7 +37,7 @@ software = 'Pyscf'
 stepsize = 0.001        
 
 #batch_size for running calculations
-batch_size = 100
+batch_size = 10
 
 #geometry optimization set to True or False
 #opt = False
