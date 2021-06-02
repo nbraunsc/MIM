@@ -26,7 +26,7 @@ for filename in os.listdir():
 
 
 for i in dirlist:
-    slurm_jobs = open("slurm_info.txt", "w+")
+    slurm_jobs = open("slurm_info.txt", "a")
     os.chdir(i)
     files_dill = glob.glob('*.dill')
     if batch_size == None:
@@ -53,7 +53,6 @@ for i in dirlist:
                 slurm_jobs.write(name)
                 info = cmd + "\n"
                 slurm_jobs.write(info)
-                slurm_jobs.close()
 
             if queue == 'pbs':
                 cmd = 'qsub -e %s -N %s -o %s -v LEVEL="%s",BATCH="%s",FOLDER="%s" %s'%(path, submit_name, path, path, string_num, folder, script)     ##For Newriver
@@ -61,6 +60,7 @@ for i in dirlist:
             command_list.append(cmd)
             os.chdir(folder)
             os.chdir(i)
+    slurm_jobs.close()
     os.chdir('../')
 os.chdir('../')
 
