@@ -35,7 +35,6 @@ for level in levels:
         infile = open(i, 'rb')
         new_class_loop = dill.load(infile)
         outfile = open(i, "wb")
-        print("Fragment ID:", level, i)
         e += new_class_loop.energy
         g += new_class_loop.grad
         h += new_class_loop.hessian

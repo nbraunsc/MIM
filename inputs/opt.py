@@ -109,7 +109,6 @@ os.chdir('../')
 def opt_fnc(newcoords, cycle):
     os.chdir(folder)
     slurm_job = open("slurm_info.txt", "w")
-    slurm_job.close()
     for atom in range(0, len(newcoords)): #makes newcoords = self.molecule.atomtable
         x = list(newcoords[atom])
         obj_list[0].molecule.atomtable[atom][1:] = x
@@ -161,6 +160,9 @@ def opt_fnc(newcoords, cycle):
     if queue == 'slurm':
         cmd = 'python batch.py %s %s slurm_pbs.sh %s'%(str(batch_size), folder, queue)         ##For TinkerCliffs/Huckleberry/Infer
         opt_cmd = 'sbatch -e %s -J checker -o "%s" --export=FOLDER="%s" slurm_geom_opt.sh'%(os.getcwd()+"/checker.error", os.getcwd() + "/checker.out", path)
+        info = opt_cmd + "\n"
+        slurm_job.write(info)
+        slurm_job.close()
         os.system(cmd)
         os.system(opt_cmd)
 
