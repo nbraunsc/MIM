@@ -22,6 +22,7 @@ basis_set_low = 'sto-3g'
 #Always need to define high_theory
 #high_theory = 'RHF'
 high_theory = 'MP2'
+#high_theory = 'DFT'
 
 #Only define low_theory if mim_levels = 2
 low_theory = 'DFT'
