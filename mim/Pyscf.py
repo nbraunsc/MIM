@@ -38,6 +38,8 @@ class Pyscf():
             mol.spin = self.spin-1
         else:
             mol.spin = self.spin
+        print("spin:", mol.spin)
+        print("charge:", mol.charge)
         #mol.unit = 'Bohr'
         mol.unit = 'Angstrom'
         #mol.symmetry = True
@@ -307,7 +309,7 @@ class Pyscf():
             dipole = mfx.dip_moment(mol2, unit='DEBYE')
         
         if self.theory == 'DFT':
-            if mol2.spin != 1:
+            if mol2.spin != 0:
                 mf = dft.UKS(mol2)
                 mf.xc = self.xc
                 mf.kernel()

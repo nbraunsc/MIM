@@ -163,6 +163,8 @@ class Molecule():
                 tempatom.append(self.atomtable[atom][0])
             if self.special_prim != None and self.special_prim in tempatom:
                 self.prims.append(Primitive.Primitive(z, prim[z], charge=self.special_charge, spin=self.special_spin))
+                print(self.prims[-1].charge, self.prims[-1].spin)
+                print("this in molecule.py")
 
             else:
                 self.prims.append(Primitive.Primitive(z, prim[z], charge=0, spin=0))

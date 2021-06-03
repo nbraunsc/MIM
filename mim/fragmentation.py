@@ -85,6 +85,7 @@ class Fragmentation():
                 for i in x:
                     if arr[i] != 0:
                         self.fragment[a].extend([i])
+        
         # Now get list of unique frags, running compress_frags function below
         self.compress_frags()
 
@@ -148,11 +149,11 @@ class Fragmentation():
             self.attached.append(fragi) 
 
     def remove_repeatingfrags(self, oldcoeff, derv_dict, derivs):
-        """ Removes the repeating derivitives. Function gets called in self.do_fragmentation().
+        """ Removes the repeating derivatives. Function gets called in self.do_fragmentation().
         
-        The repeating derivates are the exact same derivates that would be added then subtracted
+        The repeating derivatives are the exact same derivatives that would be added then subtracted
         again during the principle of inclusion-exculsion process of MIM.  This also updates the self.derivs
-        and self.coefflist that are using with Fragment() class instances.
+        and self.coefflist that are used with Fragment() class instances.
         
         Parameters
         ----------
@@ -192,7 +193,8 @@ class Fragmentation():
         
         """
         
-        self.frags = [] #list of Fragment instances as ray Actor ids
+        self.frags = []
+
         for fi in range(0, len(self.derivs)):
             coeffi = self.coefflist[fi]
             attachedlist = self.attached[fi]
@@ -205,6 +207,7 @@ class Fragmentation():
             qc_fi = qc_backend(theory=theory, basis=basis, tol=tol, active_space=active_space, nelec_alpha=nelec_alpha, nelec_beta=nelec_beta, max_memory=max_memory, xc=xc, charge=frag_charge, spin=frag_spin)
         
             self.frags.append(Fragment.Fragment(qc_fi, self.molecule, self.atomlist[fi], attachedlist, coeff=coeffi, step_size=step_size, local_coeff=local_coeff))
+        print("done with initlaze frags")
 
         #for fi in range(0, len(self.atomlist)):
         #    coeffi = self.coefflist[fi]
@@ -222,80 +225,79 @@ class Fragmentation():
         #        print("hello in initalize frag func")
         #        qc_fi = qc_backend(theory=theory, basis=basis, tol=tol, active_space=active_space, nelec_alpha=nelec_alpha, nelec_beta=nelec_beta, max_memory=max_memory, xc=xc, charge=0, spin=0)
         #    self.frags.append(Fragment.Fragment(qc_fi, self.molecule, self.atomlist[fi], attachedlist, coeff=coeffi, step_size=step_size, local_coeff=local_coeff))
-        print("done with initlaze frags")
     
-    def qc_params(self, qc_backend=None, theory=None, basis=None, spin=None, tol=None, active_space=None, nelec=None, nelec_alpha=None, nelec_beta=None, max_memory=None, xc=None, charge=0):
-    #def qc_params(self, frag_index=[], qc_backend=None, theory=None, basis=None, spin=0, tol=0, active_space=0, nelec=0, nelec_alpha=0, nelec_beta=0, max_memory=0):
-        """ Funciton that is optional
-        
-        Use if a certain fragment or list of fragments need to be run with a different qc backend, or theory, or needs specific params.
+    #def qc_params(self, qc_backend=None, theory=None, basis=None, spin=None, tol=None, active_space=None, nelec=None, nelec_alpha=None, nelec_beta=None, max_memory=None, xc=None, charge=0):
+    ##def qc_params(self, frag_index=[], qc_backend=None, theory=None, basis=None, spin=0, tol=0, active_space=0, nelec=0, nelec_alpha=0, nelec_beta=0, max_memory=0):
+    #    """ Funciton that is optional
+    #    
+    #    Use if a certain fragment or list of fragments need to be run with a different qc backend, or theory, or needs specific params.
 
-        Parameters
-        ----------
-        frag_index : list
-            The location of the specific fragment within the fragment list
-        qc_backend : str
-            Quantum chemistry backend wanted for this fragment
-        theory : str
-            Theory wanted
-        basis : str
-            Basis set wanted
-        spin : int
-            Spin state for fragment
-        tol : int
-            Tolerance wanted
-        active_space : int
-            Size of active space for CASSCF etc.
-        nelec_alpha : int
-            Number of alpha electrons
-        nelec_beta : int
-            Number of beta electrons
-        max_memory : int
-            Max memory for this calculation
-        """
-        #for fi in frag_index:
-        qc_fi = qc_backend(theory=theory, basis=basis, spin=spin, tol=tol, active_space=active_space, nelec_alpha=nelec_alpha, nelec_beta=nelec_beta, max_memory=max_memory, xc=xc, charge=charge)
-        return qc_fi
+    #    Parameters
+    #    ----------
+    #    frag_index : list
+    #        The location of the specific fragment within the fragment list
+    #    qc_backend : str
+    #        Quantum chemistry backend wanted for this fragment
+    #    theory : str
+    #        Theory wanted
+    #    basis : str
+    #        Basis set wanted
+    #    spin : int
+    #        Spin state for fragment
+    #    tol : int
+    #        Tolerance wanted
+    #    active_space : int
+    #        Size of active space for CASSCF etc.
+    #    nelec_alpha : int
+    #        Number of alpha electrons
+    #    nelec_beta : int
+    #        Number of beta electrons
+    #    max_memory : int
+    #        Max memory for this calculation
+    #    """
+    #    #for fi in frag_index:
+    #    qc_fi = qc_backend(theory=theory, basis=basis, spin=spin, tol=tol, active_space=active_space, nelec_alpha=nelec_alpha, nelec_beta=nelec_beta, max_memory=max_memory, xc=xc, charge=charge)
+    #    return qc_fi
             
     
-    def energy_gradient(self):
-    #def energy_gradient(self, newcoords):
-        """ Function returns total energy and gradient of global molecule.
-        
-        This function holds virtual functions for different chemical software.  A software
-        must be implemented inorder to run this function.  
-        
-        Parameters
-        ----------
-        newcoords : npdarray
-            Contains xyz coords for the full molecule. These get updated after each geometry optimization cycle.
-        
-        Returns
-        -------
-        self.etot : float
-            Energy of the full molecule
-        self.gradient : ndarray
-            Gradient of the full molecule
-        
-        """
+    #def energy_gradient(self):
+    ##def energy_gradient(self, newcoords):
+    #    """ Function returns total energy and gradient of global molecule.
+    #    
+    #    This function holds virtual functions for different chemical software.  A software
+    #    must be implemented inorder to run this function.  
+    #    
+    #    Parameters
+    #    ----------
+    #    newcoords : npdarray
+    #        Contains xyz coords for the full molecule. These get updated after each geometry optimization cycle.
+    #    
+    #    Returns
+    #    -------
+    #    self.etot : float
+    #        Energy of the full molecule
+    #    self.gradient : ndarray
+    #        Gradient of the full molecule
+    #    
+    #    """
 
-        #for atom in range(0, len(self.molecule.atomtable)): #makes newcoords = self.molecule.atomtable
-        #    x = list(newcoords[atom])
-        #    self.molecule.atomtable[atom][1:] = x
+    #    #for atom in range(0, len(self.molecule.atomtable)): #makes newcoords = self.molecule.atomtable
+    #    #    x = list(newcoords[atom])
+    #    #    self.molecule.atomtable[atom][1:] = x
 
 
-        self.gradient = np.zeros((self.molecule.natoms,3)) #setting them back to zero
-        self.etot = 0
-        self.hessian = np.zeros((self.molecule.natoms, self.molecule.natoms, 3, 3)) 
-        apt=0
-        for i in self.frags:
-            #i.molecule.atomtable = self.molecule.atomtable  #setting newcoords
-            e, grad, i_hess, i_apt = i.qc_backend()
-            self.etot += i.energy
-            self.gradient += i.grad
-            self.hessian += i.hessian
-            apt += i_apt
-        return self.etot, self.gradient, self.hessian, apt
+    #    self.gradient = np.zeros((self.molecule.natoms,3)) #setting them back to zero
+    #    self.etot = 0
+    #    self.hessian = np.zeros((self.molecule.natoms, self.molecule.natoms, 3, 3)) 
+    #    apt=0
+    #    for i in self.frags:
+    #        #i.molecule.atomtable = self.molecule.atomtable  #setting newcoords
+    #        e, grad, i_hess, i_apt = i.qc_backend()
+    #        self.etot += i.energy
+    #        self.gradient += i.grad
+    #        self.hessian += i.hessian
+    #        apt += i_apt
+    #    return self.etot, self.gradient, self.hessian, apt
            
     def write_xyz(self, name):
         """ Writes an xyz file with the atom labels, number of atoms, and respective Cartesian coords for geom_opt().
@@ -351,8 +353,10 @@ class Fragmentation():
         """
         self.build_frags(frag_type=fragtype, value=value)
         derivs, oldcoeff, deriv_dict = runpie.runpie(self.unique_frag)
+        print(len(derivs), len(oldcoeff))
         self.derivs = self.remove_repeatingfrags(oldcoeff, deriv_dict, derivs)
         #self.atomlist = [None] * len(self.derivs)
+        print(len(self.derivs))
         
         self.atomlist = []
         for j in self.derivs:
@@ -360,6 +364,9 @@ class Fragmentation():
             for prim in j:
                 temp.extend(list(self.molecule.prims[prim].atoms))
             self.atomlist.append(temp)
+        print(len(self.atomlist))
+        
+        self.find_attached()
         
         #for i in range(0, len(self.derivs)):
         #    self.derivs[i] = list(self.derivs[i])
@@ -377,55 +384,43 @@ class Fragmentation():
         #for i in range(0, len(self.atomlist)):  #sorted atom numbers
         #    self.atomlist[i] = list(sorted(self.atomlist[i]))
 
-        self.find_attached()
         
-    def do_geomopt(self, name, theory, basis):
-        """ Completes the geometry optimization using pyberny from pyscf.
-        
-        Parameters
-        ----------
-        name : str
-            Name of Molecule() object to help with file path
-        theory : str
-            Level of theory for calculation
-        basis : str
-            Basis set name for calculation
-        
-        Returns
-        -------
-        self.etot_opt : float
-            Optimized energy for full molecule
-        self.grad_opt : ndarray
-            Optimized gradient for full molecule
-        
-        """
-        self.write_xyz(name)
-        os.path.abspath(os.curdir)
-        os.chdir('../inputs/')
-        optimizer = Berny(geomlib.readfile(os.path.abspath(os.curdir) + '/' + name + '.xyz'), debug=True)
-        for geom in optimizer:
-            solver = self.energy_gradient(geom.coords)
-            optimizer.send(solver)
-            self.etot_opt = solver[0]
-            #self.grad_opt = solver[1]
-        relaxed = geom
-        print("\n", "##########################", '\n', "#       Converged!       #", '\n', "##########################") 
-        print('\n', "Energy = ", self.etot_opt)
-        self.molecule.optxyz = relaxed.coords
-        os.chdir('../')
-        return self.etot_opt#, self.grad_opt
+    #def do_geomopt(self, name, theory, basis):
+    #    """ Completes the geometry optimization using pyberny from pyscf.
+    #    
+    #    Parameters
+    #    ----------
+    #    name : str
+    #        Name of Molecule() object to help with file path
+    #    theory : str
+    #        Level of theory for calculation
+    #    basis : str
+    #        Basis set name for calculation
+    #    
+    #    Returns
+    #    -------
+    #    self.etot_opt : float
+    #        Optimized energy for full molecule
+    #    self.grad_opt : ndarray
+    #        Optimized gradient for full molecule
+    #    
+    #    """
+    #    self.write_xyz(name)
+    #    os.path.abspath(os.curdir)
+    #    os.chdir('../inputs/')
+    #    optimizer = Berny(geomlib.readfile(os.path.abspath(os.curdir) + '/' + name + '.xyz'), debug=True)
+    #    for geom in optimizer:
+    #        solver = self.energy_gradient(geom.coords)
+    #        optimizer.send(solver)
+    #        self.etot_opt = solver[0]
+    #        #self.grad_opt = solver[1]
+    #    relaxed = geom
+    #    print("\n", "##########################", '\n', "#       Converged!       #", '\n', "##########################") 
+    #    print('\n', "Energy = ", self.etot_opt)
+    #    self.molecule.optxyz = relaxed.coords
+    #    os.chdir('../')
+    #    return self.etot_opt#, self.grad_opt
        
-   # def compute_Hessian(self):
-   #     """
-   #     Computes the overall Hessian for the molecule after the geometry optimization is completed.
-   #     :Also does link atom projects for the Hessians
-   #     """
-   #     self.hessian = np.zeros((self.molecule.natoms, self.molecule.natoms, 3, 3)) 
-   #     for i in self.frags:
-   #         self.hessian += i.hess*i.coeff
-
-   #     return self.hessian, hess_values, hess_vectors
-
     def mw_hessian(self, full_hessian):
         """
         Will compute the mass-weighted hessian, frequencies, and 
@@ -469,12 +464,12 @@ class Fragmentation():
         freq = (np.sqrt(e_values*factor))/(2*np.pi*2.9979*10**10) #1/s^2 -> cm-1
         return freq, modes
 
-    def global_apt(self):
-        global_apt = np.zeros((self.molecule.natoms*3, 3))
-        for frag in self.frags:
-            #frag.build_apt()
-            global_apt += frag.apt
-        return global_apt
+    #def global_apt(self):
+    #    global_apt = np.zeros((self.molecule.natoms*3, 3))
+    #    for frag in self.frags:
+    #        #frag.build_apt()
+    #        global_apt += frag.apt
+    #    return global_apt
 
 
 if __name__ == "__main__":

@@ -210,12 +210,13 @@ class Fragment():
         self.inputxyz = self.build_xyz()
         
         #sets origin of coords to center of mass
-        self.center = self.com()   
+        #self.center = self.com()   
         #finds inertia vector, R and T modes (only for 3 atom molecules currently)
         #self.inertia()
         
         energy, grad, hess_py = self.qc_class.energy_gradient(self.inputxyz)
-        self.energy = self.local_coeff*self.coeff*energy
+        self.energy = self.coeff*energy
+        #self.energy = self.local_coeff*self.coeff*energy
         jacob = self.build_jacobian_Grad()
         self.grad = self.local_coeff*self.coeff*jacob.dot(grad)
         self.M = self.mass_matrix()
