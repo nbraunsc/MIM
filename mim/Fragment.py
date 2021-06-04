@@ -215,8 +215,8 @@ class Fragment():
         #self.inertia()
         
         energy, grad, hess_py = self.qc_class.energy_gradient(self.inputxyz)
-        self.energy = self.coeff*energy
-        #self.energy = self.local_coeff*self.coeff*energy
+        #self.energy = self.coeff*energy
+        self.energy = self.local_coeff*self.coeff*energy
         jacob = self.build_jacobian_Grad()
         self.grad = self.local_coeff*self.coeff*jacob.dot(grad)
         self.M = self.mass_matrix()
