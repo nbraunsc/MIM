@@ -9,14 +9,18 @@ mim_levels = 1
 frag_type = 'distance' 
 
 #smaller fragmentation level
+<<<<<<< HEAD
 frag_deg = 1.6
+=======
+frag_deg = 10
+>>>>>>> 8211aa9a4facb0a20dbaf8587e419c7d06aa847c
 
 #larger fragmentation level
 frag_deg_large = 2.6
 
 #Basis set for quantum calculation
-basis_set_high = 'ccpvdz'
-basis_set_low = 'sto-3g'
+#basis_set_high = 'ccpvdz'
+basis_set_high = 'sto-3g'
 
 
 #Always need to define high_theory
@@ -39,7 +43,7 @@ software = 'Pyscf'
 stepsize = 0.001        
 
 #batch_size for running calculations
-batch_size = 5
+batch_size = 8
 
 #geometry optimization set to True or False
 opt = False
@@ -51,5 +55,5 @@ charge = -1
 spin = 2 #2S+1
 
 #pbs/slurm/Local?
-#queue = 'slurm'
-queue = 'local'
+queue = 'slurm'
+#queue = 'local'
