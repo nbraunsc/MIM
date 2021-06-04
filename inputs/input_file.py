@@ -5,8 +5,8 @@ import sys
 mim_levels = 1
 
 #can be 'distance' or 'graphical'
-frag_type = 'graphical'
-#frag_type = 'distance' 
+#frag_type = 'graphical'
+frag_type = 'distance' 
 
 #smaller fragmentation level
 frag_deg = 2.6
@@ -15,8 +15,8 @@ frag_deg = 2.6
 frag_deg_large = 2.6
 
 #Basis set for quantum calculation
-basis_set_high = 'ccpvdz'
-basis_set_low = 'sto-3g'
+#basis_set_high = 'ccpvdz'
+basis_set_high = 'sto-3g'
 
 
 #Always need to define high_theory
@@ -51,5 +51,5 @@ charge = -1
 spin = 2 #2S+1
 
 #pbs/slurm/Local?
-#queue = 'slurm'
-queue = 'local'
+queue = 'slurm'
+#queue = 'local'
