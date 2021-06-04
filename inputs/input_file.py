@@ -5,8 +5,8 @@ import sys
 mim_levels = 1
 
 #can be 'distance' or 'graphical'
-frag_type = 'graphical'
-#frag_type = 'distance' 
+#frag_type = 'graphical'
+frag_type = 'distance' 
 
 #smaller fragmentation level
 frag_deg = 2.6

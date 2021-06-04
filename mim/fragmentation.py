@@ -166,13 +166,52 @@ class Fragmentation():
             List of coefficents where index of coeff correlates to that fragment
             
         """
-        self.coefflist = []
-        derivatives = [list(tupl) for tupl in {tuple(item) for item in derivs }]
+        unique = [list(tupl) for tupl in {tuple(item) for item in derivs }]
+        derv = []
+        coeff =[]
+        sums = []
 
-        for i in derivatives:
-            key = str(sorted(set(i)))
-            self.coefflist.append(derv_dict[key])
-        return derivatives
+        for x in range(0, len(unique)):
+            index = []
+            value = 1
+            count = derivs.count(set(unique[x]))
+
+            #if derv only appears once add it to final list
+            if count == 1:
+                derv.append(derivs[x])
+                coeff.append(oldcoeff[x])
+                #print("added to list", derivs[x])
+
+            #if derv appears more than once, add/subtract coeff to determine if needed
+            if count > 1:
+                indices = [index for index, element in enumerate(derivs) if element == derivs[x]]
+                temp_coef = []
+                for num in indices: 
+                    temp_coef.append(oldcoeff[num])
+                
+                sum_coeff = float(sum(temp_coef))
+                sums.append(sum_coeff)
+                
+                #if overall neg, add derv that amount of times with -1 as coeff
+                if sum_coeff < 0:
+                    for i in range(0, int(abs(sum_coeff))):
+                        derv.append(derivs[x])
+                        coeff.append(-1)
+
+                #if overall positive, add derv that amount of times with +1 as coeff
+                if sum_coeff > 0:
+                    for i in range(0, int(sum_coeff)):
+                        derv.append(derivs[x])
+                        coeff.append(1)
+                
+        self.coefflist = coeff
+
+        #derivatives = [list(tupl) for tupl in {tuple(item) for item in derivs }]
+
+        #for i in derivatives:
+        #    key = str(sorted(set(i)))
+        #    self.coefflist.append(derv_dict[key])
+        return derv
 
     def initalize_Frag_objects(self, theory=None, basis=None, qc_backend=None, spin=None, tol=None, active_space=None, nelec=None, nelec_alpha=None, nelec_beta=None, max_memory=None, xc=None, charge=0, step_size=0.001, local_coeff=1):
         """ Initalizes the Fragment() objects
@@ -353,10 +392,8 @@ class Fragmentation():
         """
         self.build_frags(frag_type=fragtype, value=value)
         derivs, oldcoeff, deriv_dict = runpie.runpie(self.unique_frag)
-        print(len(derivs), len(oldcoeff))
         self.derivs = self.remove_repeatingfrags(oldcoeff, deriv_dict, derivs)
         #self.atomlist = [None] * len(self.derivs)
-        print(len(self.derivs))
         
         self.atomlist = []
         for j in self.derivs:
@@ -364,7 +401,6 @@ class Fragmentation():
             for prim in j:
                 temp.extend(list(self.molecule.prims[prim].atoms))
             self.atomlist.append(temp)
-        print(len(self.atomlist))
         
         self.find_attached()
         
@@ -456,7 +492,6 @@ class Fragmentation():
         reshape_mass_hess = full_hessian.transpose(0, 2, 1, 3)
         x = reshape_mass_hess.reshape(reshape_mass_hess.shape[0]*reshape_mass_hess.shape[1],reshape_mass_hess.shape[2]*reshape_mass_hess.shape[3])
         e_values, modes = LA.eigh(x)
-        #e_values, modes = LA.eigh(x)
 
         #unit conversion of freq from H/B**2 amu -> 1/s**2
         #factor = (4.3597482*10**-18)/(1.6603145*10**-27)/(1.0*10**-20)  #Angstrom to m
