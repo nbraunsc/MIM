@@ -89,12 +89,12 @@ class Fragmentation():
         # Now get list of unique frags, running compress_frags function below
         self.compress_frags()
 
-
     def compress_frags(self): #takes full list of frags, compresses to unique frags
         """ Takes the full list of fragments and compresses them to only the unique fragments.
         
-        This functions compresses self.fragment into self.uniquefrag. 
-        
+        This functions compresses self.fragment into self.uniquefrag. Deletes fragments that
+        are completely represented by another fragment.
+
         Parameters
         ----------
         none
@@ -167,6 +167,7 @@ class Fragmentation():
             
         """
         unique = [list(tupl) for tupl in {tuple(item) for item in derivs }]
+        print(unique)
         derv = []
         coeff =[]
         sums = []
@@ -178,13 +179,13 @@ class Fragmentation():
 
             #if derv only appears once add it to final list
             if count == 1:
-                derv.append(derivs[x])
+                print("only occurs once", unique[x])
+                derv.append(unique[x])
                 coeff.append(oldcoeff[x])
-                #print("added to list", derivs[x])
 
             #if derv appears more than once, add/subtract coeff to determine if needed
             if count > 1:
-                indices = [index for index, element in enumerate(derivs) if element == derivs[x]]
+                indices = [index for index, element in enumerate(derivs) if element == set(unique[x])]
                 temp_coef = []
                 for num in indices: 
                     temp_coef.append(oldcoeff[num])
@@ -195,14 +196,19 @@ class Fragmentation():
                 #if overall neg, add derv that amount of times with -1 as coeff
                 if sum_coeff < 0:
                     for i in range(0, int(abs(sum_coeff))):
-                        derv.append(derivs[x])
+                        derv.append(unique[x])
                         coeff.append(-1)
 
                 #if overall positive, add derv that amount of times with +1 as coeff
                 if sum_coeff > 0:
                     for i in range(0, int(sum_coeff)):
-                        derv.append(derivs[x])
+                        derv.append(unique[x])
                         coeff.append(1)
+                
+                if sum_coeff == 0:
+                    print("indices >0, but sum of coeff ==0, dont add")
+                    print(unique[x])
+            
                 
         self.coefflist = coeff
 
@@ -211,6 +217,9 @@ class Fragmentation():
         #for i in derivatives:
         #    key = str(sorted(set(i)))
         #    self.coefflist.append(derv_dict[key])
+        #print(derivatives)
+        #print(self.coefflist)
+        #exit()
         return derv
 
     def initalize_Frag_objects(self, theory=None, basis=None, qc_backend=None, spin=None, tol=None, active_space=None, nelec=None, nelec_alpha=None, nelec_beta=None, max_memory=None, xc=None, charge=0, step_size=0.001, local_coeff=1):
