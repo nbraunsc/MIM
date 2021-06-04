@@ -3,6 +3,7 @@ import sys
 import glob
 import mim
 from mim import *
+import time
 #from mim import runpie, Molecule, fragmentation, Fragment, Pyscf
 
 batch_size = int(sys.argv[1])
@@ -67,4 +68,6 @@ os.chdir('../')
 for command in command_list:
     print("\n Submitting job:", command, "\n")
     os.system(command)
+    time.sleep(2)
+  
 

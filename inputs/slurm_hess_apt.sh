@@ -6,6 +6,7 @@
 #SBATCH --account=nmayhall_group
 #SBATCH --mail-user=nbraunsc@vt.edu
 #SBATCH --mail-type=FAIL
+#SBATCH --export=ALL
 # SBATCH --get-user-env=30
 
 . /etc/bashrc
