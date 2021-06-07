@@ -38,6 +38,8 @@ class Pyscf():
             mol.spin = self.spin-1
         else:
             mol.spin = self.spin
+        print("spin:", mol.spin)
+        print("charge:", mol.charge)
         #mol.unit = 'Bohr'
         mol.unit = 'Angstrom'
         #mol.symmetry = True
@@ -120,8 +122,11 @@ class Pyscf():
         
         if self.theory == 'CCSD(T)':    #Couple Cluster for singles and doubles, pertub triples
             mf = scf.RHF(mol).run()
-            postmf = cc.ccsd_t(mf).run()
-            e = mf.kernel() + postmf.kernel()[0]
+            mycc = cc.CCSD(mf).run()
+            et = mycc.ccsd_t()
+            #postmf = cc.ccsd_t(mf).run()
+            #e = mf.kernel() + postmf.kernel()[0]
+            e = mycc.e_tot + et
             g=0
             #g2 = postmf.nuc_grad_method()
             #g = g2.kernel()
@@ -304,7 +309,7 @@ class Pyscf():
             dipole = mfx.dip_moment(mol2, unit='DEBYE')
         
         if self.theory == 'DFT':
-            if mol2.spin != 1:
+            if mol2.spin != 0:
                 mf = dft.UKS(mol2)
                 mf.xc = self.xc
                 mf.kernel()

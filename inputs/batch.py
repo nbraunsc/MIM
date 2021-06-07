@@ -3,6 +3,7 @@ import sys
 import glob
 import mim
 from mim import *
+import time
 #from mim import runpie, Molecule, fragmentation, Fragment, Pyscf
 
 batch_size = int(sys.argv[1])
@@ -26,6 +27,7 @@ for filename in os.listdir():
 
 
 for i in dirlist:
+    slurm_jobs = open("slurm_info.txt", "a")
     os.chdir(i)
     files_dill = glob.glob('*.dill')
     if batch_size == None:
@@ -45,17 +47,27 @@ for i in dirlist:
                 #cmd = 'python %s %s %s %s >> run_error.txt'%(script, path, string_num, folder)
                 cmd = 'python %s %s %s %s'%(script, path, string_num, folder)
             if queue =='slurm':
-                cmd = 'sbatch -e %s -J %s -o "%s" --export=LEVEL="%s",BATCH="%s",FOLDER="%s"  %s'%(path+"/"+submit_name+".error", submit_name, path+"/"+submit_name+".log", path, string_num, folder, script)     ##For TinkerCliffs/Huckleberry
+                cmd = 'sbatch -e %s -J %s -o "%s" --export=LEVEL="%s",BATCH="%s",FOLDER="%s"  %s'%(path+"/"+submit_name[:10]+".error", submit_name[:10], path+"/"+submit_name[:10]+".log", path, string_num, folder, script)     ##For TinkerCliffs/Huckleberry
+
+                #write slurm variables to output file
+                name = "\n" + submit_name[:10] + "\n"
+                slurm_jobs.write(name)
+                info = cmd + "\n"
+                slurm_jobs.write(info)
+
             if queue == 'pbs':
                 cmd = 'qsub -e %s -N %s -o %s -v LEVEL="%s",BATCH="%s",FOLDER="%s" %s'%(path, submit_name, path, path, string_num, folder, script)     ##For Newriver
             
             command_list.append(cmd)
             os.chdir(folder)
             os.chdir(i)
+    slurm_jobs.close()
     os.chdir('../')
 os.chdir('../')
 
 for command in command_list:
     print("\n Submitting job:", command, "\n")
     os.system(command)
+    time.sleep(2)
+  
 

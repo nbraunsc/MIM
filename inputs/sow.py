@@ -36,7 +36,7 @@ if frag_deg == None:
 if frag_deg_large == None:
     raise Exception('Second fragmentation distance cutoff not defined')
 
-if not basis_set:
+if not basis_set_high:
     raise Exception('Basis set not defined')
     
 if mim_levels == 2 and not low_theory: 
@@ -60,7 +60,7 @@ if opt == False:
     if mim_levels == 1:
         frag1 = fragmentation.Fragmentation(input_molecule)
         frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
-        frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
+        frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set_high, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
         os.path.abspath(os.curdir)
         os.chdir(folder)
         level_list = os.listdir()
@@ -86,7 +86,7 @@ if opt == False:
         #""" MIM high theory, small fragments"""
         frag1 = fragmentation.Fragmentation(input_molecule)
         frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
-        frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
+        frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set_high, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
         os.path.abspath(os.curdir)
         os.chdir(folder)
         level_list = os.listdir()
@@ -110,7 +110,7 @@ if opt == False:
         #""" MIM low theory, small fragments"""
         frag2 = fragmentation.Fragmentation(input_molecule)
         frag2.do_fragmentation(fragtype=frag_type, value=frag_deg)
-        frag2.initalize_Frag_objects(theory=low_theory, basis=basis_set, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=-1)
+        frag2.initalize_Frag_objects(theory=low_theory, basis=basis_set_low, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=-1)
         print("done with initalize low theory small fragments")
         os.mkdir('frag2')
         os.chdir('frag2')
@@ -131,7 +131,7 @@ if opt == False:
         print("starting large fragments")
         frag3.do_fragmentation(fragtype=frag_type, value=frag_deg_large)
         print(frag3.derivs)
-        frag3.initalize_Frag_objects(theory=low_theory, basis=basis_set, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
+        frag3.initalize_Frag_objects(theory=low_theory, basis=basis_set_low, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
         print("done with initalize")
         os.mkdir('frag3')
         os.chdir('frag3')
@@ -145,12 +145,12 @@ if opt == False:
     
     os.chdir('../')
     if queue == 'pbs':
-        cmd = "python batch.py %s %s pbs.sh %s"%(str(batch_size), folder, queue)       ##For Newriver
+        cmd = "python batch.py %s %s hess_apt.sh %s"%(str(batch_size), folder, queue)       ##For Newriver
     if queue == 'slurm':
-        cmd = 'python batch.py %s %s slurm_pbs.sh %s'%(str(batch_size), folder, queue)         ##For TinkerCliffs/Huckleberry/Infer
+        cmd = 'python batch.py %s %s slurm_hess_apt.sh %s'%(str(batch_size), folder, queue)         ##For TinkerCliffs/Huckleberry/Infer
     
     if queue == 'local':
-        cmd = 'python batch.py %s %s run.py %s'%(str(batch_size), folder, queue)
+        cmd = 'python batch.py %s %s run_opt.py %s'%(str(batch_size), folder, queue)
     
     os.system(cmd)
     print(cmd)

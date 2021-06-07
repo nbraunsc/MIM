@@ -35,7 +35,6 @@ for level in levels:
         infile = open(i, 'rb')
         new_class_loop = dill.load(infile)
         outfile = open(i, "wb")
-        print("Fragment ID:", level, i)
         e += new_class_loop.energy
         g += new_class_loop.grad
         h += new_class_loop.hessian
@@ -78,11 +77,11 @@ np.save('freq.npy', freq)
 np.save('intensity.npy', intense_kmmol)
 np.save('normalmodes.npy', modes_unweight)
 
-print("MIM Energy:", e, "Hartree")
-print("MIM Gradient:\n", g)
-print("MIM Hessian shape:\n", h.shape, "\n")
+print("\nMIM Energy (Hartree)\n", e)
+print("\nMIM Gradient:\n", g)
+print("\nMIM Hessian shape:\n", h.shape, "\n")
 print("MIM frequencies:\n", freq)
-print("MIM intensities:\n", intense_kmmol)
+print("\nMIM intensities:\n", intense_kmmol)
 exit()
 
 outfile = open('fragment0.dill', 'wb')

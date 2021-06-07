@@ -44,18 +44,13 @@ class Molecule():
         self.molchart = []
         self.covrad = cov_rad.form_covalent_radii()
         self.optxyz = []
-        #self.mol_class = mol_class
         self.prim_dist = []
         self.special_prim = special_prim
         self.special_charge = special_charge
         self.special_spin = special_spin
         
     def initalize_molecule(self):
-        #filename = self.name.replace("'", "")
-        #y = filename.strip()
-        #x = "../inputs/" + y + ".cml"
         self.parse_cml(self.coord_path)
-        #self.build_molmatrix(2)
 
     def parse_cml(self, filename):
         """ Finds file location, runs parse_cml(), runs build_matrix()
@@ -171,6 +166,11 @@ class Molecule():
 
             else:
                 self.prims.append(Primitive.Primitive(z, prim[z], charge=0, spin=0))
+            
+            #print(self.prims[-1].prim_label)
+            #print(self.prims[-1].atoms)
+            #for i in self.prims[-1].atoms:
+            #    print(self.atomtable[i])
         return self.prims
 
     def build_atom_dist(self):
@@ -233,9 +233,9 @@ class Molecule():
         self.primsleng = len(self.prims)
         self.primchart = np.zeros( (self.primsleng,self.primsleng))
         for prim1 in range(0, len(self.prims)):
-            for atomi in self.prims.atoms[prim1]:
+            for atomi in self.prims[prim1].atoms:
                 for prim2 in range(0, len(self.prims)):
-                    for atomj in self.prims.atoms[prim2]:
+                    for atomj in self.prims[prim2].atoms:
                         if prim1 == prim2:
                             continue
                         if self.A[atomi][atomj] != 0:
