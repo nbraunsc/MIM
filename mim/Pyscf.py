@@ -74,7 +74,7 @@ class Pyscf():
             h = hess.transpose(0,2,1,3).reshape(len(input_xyz)*3, len(input_xyz)*3, order='C')
             return e, g, h
         
-        if self.theory == 'UHF': #Restricted HF calc
+        if self.theory == 'UHF': #Unrestricted HF calc
             mf = scf.UHF(mol).run()
             e = mf.kernel()
             mf.dump_scf_summary()

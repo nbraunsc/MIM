@@ -15,10 +15,8 @@ class Molecule():
     Molecule class is the parent class for the MIM code.
     
     Responsible for obtaining input file of molecule, changing into
-    appropriate file format
-    
-    Holds molecule information that will not change througout fragmentation
-    code.
+    appropriate file format. Holds molecule information that will not change througout 
+    fragmentation code.
     """
     
     def __init__(self, coord_path, special_prim=None, special_charge=None, special_spin=None):
@@ -103,6 +101,7 @@ class Molecule():
             self.A[x][y] = z
             self.A[y][x] = z
         self.build_prims()
+        return None
         
         #pandas testing
         #path = "../inputs/" + 'aspirin.json'
@@ -175,10 +174,14 @@ class Molecule():
 
     def build_atom_dist(self):
         """ Builds a matrix with atom to atom distances
+        
+        Parameters
+        ----------
+        none
 
         Returns
         -------
-        atom_dist = np.ndarray
+        atom_dist : np.ndarray
             Ndarray of shape(# atoms, # atoms) with the Euclidean distance as the elements.
         """
 
@@ -196,7 +199,18 @@ class Molecule():
     def build_prim_dist(self):
         """ Builds a matrix with prim to prims distances.
 
-        Distance is determined by the minimum interatomic distances between pairs of atoms in their respective prims.
+        Distance is determined by the minimum interatomic distances between pairs of 
+        atoms in their respective prims.
+        
+        Parameters
+        ----------
+        none
+        
+        Returns
+        -------
+        self.prim_dist : ndarray
+            Ndarray of shape (# of primitaves, # of primitaves)
+                
         """
         atom_dist = self.build_atom_dist()
         self.prim_dist = np.zeros((len(self.prims), len(self.prims)))
@@ -219,7 +233,7 @@ class Molecule():
         connected to another primitave there will be a 1 in the row/column index of the array.
         This is used in the covalent network fragmentation scheme and not spheric scheme.
        
-       Parameters
+        Parameters
         ----------
         none
         

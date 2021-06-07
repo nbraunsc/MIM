@@ -15,9 +15,9 @@ class Fragmentation():
     """
     Fragmentation is a child class of Molecule().
     
-    Used to build the molecular fragments and their derivatives.
-    
-    An instance of this class represents a mapping between a large molecule and a list of independent fragments with the appropriate coefficients needed to reassemble expectation values of observables. 
+    Used to build the molecular fragments and their derivatives. An instance of this class 
+    represents a mapping between a large molecule and a list of independent fragments with 
+    the appropriate coefficients needed to reassemble expectation values of observables. 
     """
     
     def __init__(self, molecule): 
