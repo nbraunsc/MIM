@@ -1,0 +1,795 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>API Documentation &#8212; Molecules-in-Molecules (MIM)  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/material.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="User Guide" href="user_guide.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#api_test" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="index.html" title="Molecules-in-Molecules (MIM)  documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MIM 1.0</span>
+          <span class="md-header-nav__topic"> API Documentation </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="GET" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/nbraunsc/MIM/" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    MIM
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+  
+  <script src="_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = ""versions.json"",
+        target_loc = "../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">Molecules-in-Molecules (MIM)  documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="index.html" title="Molecules-in-Molecules (MIM) documentation" class="md-nav__button md-logo">
+      
+        <img src="_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="index.html"
+       title="Molecules-in-Molecules (MIM) documentation">MIM 1.0</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/nbraunsc/MIM/" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    MIM
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+    
+      <a href="install.html" class="md-nav__link">Installation Instructions</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickstart.html" class="md-nav__link">Quick Start</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="example.html" class="md-nav__link">Example</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="user_guide.html" class="md-nav__link">User Guide</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> API Documentation </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">API Documentation</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#api-test--page-root" class="md-nav__link">API Documentation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#submodules" class="md-nav__link">Submodules</a>
+        </li>
+        <li class="md-nav__item"><a href="#module-mim.Molecule" class="md-nav__link">Molecule module</a>
+        </li>
+        <li class="md-nav__item"><a href="#primitive-module" class="md-nav__link">Primitive module</a>
+        </li>
+        <li class="md-nav__item"><a href="#fragmentation-module" class="md-nav__link">Fragmentation module</a>
+        </li>
+        <li class="md-nav__item"><a href="#fragment-module" class="md-nav__link">Fragment module</a>
+        </li>
+        <li class="md-nav__item"><a href="#principle-of-inclusion-exculsion" class="md-nav__link">Principle of Inclusion/Exculsion</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/api_test.rst.txt">Show Source</a> </li>
+
+  </ul>
+</nav>
+      
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#api-test--page-root" class="md-nav__link">API Documentation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#submodules" class="md-nav__link">Submodules</a>
+        </li>
+        <li class="md-nav__item"><a href="#module-mim.Molecule" class="md-nav__link">Molecule module</a>
+        </li>
+        <li class="md-nav__item"><a href="#primitive-module" class="md-nav__link">Primitive module</a>
+        </li>
+        <li class="md-nav__item"><a href="#fragmentation-module" class="md-nav__link">Fragmentation module</a>
+        </li>
+        <li class="md-nav__item"><a href="#fragment-module" class="md-nav__link">Fragment module</a>
+        </li>
+        <li class="md-nav__item"><a href="#principle-of-inclusion-exculsion" class="md-nav__link">Principle of Inclusion/Exculsion</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/api_test.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="api-documentation">
+<h1 id="api-test--page-root">API Documentation<a class="headerlink" href="#api-test--page-root" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2 id="submodules">Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-mim.Molecule">
+<span id="molecule-module"></span><h2 id="module-mim.Molecule">Molecule module<a class="headerlink" href="#module-mim.Molecule" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mim.Molecule.Molecule">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mim.Molecule.</span></span><span class="sig-name descname"><span class="pre">Molecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coord_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">special_prim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">special_charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">special_spin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Molecule.Molecule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Molecule class is the parent class for the MIM code.</p>
+<p>Responsible for obtaining input file of molecule, changing into
+appropriate file format. Holds molecule information that will not change througout 
+fragmentation code.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Molecule.Molecule.build_atom_dist">
+<span class="sig-name descname"><span class="pre">build_atom_dist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Molecule.Molecule.build_atom_dist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a matrix with atom to atom distances</p>
+<p>none</p>
+<dl class="simple">
+<dt>atom_dist<span class="classifier">np.ndarray</span></dt><dd><p>Ndarray of shape(# atoms, # atoms) with the Euclidean distance as the elements.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Molecule.Molecule.build_molmatrix">
+<span class="sig-name descname"><span class="pre">build_molmatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Molecule.Molecule.build_molmatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds the full connectivity array</p>
+<p>Ndarray contains all connectivity between primitives. Thus row index and column index entry
+correspond to number of primiatives away column prim is from row prim. 
+This is used in the covalent network fragmentation scheme and not spheric scheme.</p>
+<p>Built through a series of matrix manipulations using self.primchart and self.molchart</p>
+<dl class="simple">
+<dt>i<span class="classifier">int</span></dt><dd><p>This must be the value 2 to start the recursive funciton for the matrix manipulations. This
+is set within the initalize_molecule() funciton</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>self.molchart<span class="classifier">ndarray</span></dt><dd><p>Ndarray of shape (# of prims, # of prims)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Molecule.Molecule.build_prim_dist">
+<span class="sig-name descname"><span class="pre">build_prim_dist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Molecule.Molecule.build_prim_dist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a matrix with prim to prims distances.</p>
+<p>Distance is determined by the minimum interatomic distances between pairs of 
+atoms in their respective prims.</p>
+<p>none</p>
+<dl class="simple">
+<dt>self.prim_dist<span class="classifier">ndarray</span></dt><dd><p>Ndarray of shape (# of primitaves, # of primitaves)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Molecule.Molecule.build_primchart">
+<span class="sig-name descname"><span class="pre">build_primchart</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Molecule.Molecule.build_primchart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds a connectivity ndarray between primitaves</p>
+<p>Ndarray contains only single-linkage connectivity.  Thus if one primative is 
+connected to another primitave there will be a 1 in the row/column index of the array.
+This is used in the covalent network fragmentation scheme and not spheric scheme.</p>
+<p>none</p>
+<dl class="simple">
+<dt>self.primchart<span class="classifier">ndarray</span></dt><dd><p>Ndarray of shape (# of primitaves, # of primitaves)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Molecule.Molecule.build_prims">
+<span class="sig-name descname"><span class="pre">build_prims</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Molecule.Molecule.build_prims" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds the primiative fragments (smallest possible fragments)</p>
+<p>Primitives are initalized with heavy atoms (all other than hydrogen), no double or 
+triple bonds are cut, no hydrogen bonds are cut.</p>
+<p>none</p>
+<dl class="simple">
+<dt>self.prims<span class="classifier">set</span></dt><dd><p>This is a set of sets containing the atom indexes that are within each primitive</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Molecule.Molecule.initalize_molecule">
+<span class="sig-name descname"><span class="pre">initalize_molecule</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Molecule.Molecule.initalize_molecule" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Molecule.Molecule.parse_cml">
+<span class="sig-name descname"><span class="pre">parse_cml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Molecule.Molecule.parse_cml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds file location, runs parse_cml(), runs build_matrix()</p>
+<p>This the only funciton that needs to be called within the Molecule() class</p>
+<dl class="simple">
+<dt>file_name<span class="classifier">str</span></dt><dd><p>This is the molecule name as it appears in its .cml file</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+<section id="primitive-module">
+<h2 id="primitive-module">Primitive module<a class="headerlink" href="#primitive-module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><span class="target" id="module-mim.Primitive"></span><dl class="py class">
+<dt class="sig sig-object py" id="mim.Primitive.Primitive">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mim.Primitive.</span></span><span class="sig-name descname"><span class="pre">Primitive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prim_label</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atoms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Primitive.Primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to store individual primitives each with their own charge and spin multiplicity, 
+which atoms are in primitive and label of primitive.</p>
+</dd></dl>
+</div></blockquote>
+</section>
+<section id="fragmentation-module">
+<h2 id="fragmentation-module">Fragmentation module<a class="headerlink" href="#fragmentation-module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><span class="target" id="module-mim.fragmentation"></span><dl class="py class">
+<dt class="sig sig-object py" id="mim.fragmentation.Fragmentation">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mim.fragmentation.</span></span><span class="sig-name descname"><span class="pre">Fragmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.fragmentation.Fragmentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Fragmentation is a child class of Molecule().</p>
+<p>Used to build the molecular fragments and their derivatives. An instance of this class 
+represents a mapping between a large molecule and a list of independent fragments with 
+the appropriate coefficients needed to reassemble expectation values of observables.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.fragmentation.Fragmentation.build_frags">
+<span class="sig-name descname"><span class="pre">build_frags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frag_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.fragmentation.Fragmentation.build_frags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs the initalize fragmmentation</p>
+<p>This will fragment the full molecule at the level of deg specified.
+Also runs self.compress_frags() to delete repeating fragments.</p>
+<dl class="simple">
+<dt>frag_type<span class="classifier">str</span></dt><dd><p>This is the type of fragmentation wanted either distance or graphical.</p>
+</dd>
+<dt>value<span class="classifier">int</span></dt><dd><p>The degree of fragmentation wanted. Larger deg results in larger fragments. For distance type it will
+be the largest radius cuttoff. For covalent_net it will be the number of bonds away from a center.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>self.fragment<span class="classifier">list</span></dt><dd><p>List of fragments containing index of primiatives that are within the value</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.fragmentation.Fragmentation.compress_frags">
+<span class="sig-name descname"><span class="pre">compress_frags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.fragmentation.Fragmentation.compress_frags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the full list of fragments and compresses them to only the unique fragments.</p>
+<p>This functions compresses self.fragment into self.uniquefrag. Deletes fragments that
+are completely represented by another fragment.</p>
+<p>none</p>
+<dl class="simple">
+<dt>self.unique_frag<span class="classifier">list</span></dt><dd><p>List of sets containing only the unqie fragments</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.fragmentation.Fragmentation.do_fragmentation">
+<span class="sig-name descname"><span class="pre">do_fragmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fragtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.fragmentation.Fragmentation.do_fragmentation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main executeable for Fragmentation () class</p>
+<p>This function fragments the molecule, runs principle of inclusion-exculsion,
+removes repeating fragments, creates attached pairs list, initalizes instances of Fragment() class.</p>
+<dl class="simple">
+<dt>frag_type<span class="classifier">str</span></dt><dd><p>Either ‘graphical’ to do covalent network or ‘radius’ to do spacial fragmentation</p>
+</dd>
+<dt>value<span class="classifier">int</span></dt><dd><p>Degree or radius of fragmentation wanted, gets used in self.build_frags()</p>
+</dd>
+</dl>
+<p>none</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.fragmentation.Fragmentation.find_attached">
+<span class="sig-name descname"><span class="pre">find_attached</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.fragmentation.Fragmentation.find_attached" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds the atoms that were cut during the fragmentation.</p>
+<p>none</p>
+<dl class="simple">
+<dt>self.attached<span class="classifier">list of lists</span></dt><dd><p>List of pairs of atoms (a, b) len of # of fragments, where a is in fragment and atom b was the 
+atom that was cut.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.fragmentation.Fragmentation.initalize_Frag_objects">
+<span class="sig-name descname"><span class="pre">initalize_Frag_objects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qc_backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">active_space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec_beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.fragmentation.Fragmentation.initalize_Frag_objects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initalizes the Fragment() objects</p>
+<p>Fragment is another child class of Fragmentaion() where link atoms get added, 
+fragment energy, gradient and hessian is calcuated.</p>
+<dl class="simple">
+<dt>theory<span class="classifier">str</span></dt><dd><p>Level of theory each fragment should be run at</p>
+</dd>
+<dt>basis<span class="classifier">str</span></dt><dd><p>Basis set wanted for calculation</p>
+</dd>
+</dl>
+<p>none</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.fragmentation.Fragmentation.mw_hessian">
+<span class="sig-name descname"><span class="pre">mw_hessian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_hessian</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.fragmentation.Fragmentation.mw_hessian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will compute the mass-weighted hessian, frequencies, and 
+normal modes for the full system.</p>
+<dl class="simple">
+<dt>full_hessian<span class="classifier">ndarray</span></dt><dd><p>This is the full hessian for the full molecule.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>freq<span class="classifier">ndarray</span></dt><dd><p>1D np array holding the frequencies</p>
+</dd>
+<dt>modes<span class="classifier">ndarray</span></dt><dd><p>2D ndarray holding normal modes in the columns</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.fragmentation.Fragmentation.remove_repeatingfrags">
+<span class="sig-name descname"><span class="pre">remove_repeatingfrags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oldcoeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derv_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.fragmentation.Fragmentation.remove_repeatingfrags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the repeating derivatives. Function gets called in self.do_fragmentation().</p>
+<p>The repeating derivatives are the exact same derivatives that would be added then subtracted
+again during the principle of inclusion-exculsion process of MIM.  This also updates the self.derivs
+and self.coefflist that are used with Fragment() class instances.</p>
+<dl class="simple">
+<dt>oldcoeff<span class="classifier">list</span></dt><dd><p>List of coefficients that is the output of runpie() function that is called in self.do_fragmentation().</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>self.coefflist<span class="classifier">list</span></dt><dd><p>List of coefficents where index of coeff correlates to that fragment</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.fragmentation.Fragmentation.write_xyz">
+<span class="sig-name descname"><span class="pre">write_xyz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.fragmentation.Fragmentation.write_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes an xyz file with the atom labels, number of atoms, and respective Cartesian coords for geom_opt().</p>
+<dl class="simple">
+<dt>name<span class="classifier">str</span></dt><dd><p>Name of the molecule, must be same name as input.cml file</p>
+</dd>
+</dl>
+<p>none</p>
+</dd></dl>
+</dd></dl>
+</div></blockquote>
+</section>
+<section id="fragment-module">
+<h2 id="fragment-module">Fragment module<a class="headerlink" href="#fragment-module" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><span class="target" id="module-mim.Fragment"></span><dl class="py class">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mim.Fragment.</span></span><span class="sig-name descname"><span class="pre">Fragment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qc_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">molecule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attached</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to store a list of primitives corresponding to a molecular fragment</p>
+<dl class="simple">
+<dt>theory<span class="classifier">str</span></dt><dd><p>Level of theory for calculation</p>
+</dd>
+<dt>basis<span class="classifier">str</span></dt><dd><p>Basis set name for calculations</p>
+</dd>
+<dt>prims<span class="classifier">list</span></dt><dd><p>List of fragments from Fragmentation class with atom indexes in list</p>
+</dd>
+<dt>attached<span class="classifier">list</span></dt><dd><p>List of attached pairs with the atom that is in the fragment and its corresponding atom pair that was cut</p>
+</dd>
+<dt>coeff<span class="classifier">int</span></dt><dd><p>Coefficent of fragment.  This will either be 1 or -1.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.add_linkatoms">
+<span class="sig-name descname"><span class="pre">add_linkatoms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attached_atom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">molecule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.add_linkatoms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds H as a link atom</p>
+<p>This link atoms adds at a distance ratio between the supporting and host atom to each fragment where a previous atom was cut</p>
+<dl class="simple">
+<dt>atom1<span class="classifier">int</span></dt><dd><p>This is the integer corresponding to the supporting atom (real atom)</p>
+</dd>
+<dt>attached_atom<span class="classifier">int</span></dt><dd><p>This is the integer corresponiding to the host atom (ghost atom)</p>
+</dd>
+<dt>molecule<span class="classifier">&lt;class&gt; instance</span></dt><dd><p>This is the molecule class instance</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>new_xyz<span class="classifier">list</span></dt><dd><p>This is the list of the new link atom with atom label and xyz coords</p>
+</dd>
+<dt>factor<span class="classifier">float</span></dt><dd><p>The factor between the supporting and host atom. Used in building Jacobians for link atom projections.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.apt_grad">
+<span class="sig-name descname"><span class="pre">apt_grad</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.apt_grad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Working on implementing this.
+Function to create the apts by applying an electric field in a certain direciton to 
+molecule then finite difference of gradient w.r.t the applied E field.</p>
+<dl class="simple">
+<dt>apt_grad<span class="classifier">ndarray (3N, 3)</span></dt><dd><p>The deriv of gradient w.r.t applied field after LA projections are done.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.build_apt">
+<span class="sig-name descname"><span class="pre">build_apt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.build_apt" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Builds the atomic polar tensor with numerical derivative of dipole moment w.r.t atomic Cartesian
+coordinates. Function builds xyz input with link atoms in ndarray format, not string type or list like previous functions.</p>
+</div></blockquote>
+<p>Units of APT: Debye / (Angstrom np.sqrt(amu))</p>
+<dl class="simple">
+<dt>oldapt: ndarray (3N, 3)</dt><dd><p>This is the mass weighted APT for current fragment after LA projections are done.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.build_jacobian_Grad">
+<span class="sig-name descname"><span class="pre">build_jacobian_Grad</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.build_jacobian_Grad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds Jacobian matrix for gradient link atom projections</p>
+<p>none</p>
+<dl class="simple">
+<dt>self.jacobian_grad<span class="classifier">ndarray</span></dt><dd><p>Array where entries are floats on the diagonal with the corresponding factor. 
+Array has size (# of atoms in full molecule + all link atoms, # of atoms in primiative)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.build_jacobian_Hess">
+<span class="sig-name descname"><span class="pre">build_jacobian_Hess</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.build_jacobian_Hess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds Jacobian matrix for hessian link atom projections.</p>
+<dl class="simple">
+<dt>self.jacobian_hess<span class="classifier">ndarray (tensor)</span></dt><dd><p>Array where the entries are matrices corresponding factor.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.build_xyz">
+<span class="sig-name descname"><span class="pre">build_xyz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.build_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Builds the xyz input with the atom labels, xyz coords, and link atoms as a string or list</p>
+<p>none</p>
+<dl class="simple">
+<dt>inputxyz<span class="classifier">str</span></dt><dd><p>String with atom label then corresonding xyz coordinates.  This input includes the link atoms.</p>
+</dd>
+<dt>input_list<span class="classifier">list of lists</span></dt><dd><p>ie [[[‘H’, [0, 0 ,0]], [‘O’, [x, y, z]], … ]</p>
+</dd>
+<dt>self.notes: list of lists</dt><dd><p>List of lists that is created with len = number of link atoms. Each sub list corresponds to one link atom.
+(i.e. [index of link atom, factor, supporting atom number, host atom number])</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.com">
+<span class="sig-name descname"><span class="pre">com</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.com" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is translating the origin of fragment to the center of mass.
+This will also update the coordinates for self.inputxyz to be in the center of mass basis.</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.hess_apt">
+<span class="sig-name descname"><span class="pre">hess_apt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hess_py</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.hess_apt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs only the hessian and atomic polar tensor calculations</p>
+<p>self.hessian : ndarray
+self.apt : ndarray</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.inertia">
+<span class="sig-name descname"><span class="pre">inertia</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.inertia" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds principal axes and moments of inertia in amu*Bohr^2
+(I did this in a very non-optimized way!)</p>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.mass_matrix">
+<span class="sig-name descname"><span class="pre">mass_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.mass_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.mw_hessian">
+<span class="sig-name descname"><span class="pre">mw_hessian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">full_hessian</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.mw_hessian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will compute the mass-weighted hessian, frequencies, and 
+normal modes for the full system.</p>
+<dl class="simple">
+<dt>full_hessian<span class="classifier">ndarray</span></dt><dd><p>This is the full hessian for the full molecule.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>freq<span class="classifier">ndarray</span></dt><dd><p>1D np array holding the frequencies</p>
+</dd>
+<dt>modes<span class="classifier">ndarray</span></dt><dd><p>2D ndarray holding normal modes in the columns</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Fragment.Fragment.qc_backend">
+<span class="sig-name descname"><span class="pre">qc_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mim.Fragment.Fragment.qc_backend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the quantum chemistry backend.</p>
+<p>This runs an energy and gradient calculation. If hessian is available
+it will also run that.</p>
+<dl class="simple">
+<dt>self.energy<span class="classifier">float</span></dt><dd><p>This is the energy for the fragment*its coeff</p>
+</dd>
+<dt>self.gradient<span class="classifier">ndarray</span></dt><dd><p>This is the gradient for the fragment*its coeff</p>
+</dd>
+<dt>self.hessian<span class="classifier">ndarray (4D tensor)</span></dt><dd><p>This is the hessian for the fragement*its coeff</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</div></blockquote>
+</section>
+<section id="principle-of-inclusion-exculsion">
+<h2 id="principle-of-inclusion-exculsion">Principle of Inclusion/Exculsion<a class="headerlink" href="#principle-of-inclusion-exculsion" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><span class="target" id="module-mim.runpie.runpie"></span><p>Runs the principle of inculsion-exculsion</p>
+<section id="parameters">
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>fraglist<span class="classifier">list of lists</span></dt><dd><p>List of fragments that gets generated by functions in the Fragmentation class.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3 id="returns">Returns<a class="headerlink" href="#returns" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>derivs<span class="classifier">list</span></dt><dd><p>List of derivatives created by prinicple on inclusion-exculusion</p>
+</dd>
+<dt>signlist<span class="classifier">list</span></dt><dd><p>List of coefficents (1 or -1)</p>
+</dd>
+</dl>
+</section>
+<span class="target" id="module-mim.runpie.recurse"></span><p>Recursive part of the pie</p>
+<p>Where funciton  builds layers and layers of fragments from interestions</p>
+<section id="id1">
+<h3 id="id1">Parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>f_old<span class="classifier">list</span></dt><dd><p>A list of primiatives for a specific fragment</p>
+</dd>
+<dt>start<span class="classifier">int</span></dt><dd><p>The depth of intersections.  Always increasing.</p>
+</dd>
+<dt>derivs<span class="classifier">list</span></dt><dd><p>List of derivates that keeps getting appended tol.l</p>
+</dd>
+<dt>fraglist<span class="classifier">list of lists</span></dt><dd><p>List of fragment that gets generated by functions in the Fragmentation class. Does not change in this function.</p>
+</dd>
+<dt>signlist<span class="classifier">list</span></dt><dd><p>List of coefficents</p>
+</dd>
+<dt>sign<span class="classifier">int</span></dt><dd><p>New sign that is determined based on PIE</p>
+</dd>
+</dl>
+</section>
+</div></blockquote>
+</section>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="user_guide.html" title="User Guide"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> User Guide </span>
+              </div>
+            </a>
+          
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2021, Nicole Braunscheidel. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

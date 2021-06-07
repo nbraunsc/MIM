@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -55,7 +56,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="mim.Pyscf" href="autosummary/mim.Pyscf.html" />
+    <link rel="next" title="API Documentation" href="api_test.html" />
     <link rel="prev" title="Example" href="example.html" />
   
    
@@ -92,7 +93,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MIM </span>
+          <span class="md-header-nav__topic">MIM 1.0</span>
           <span class="md-header-nav__topic"> User Guide </span>
         </div>
       </div>
@@ -184,7 +185,7 @@
       
     </a>
     <a href="index.html"
-       title="Molecules-in-Molecules (MIM) documentation">MIM </a>
+       title="Molecules-in-Molecules (MIM) documentation">MIM 1.0</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/nbraunsc/MIM/" title="Go to repository" class="md-source" data-md-source="github">
@@ -253,6 +254,10 @@
         <li class="md-nav__item"><a href="#infrared-intensities" class="md-nav__link">Infrared Intensities</a>
         </li>
         <li class="md-nav__item"><a href="#quantum-chemistry-backends" class="md-nav__link">Quantum Chemistry Backends</a>
+        </li>
+        <li class="md-nav__item"><a href="#pyscf" class="md-nav__link">Pyscf</a>
+        </li>
+        <li class="md-nav__item"><a href="#psi4" class="md-nav__link">Psi4</a>
         </li></ul>
             </nav>
         </li>
@@ -267,7 +272,7 @@
     <li class="md-nav__item">
     
     
-      <a href="api.html" class="md-nav__link">API Documentation</a>
+      <a href="api_test.html" class="md-nav__link">API Documentation</a>
       
     
     </li>
@@ -300,6 +305,10 @@
         <li class="md-nav__item"><a href="#infrared-intensities" class="md-nav__link">Infrared Intensities</a>
         </li>
         <li class="md-nav__item"><a href="#quantum-chemistry-backends" class="md-nav__link">Quantum Chemistry Backends</a>
+        </li>
+        <li class="md-nav__item"><a href="#pyscf" class="md-nav__link">Pyscf</a>
+        </li>
+        <li class="md-nav__item"><a href="#psi4" class="md-nav__link">Psi4</a>
         </li></ul>
             </nav>
         </li>
@@ -317,58 +326,116 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="user-guide">
 <h1 id="user-guide--page-root">User Guide<a class="headerlink" href="#user-guide--page-root" title="Permalink to this headline">¶</a></h1>
-
+<section id="energy">
 <h2 id="energy">Energy<a class="headerlink" href="#energy" title="Permalink to this headline">¶</a></h2>
 <p>The energy is calculated for all MIM calculations.</p>
-
-
+</section>
+<section id="gradient">
 <h2 id="gradient">Gradient<a class="headerlink" href="#gradient" title="Permalink to this headline">¶</a></h2>
 <p>The first derivative of the energy is computed either analytically
 (if available for specific method in quantum chemistry backend) or
 numerically.</p>
-
-
+</section>
+<section id="geometry-optmizations">
 <h2 id="geometry-optmizations">Geometry Optmizations<a class="headerlink" href="#geometry-optmizations" title="Permalink to this headline">¶</a></h2>
 <p>You are able to run geometery optimizations within the MIM framework.
 This is set in the input file that is edited before running calculation.</p>
-
-
+</section>
+<section id="hessian">
 <h2 id="hessian">Hessian<a class="headerlink" href="#hessian" title="Permalink to this headline">¶</a></h2>
 <p>The second derivative of the energy is computed either analytically
 (if available for specific method in quantum chemistry backend) or
 numerically.</p>
-
-
+</section>
+<section id="atomic-polar-tensors">
 <h2 id="atomic-polar-tensors">Atomic Polar Tensors<a class="headerlink" href="#atomic-polar-tensors" title="Permalink to this headline">¶</a></h2>
 <p>The atomic polar tensors can be computed using the derivative
 of the dipole moment with respect to the mass-weighted atomic
 coords or using the finite field method.</p>
-
-
+</section>
+<section id="infrared-intensities">
 <h2 id="infrared-intensities">Infrared Intensities<a class="headerlink" href="#infrared-intensities" title="Permalink to this headline">¶</a></h2>
 <p>You can compute IR intensities from the APTs or tensors computed
 using the finite field method.</p>
-
-
+</section>
+<section id="quantum-chemistry-backends">
 <h2 id="quantum-chemistry-backends">Quantum Chemistry Backends<a class="headerlink" href="#quantum-chemistry-backends" title="Permalink to this headline">¶</a></h2>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%"/>
-<col style="width: 90%"/>
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="autosummary/mim.Pyscf.html#module-mim.Pyscf" title="mim.Pyscf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mim.Pyscf</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="autosummary/mim.Psi4.html#module-mim.Psi4" title="mim.Psi4"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mim.Psi4</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-
-
+</section>
+<section id="pyscf">
+<h2 id="pyscf">Pyscf<a class="headerlink" href="#pyscf" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><span class="target" id="module-mim.Pyscf"></span><dl class="py class">
+<dt class="sig sig-object py" id="mim.Pyscf.Pyscf">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mim.Pyscf.</span></span><span class="sig-name descname"><span class="pre">Pyscf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">active_space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec_beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Pyscf.Pyscf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Pyscf quantum chemistry backend class</p>
+<p>An instance of this class is passed into the Fragment class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Pyscf.Pyscf.apply_field">
+<span class="sig-name descname"><span class="pre">apply_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_xyz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Pyscf.Pyscf.apply_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will apply an e lectric field in a specific direction for pyscf. gives E vector
+to make a new hcore. Used when building the derivative of gradient w.r.t electric field to
+compute the IR intensities.</p>
+<dl>
+<dt>E<span class="classifier">np array</span></dt><dd><p>This is a 1D array of an x, y, z.  Put magintude of wanted E field in the position of the.  Right now it is only set up for RHF.</p>
+<p>direction wanted.</p>
+</dd>
+<dt>input_xyz<span class="classifier">list</span></dt><dd><p>Coordinates for molecule</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>e<span class="classifier">float</span></dt><dd><p>Energy</p>
+</dd>
+<dt>g<span class="classifier">ndarray</span></dt><dd><p>gradient</p>
+</dd>
+<dt>dipole<span class="classifier">ndarray</span></dt><dd><p>dipole moment</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Pyscf.Pyscf.energy_gradient">
+<span class="sig-name descname"><span class="pre">energy_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_xyz</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Pyscf.Pyscf.energy_gradient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Pyscf.Pyscf.get_dipole">
+<span class="sig-name descname"><span class="pre">get_dipole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords_new</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Pyscf.Pyscf.get_dipole" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is used when building the APT’s from numerical diff w.r.t 
+atomic coordinates.</p>
+<p>Pyscf only has dipole moments for SCF and DFT.</p>
+</dd></dl>
+</dd></dl>
+</div></blockquote>
+</section>
+<section id="psi4">
+<h2 id="psi4">Psi4<a class="headerlink" href="#psi4" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><span class="target" id="module-mim.Psi4"></span><dl class="py class">
+<dt class="sig sig-object py" id="mim.Psi4.Psi4">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">mim.Psi4.</span></span><span class="sig-name descname"><span class="pre">Psi4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">active_space</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec_beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charge</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Psi4.Psi4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Psi4 Numpy quantum chemistry backend class</p>
+<p>An instance of this class is passed into the Fragment class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Psi4.Psi4.apply_field">
+<span class="sig-name descname"><span class="pre">apply_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_xyz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">com</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Psi4.Psi4.apply_field" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Psi4.Psi4.energy_gradient">
+<span class="sig-name descname"><span class="pre">energy_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_xyz</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Psi4.Psi4.energy_gradient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mim.Psi4.Psi4.get_dipole">
+<span class="sig-name descname"><span class="pre">get_dipole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords_new</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mim.Psi4.Psi4.get_dipole" title="Permalink to this definition">¶</a></dt>
+<dd><p>This only for RHF and is used when building the APT’s from numerical diff w.r.t 
+atomic coordinates.</p>
+<p>There are no CCSD(T) dipole moments implemented in Psi4.</p>
+</dd></dl>
+</dd></dl>
+</div></blockquote>
+</section>
+</section>
 
 
           </article>
@@ -394,12 +461,12 @@ using the finite field method.</p>
             </a>
           
           
-            <a href="autosummary/mim.Pyscf.html" title="mim.Pyscf"
+            <a href="api_test.html" title="API Documentation"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> mim.Pyscf </span>
+                class="md-footer-nav__direction"> Next </span> API Documentation </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

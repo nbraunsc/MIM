@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -91,7 +92,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MIM </span>
+          <span class="md-header-nav__topic">MIM 1.0</span>
           <span class="md-header-nav__topic"> Welcome to MIM’s documentation! </span>
         </div>
       </div>
@@ -183,7 +184,7 @@
       
     </a>
     <a href="#"
-       title="Molecules-in-Molecules (MIM) documentation">MIM </a>
+       title="Molecules-in-Molecules (MIM) documentation">MIM 1.0</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/nbraunsc/MIM/" title="Go to repository" class="md-source" data-md-source="github">
@@ -235,7 +236,7 @@
     <li class="md-nav__item">
     
     
-      <a href="api.html" class="md-nav__link">API Documentation</a>
+      <a href="api_test.html" class="md-nav__link">API Documentation</a>
       
     
     </li>
@@ -273,36 +274,60 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="welcome-to-mim-s-documentation">
 <h1 id="index--page-root">Welcome to MIM’s documentation!<a class="headerlink" href="#index--page-root" title="Permalink to this headline">¶</a></h1>
 <a class="reference internal image-reference" href="_images/fragment4.png"><img alt="alternate text" class="align-right" src="_images/fragment4.png" style="width: 387.6px; height: 281.2px;"/></a>
 <p>This is the documentation for the molecular fragmentation method called Molecules-in-Molecules (MIM). MIM is a linear scaling multi-theory method that can have an arbitrary number of levels, MIMn. Where the general idea is that each lower level of theory is attempting to correct the fragmentation error associated with the higher layer. MIM calculations are largely based on the principle of inclusion/exclusion to generate highly overlapping fragments verses disjoint fragments to better predict macromolecules properties.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation Instructions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#set-up">Set up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#run">Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#collect-results">Collect Results</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="example.html">Example</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#energy">Energy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#gradient">Gradient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#geometry-optmizations">Geometry Optmizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#hessian">Hessian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#atomic-polar-tensors">Atomic Polar Tensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#infrared-intensities">Infrared Intensities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#quantum-chemistry-backends">Quantum Chemistry Backends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#pyscf">Pyscf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_guide.html#psi4">Psi4</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_test.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_test.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_test.html#module-mim.Molecule">Molecule module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_test.html#primitive-module">Primitive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_test.html#fragmentation-module">Fragmentation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_test.html#fragment-module">Fragment module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_test.html#principle-of-inclusion-exculsion">Principle of Inclusion/Exculsion</a></li>
+</ul>
+</li>
 </ul>
 </div>
-
-
+</section>
+<section id="indices-and-tables">
 <h1 id="indices-and-tables">Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-
-
+</section>
+<section id="references">
 <h1 id="references">References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Mayhall, N. J.; Raghavachari, K., Molecules-in-Molecules: An Extrapolated Fragment-Based Approach for Accurate Calculations on Large Molecules and Materials. J Chem Theory Comput 2011, 7 (5), 1336-43</p></li>
 <li><p>Mayhall, N. J.; Raghavachari, K., Many-Overlapping-Body (MOB) Expansion: A Generalized Many Body Expansion for Nondisjoint Monomers in Molecular Fragmentation Calculations of Covalent Molecules. J Chem Theory Comput 2012, 8 (8), 2669-75.</p></li>
 <li><p>Jovan Jose, K. V.; Raghavachari, K., Molecules-in-molecules fragment-based method for the evaluation of Raman spectra of large molecules. Molecular Physics 2015, 113 (19-20), 3057-3066.</p></li>
 </ul>
-
+</section>
 
 
           </article>

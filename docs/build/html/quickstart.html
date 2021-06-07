@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -92,7 +93,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MIM </span>
+          <span class="md-header-nav__topic">MIM 1.0</span>
           <span class="md-header-nav__topic"> Quick Start </span>
         </div>
       </div>
@@ -184,7 +185,7 @@
       
     </a>
     <a href="index.html"
-       title="Molecules-in-Molecules (MIM) documentation">MIM </a>
+       title="Molecules-in-Molecules (MIM) documentation">MIM 1.0</a>
   </label>
     <div class="md-nav__source">
       <a href="https://github.com/nbraunsc/MIM/" title="Go to repository" class="md-source" data-md-source="github">
@@ -259,7 +260,7 @@
     <li class="md-nav__item">
     
     
-      <a href="api.html" class="md-nav__link">API Documentation</a>
+      <a href="api_test.html" class="md-nav__link">API Documentation</a>
       
     
     </li>
@@ -301,40 +302,42 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
+  <section id="quick-start">
 <h1 id="quickstart--page-root">Quick Start<a class="headerlink" href="#quickstart--page-root" title="Permalink to this headline">¶</a></h1>
-
+<section id="set-up">
 <h2 id="set-up">Set up<a class="headerlink" href="#set-up" title="Permalink to this headline">¶</a></h2>
-<p>Make changes to input file:</p>
-<p>It is prefered that you edit the input file already in the <cite>inputs/</cite>,
-but you may have your own.</p>
+<p>Change into the inputs directory</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd inputs/
-$ vi input_file.py
 </pre></div>
 </div>
-<p>Obtain molecular coordinates in Chemical Markup Language (.cml):</p>
-<p>You will next have to put your molecular coordinates file that is a <cite>*.cml</cite> file in <cite>inputs/</cite>.
-We will use <cite>molecule.cml</cite> for reference.</p>
-<p>Create a directory to store results:</p>
-<p>Finally, make a directory within <cite>inputs/</cite> where you would like to store all generated files.
-We will use <cite>to_run/</cite> for reference.</p>
-
-
+<p>Edit the input file with desired parameters for calculation</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ vi input_file.py
+</pre></div>
+</div>
+<p>You will need to obtain molecular coordinates in Chemical Markup Language (.cml) for the
+molecule of interest (See <cite>MIM/inputs/coords/water.cml for example</cite> .cml file).</p>
+<p>Create a directory to store results</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir to_run/
+</pre></div>
+</div>
+</section>
+<section id="run">
 <h2 id="run">Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
-<p>At this point you have everything required to run your MIM calculation!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python sow.py input_file.py molecule.cml to_run/
+<p>At this point you have everything required to run your MIM calculation! Run the
+following command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python sow.py input_file.py &lt;path_to_coordinates&gt; to_run/
 </pre></div>
 </div>
-
-
+</section>
+<section id="collect-results">
 <h2 id="collect-results">Collect Results<a class="headerlink" href="#collect-results" title="Permalink to this headline">¶</a></h2>
 <p>Once all of your calculations have finished, you may collect all your results
-by running the following command:</p>
+by running the following command</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python reap.py to_run/
 </pre></div>
 </div>
-
-
+</section>
+</section>
 
 
           </article>

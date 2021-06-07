@@ -37,9 +37,20 @@ using the finite field method.
 Quantum Chemistry Backends
 --------------------------
 
-.. autosummary::
-   :toctree: autosummary
-   
-    mim.Pyscf
-    mim.Psi4
+Pyscf
+-----
+ 
+ .. automodule:: mim.Pyscf
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Psi4
+-----
+ 
+ .. automodule:: mim.Psi4
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
