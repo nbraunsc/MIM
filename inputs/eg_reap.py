@@ -2,6 +2,7 @@ import os
 import glob
 import dill
 import numpy as np
+from numpy import linalg as LA
 import sys
 
 folder = sys.argv[1]
@@ -35,8 +36,8 @@ for level in levels:
 
 #os.chdir('../')
 print(os.getcwd())
-print(e)
-print(g)
-print("about to save energy and gradient")
+print("MIM Energy (Hartree):\n", e)
+print("Norm of Gradient:\n", LA.norm(g))
+#print("about to save energy and gradient")
 np.save('energy.npy', e)
 np.save('gradient.npy', g)

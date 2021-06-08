@@ -9,7 +9,7 @@ mim_levels = 2
 frag_type = 'distance' 
 
 #smaller fragmentation level
-frag_deg = 2.6
+frag_deg = 1.6
 
 #larger fragmentation level
 frag_deg_large = 2.6
@@ -25,8 +25,8 @@ high_theory = 'MP2'
 #high_theory = 'DFT'
 
 #Only define low_theory if mim_levels = 2
-low_theory = 'RHF'
-#low_theory = 'DFT'
+#low_theory = 'RHF'
+low_theory = 'DFT'
 
 #exchange-correlation functional for DFT
 xc = 'LDA'
@@ -39,11 +39,11 @@ software = 'Pyscf'
 stepsize = 0.001        
 
 #batch_size for running calculations
-batch_size = 30
+batch_size = 15
 
 #geometry optimization set to True or False
-opt = False
-#opt = True
+#opt = False
+opt = True
 
 #special params for primitive
 atom = 'Si'
@@ -51,5 +51,5 @@ charge = -1
 spin = 2 #2S+1
 
 #pbs/slurm/Local?
-#queue = 'slurm'
-queue = 'local'
+queue = 'slurm'
+#queue = 'local'

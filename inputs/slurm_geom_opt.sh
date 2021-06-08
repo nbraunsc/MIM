@@ -11,9 +11,18 @@
 
 ## SBATCH --exclusive # this requests exclusive access to node for interactive jobs
 
-. /etc/bashrc
-hostname
+# . /etc/bashrc
 
+
+if [ -z ${HOME+x} ];
+then
+    export HOME=$(echo ~)
+    source /etc/profile
+    source /etc/bashrc
+    source $HOME/.bashrc
+fi
+
+hostname
 # sleep 10
 
 module reset
@@ -37,7 +46,7 @@ done
 echo "Calculations are done!, end status:"
 echo $finished
 
-python eg_reap.py $FOLDER > eg_reap.out
+python eg_reap.py $FOLDER >> eg_reap.out
 echo "Reap is done!"
 
 exit;
