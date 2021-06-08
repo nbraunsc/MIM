@@ -9,7 +9,7 @@ mim_levels = 2
 frag_type = 'distance' 
 
 #smaller fragmentation level
-frag_deg = 1.6
+frag_deg = 2.6
 
 #larger fragmentation level
 frag_deg_large = 2.6
@@ -51,5 +51,5 @@ charge = -1
 spin = 2 #2S+1
 
 #pbs/slurm/Local?
-queue = 'slurm'
-#queue = 'local'
+#queue = 'slurm'
+queue = 'local'
