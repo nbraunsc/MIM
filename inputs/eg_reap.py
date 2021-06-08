@@ -22,7 +22,7 @@ for level in levels:
         #undill and run e, g, hess, apt etc
         infile = open(i, 'rb')
         new_class = dill.load(infile)
-        print("Fragment ID:", level, i)
+        #print("Fragment ID:", level, i)
         e += new_class.energy
         g += new_class.grad
         #print(new_class.molecule.atomtable)
@@ -30,6 +30,7 @@ for level in levels:
         dill.dump(new_class, outfile)
         infile.close()
         outfile.close()
+    print("############## Energy for level(", level, ") is :", e, "################")
     os.chdir('../')
 
 #os.chdir('../')

@@ -9,8 +9,18 @@
 #SBATCH --export=ALL
 # SBATCH --get-user-env=30
 
-. /etc/bashrc
-env
+# . /etc/bashrc
+
+#Remake my environment if HOME variable not set
+if [ -z ${HOME+x} ];
+then
+    export HOME=$(echo ~)
+    source /etc/profile
+    source /etc/bashrc
+    source $HOME/.bashrc
+fi
+
+#env
 
 # sleep 10
 hostname

@@ -37,7 +37,7 @@ done
 echo "Calculations are done!, end status:"
 echo $finished
 
-python eg_reap.py $FOLDER
+python eg_reap.py $FOLDER > eg_reap.out
 echo "Reap is done!"
 
 exit;

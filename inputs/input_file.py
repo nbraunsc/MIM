@@ -2,30 +2,26 @@
 import sys
 
 #number of mim levels
-mim_levels = 1
+mim_levels = 2
 
 #can be 'distance' or 'graphical'
 #frag_type = 'graphical'
 frag_type = 'distance' 
 
 #smaller fragmentation level
-<<<<<<< HEAD
 frag_deg = 1.6
-=======
-frag_deg = 10
->>>>>>> 8211aa9a4facb0a20dbaf8587e419c7d06aa847c
 
 #larger fragmentation level
 frag_deg_large = 2.6
 
 #Basis set for quantum calculation
-#basis_set_high = 'ccpvdz'
-basis_set_high = 'sto-3g'
+basis_set_high = 'ccpvdz'
+basis_set_low = 'sto-3g' 
 
 
 #Always need to define high_theory
-high_theory = 'RHF'
-#high_theory = 'MP2'
+#high_theory = 'RHF'
+high_theory = 'MP2'
 #high_theory = 'DFT'
 
 #Only define low_theory if mim_levels = 2
@@ -43,7 +39,7 @@ software = 'Pyscf'
 stepsize = 0.001        
 
 #batch_size for running calculations
-batch_size = 8
+batch_size = 30
 
 #geometry optimization set to True or False
 opt = False

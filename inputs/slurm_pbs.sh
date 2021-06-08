@@ -9,7 +9,17 @@
 #SBATCH --mail-type=FAIL
 # SBATCH --get-user-env=15
 
-. /etc/bashrc
+#  . /etc/bashrc
+
+#Remake my environment if HOME variable not set
+if [ -z ${HOME+x} ];
+then
+    export HOME=$(echo ~)
+    source /etc/profile
+    source /etc/bashrc
+    source $HOME/.bashrc
+fi
+
 hostname
 env
 
