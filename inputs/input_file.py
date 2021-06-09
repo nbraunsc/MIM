@@ -16,7 +16,7 @@ frag_deg_large = 2.6
 
 #Basis set for quantum calculation
 basis_set_high = 'ccpvdz'
-basis_set_low = 'sto-3g' 
+basis_set_low = 'sto3g' 
 
 
 #Always need to define high_theory
@@ -29,7 +29,7 @@ high_theory = 'MP2'
 low_theory = 'DFT'
 
 #exchange-correlation functional for DFT
-xc = 'LDA'
+xc = 'PBE'
 
 #could be Pyscf or Psi4, and eventually Qchem, or Molcas
 #software = 'Psi4'  
