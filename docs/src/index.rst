@@ -19,7 +19,7 @@ This is the documentation for the molecular fragmentation method called Molecule
    quickstart
    example
    user_guide
-   api_test
+   api
 
 Indices and tables
 ==================
