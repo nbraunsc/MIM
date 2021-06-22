@@ -1,6 +1,7 @@
 API Documentation
 =================
 
+<<<<<<< HEAD
 Molecule
 ---------
 .. autosummary::
@@ -43,14 +44,45 @@ Fragments
     mim.Fragment.qc_backend
     mim.Fragment.hess_apt
 
+=======
+Submodules
+-----------
+
+Molecule module
+---------------
+
+.. automodule:: mim.Molecule
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Primitive module
+----------------
+
+ .. automodule:: mim.Primitive
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Fragmentation module
+--------------------
+ 
+ .. automodule:: mim.fragmentation
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Fragment module
+---------------
+ 
+ .. automodule:: mim.Fragment
+    :members:
+    :undoc-members:
+    :show-inheritance:
+>>>>>>> master
 
 Principle of Inclusion/Exculsion
 --------------------------------
-.. autosummary::
-   :toctree: autosummary
-   
-    mim.runpie.runpie
-    mim.runpie.recurse
+ .. automodule:: mim.runpie.runpie
+ .. automodule:: mim.runpie.recurse
 
-
-   

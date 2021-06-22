@@ -7,6 +7,7 @@ from sys import argv
 import xml.etree.ElementTree as ET
 from itertools import cycle
 from mendeleev import element
+from atom_count import *
 
 #import mim
 from mim import runpie, Molecule, fragmentation, Fragment, Pyscf
@@ -167,10 +168,10 @@ class Fragmentation():
             
         """
         unique = [list(tupl) for tupl in {tuple(item) for item in derivs }]
-        print(unique)
+        print("Unique fragments:\n", unique)
+        print("There are ", len(unique), "unique frags out of ", len(derivs))
         derv = []
         coeff =[]
-        sums = []
 
         for x in range(0, len(unique)):
             index = []
@@ -179,9 +180,9 @@ class Fragmentation():
 
             #if derv only appears once add it to final list
             if count == 1:
-                print("only occurs once", unique[x])
                 derv.append(unique[x])
-                coeff.append(oldcoeff[x])
+                index = derivs.index(set(unique[x]))
+                coeff.append(oldcoeff[index])
 
             #if derv appears more than once, add/subtract coeff to determine if needed
             if count > 1:
@@ -189,9 +190,7 @@ class Fragmentation():
                 temp_coef = []
                 for num in indices: 
                     temp_coef.append(oldcoeff[num])
-                
                 sum_coeff = float(sum(temp_coef))
-                sums.append(sum_coeff)
                 
                 #if overall neg, add derv that amount of times with -1 as coeff
                 if sum_coeff < 0:
@@ -207,7 +206,7 @@ class Fragmentation():
                 
                 if sum_coeff == 0:
                     print("indices >0, but sum of coeff ==0, dont add")
-                    print(unique[x])
+                    #print(unique[x])
             
                 
         self.coefflist = coeff
@@ -219,7 +218,6 @@ class Fragmentation():
         #    self.coefflist.append(derv_dict[key])
         #print(derivatives)
         #print(self.coefflist)
-        #exit()
         return derv
 
     def initalize_Frag_objects(self, theory=None, basis=None, qc_backend=None, spin=None, tol=None, active_space=None, nelec=None, nelec_alpha=None, nelec_beta=None, max_memory=None, xc=None, charge=0, step_size=0.001, local_coeff=1):
@@ -411,6 +409,7 @@ class Fragmentation():
                 temp.extend(list(self.molecule.prims[prim].atoms))
             self.atomlist.append(temp)
         
+        vec = test_atoms(self.atomlist, self.coefflist, self.molecule.natoms)
         self.find_attached()
         
         #for i in range(0, len(self.derivs)):

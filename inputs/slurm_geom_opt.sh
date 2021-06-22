@@ -2,8 +2,8 @@
 
 #SBATCH -p normal_q
 #SBATCH -N 1  # this requests 1 node, 1 core. 
-#SBATCH --mem=1G
-#SBATCH -t 02:00:00
+#SBATCH --mem=1GB
+#SBATCH -t 01:05:00
 #SBATCH --account=nmayhall_group
 #SBATCH --mail-user=nbraunsc@vt.edu
 #SBATCH --mail-type=FAIL,END
@@ -11,9 +11,18 @@
 
 ## SBATCH --exclusive # this requests exclusive access to node for interactive jobs
 
-. /etc/bashrc
-hostname
+# . /etc/bashrc
 
+
+if [ -z ${HOME+x} ];
+then
+    export HOME=$(echo ~)
+    source /etc/profile
+    source /etc/bashrc
+    source $HOME/.bashrc
+fi
+
+hostname
 # sleep 10
 
 module reset
@@ -37,7 +46,7 @@ done
 echo "Calculations are done!, end status:"
 echo $finished
 
-python eg_reap.py $FOLDER
+python eg_reap.py $FOLDER >> eg_reap.out
 echo "Reap is done!"
 
 exit;

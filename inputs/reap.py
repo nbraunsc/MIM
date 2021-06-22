@@ -43,6 +43,7 @@ for level in levels:
         dill.dump(new_class_loop, outfile)
         infile.close()
         outfile.close()
+    print("############## Energy for level(", level, ") is :", e, "################")
     os.chdir('../')
 
 ###############         ONLY FOR DOING WITHOUT FINITE GRAD METHOD ####################
