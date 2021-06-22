@@ -1,14 +1,12 @@
 #!/bin/bash
 #SBATCH -p normal_q
-#SBATCH -N 1  # this requests 1 node, 1 core. 
-#SBATCH --mem=20G
-#SBATCH -t 05:00:00
-### SBATCH --cpus-per-task=22
+#SBATCH -N 1  # this requests 1 node
+#SBATCH --mem=3G
+#SBATCH -t 00:20:00
 #SBATCH --account=nmayhall_group
 #SBATCH --mail-user=nbraunsc@vt.edu
 #SBATCH --mail-type=FAIL
 #SBATCH --export=ALL
-# SBATCH --get-user-env=30
 
 #Remake my environment if HOME variable not set
 if [ -z ${HOME+x} ];
@@ -35,11 +33,41 @@ cd $SLURM_SUBMIT_DIR
 echo $LEVEL
 echo $BATCH
 
-#for i in $BATCH_LIST
-#do
-#    python run_opt.py $LEVEL $BATCH $FOLDER >& run_opt{$i}.out &
-#done
+#python run_opt.py $LEVEL $BATCH $FOLDER
 
-python run_opt.py $LEVEL $BATCH $FOLDER
+#change batch_list into bash array
+export BATCH_LIST=$1
+IFS=', ' read -r -a array <<< "$BATCH_LIST"
+echo "${array[@]}"
+
+export len=${#array[@]}
+export len1=$(( $len + 1 ))
+# echo $len
+
+for i in "${array[@]}"
+do
+    echo ${i}
+    python run_opt.py $LEVEL $i $FOLDER $TEMP >> $LEVEL/"$i.out"
+done
+
+#check if #.status files = #jobs in batch
+echo "Finished submitting python run.py. Now changing into" $TEMP
+
+#make empty status file (testing to see if this fixed fails)
+cd $TEMP
+touch test.status
+ls
+echo $len
+while [ $(ls -lR ./*.status | wc -l) != $len1 ]
+do
+    echo "Jobs Not Done Yet"
+    sleep 2
+done
+
+echo "Finished!"
+
+#mkdir $LEVEL/"$OUTFILE.scr"
+#cp * $LEVEL/"$OUTFILE.scr"
+rm -r *
 
 exit;

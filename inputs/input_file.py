@@ -16,7 +16,7 @@ frag_deg_large = 2.6
 
 #Basis set for quantum calculation
 basis_set_high = 'ccpvdz'
-basis_set_low = 'sto3g' 
+basis_set_low = '631g' 
 
 
 #Always need to define high_theory
@@ -39,7 +39,7 @@ software = 'Pyscf'
 stepsize = 0.001        
 
 #batch_size for running calculations
-batch_size = 15
+batch_size = 22
 
 #geometry optimization set to True or False
 #opt = False
