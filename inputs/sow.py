@@ -11,6 +11,12 @@ import shutil
 input_file = sys.argv[1]
 folder = sys.argv[3]
 
+#copy inputfile to running folder
+shutil.copy(input_file, folder)
+os.chdir(folder)
+shutil.move(input_file, 'input_file.txt')
+os.chdir('../')
+
 from input_file import *
 coords = sys.argv[2]
 path = os.getcwd() + "/" + coords

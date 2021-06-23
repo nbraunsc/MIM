@@ -25,8 +25,8 @@ except:
     print("Job died:", frag_name)
     status = -1
     name = "redo_frag" + single_frag + ".py"
-    #submit_line ='sbatch -e %s -J %s -o "%s" --export=LEVEL="%s",BATCH="%s",FOLDER="%s"  slurm_pbs.sh'%(directory+"/"+name+"redo.error", name+"redo", directory+"/"+name+"redo.log", directory, name, folder)     ##For TinkerCliffs/Huckleberry
-    submit_line ='sbatch %s -J %s -o "%s" --export=LEVEL="%s",BATCH="%s",FOLDER="%s"  slurm_pbs.sh'%(name+"redo", directory+"/"+name+"redo.log", directory, name, folder)     ##For TinkerCliffs/Huckleberry
+    #submit_line ='sbatch %s -J %s -o "%s" --export=LEVEL="%s",BATCH="%s",FOLDER="%s"  slurm_pbs.sh'%(name+"redo", directory+"/"+name+"redo.log", directory, name, folder)     ##For TinkerCliffs/Huckleberry
+    submit_line = 'sbatch -J %s -o "%s" -c "%s" --export=LEVEL="%s",FOLDER="%s" %s "%s"'%(name+"redo", directory+"/"+name+"redo.log", 1, directory,folder, script, single_frag)     ##For TinkerCliffs/Huckleberry
     lines = """import os
 import sys
 import dill

@@ -108,7 +108,7 @@ os.chdir('../')
 
 def opt_fnc(newcoords, cycle):
     os.chdir(folder)
-    slurm_job = open("slurm_info.txt", "w+")
+    slurm_job = open("checker_info.txt", "w")
     for atom in range(0, len(newcoords)): #makes newcoords = self.molecule.atomtable
         x = list(newcoords[atom])
         obj_list[0].molecule.atomtable[atom][1:] = x
@@ -141,8 +141,11 @@ def opt_fnc(newcoords, cycle):
         os.chdir('../')
     
     #removing old slurm job info
+    place_holder = open("slurm_info.txt", "w")
     os.remove('slurm_info.txt')
-
+    place_holder.close()
+    
+    #removing old energy and gradient
     print("Removing old energy.npy and grad.npy")
     npy_list = glob.glob('*.npy')
     for thing in npy_list:
@@ -162,7 +165,6 @@ def opt_fnc(newcoords, cycle):
         cmd = 'python batch.py %s %s slurm_pbs.sh %s'%(str(batch_size), folder, queue)         ##For TinkerCliffs/Huckleberry/Infer
         opt_cmd = 'sbatch -e %s -J checker -o "%s" --export=FOLDER="%s" slurm_geom_opt.sh'%(os.getcwd()+"/checker.error", os.getcwd() + "/checker.out", path)
         info = opt_cmd + "\n"
-        info = cmd
         slurm_job.write(info)
         slurm_job.close()
         os.system(cmd)
@@ -193,7 +195,7 @@ def opt_fnc(newcoords, cycle):
     os.chdir('../')
     return etot, gtot
 
-
+#start of pyberny optimizer
 obj_list[0].write_xyz(coords_name)
 os.path.abspath(os.curdir)
 optimizer = Berny(geomlib.readfile(os.path.abspath(coords_name)), debug=True)
@@ -209,6 +211,7 @@ for geom in optimizer:
     grad_opt = solver[1]
 relaxed = geom
 
+#writing optimized coords to .xyz file
 os.chdir(folder)
 coordsname = open("opt_coords.xyz", "w")
 string = str(len(relaxed.species)) + '\n'
