@@ -1,14 +1,14 @@
 #!/bin/bash
 
-####SBATCH -p normal_q
+###SBATCH -p normal_q
 #SBATCH -p preemptable_q
 #SBATCH -N 1  # this requests 1 node. 
-## SBATCH --mem=1GB
-#SBATCH --mem-per-cpu=150MB #memory requested for each core (or CPU)
-#SBATCH -t 05:00:00
+#SBATCH --mem=50GB
+##SBATCH --mem-per-cpu=10GB #memory requested for each core (or CPU)
+#SBATCH -t 04:00:00
 #SBATCH --account=nmayhall_group
-#SBATCH --mail-user=nbraunsc@vt.edu
-#SBATCH --mail-type=FAIL,ARRAY_TASKS
+##SBATCH --mail-user=nbraunsc@vt.edu
+##SBATCH --mail-type=FAIL,ARRAY_TASKS
 
 #Remake my environment if HOME variable not set
 if [ -z ${HOME+x} ];
@@ -33,6 +33,8 @@ cd $SLURM_SUBMIT_DIR
 
 echo $LEVEL
 echo $OUTFILE
+export ERROR=${OUTFILE%%.*}.error
+echo $ERROR
 
 export TEMP=$LEVEL/"$OUTFILE.scr"
 mkdir $TEMP
@@ -49,26 +51,31 @@ echo "${array[@]}"
 
 export len=${#array[@]}
 export len1=$(( $len + 1 ))
-# echo $len
 
 for i in "${array[@]}"
 do
     echo ${i}
-    python run.py $LEVEL $i $FOLDER $TEMP >> $LEVEL/"$i.out"
+    export FILE=$LEVEL/"$i.out"
+    python run.py $LEVEL $i $FOLDER $TEMP &>> $FILE &
 done
 
-#check if #.status files = #jobs in batch
-echo "Finished submitting python run.py. Now changing into" $TEMP
+#tail -1 $LEVEL/"$i.out"
 
-#make empty status file (testing to see if this fixed fails)
+###make empty status file (testing to see if this fixed fails)
 cd $TEMP
+
 touch test.status
 ls
 echo $len
 while [ $(ls -lR ./*.status | wc -l) != $len1 ]
 do
     echo "Jobs Not Done Yet"
-    sleep 2
+    if grep -q Killed $LEVEL/$ERROR; then
+        sendmail nbraunsc@vt.edu < $LEVEL/$OUTFILE
+        echo "Job Killed, email sent"
+        kill $$
+        fi
+    sleep 5
 done
 
 echo "Finished!"

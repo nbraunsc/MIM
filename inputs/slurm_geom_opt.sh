@@ -3,8 +3,8 @@
 #SBATCH -p preemptable_q
 ###SBATCH -p normal_q
 #SBATCH -N 1  # this requests 1 node, 1 core. 
-#SBATCH --mem=1GB
-#SBATCH -t 04:05:00
+#SBATCH --mem=2GB
+#SBATCH -t 05:05:00
 #SBATCH --account=nmayhall_group
 #SBATCH --mail-user=nbraunsc@vt.edu
 #SBATCH --mail-type=FAIL,END

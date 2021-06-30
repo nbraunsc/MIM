@@ -220,7 +220,7 @@ class Fragment():
         jacob = self.build_jacobian_Grad()
         self.grad = self.local_coeff*self.coeff*jacob.dot(grad)
         self.M = self.mass_matrix()
-        print("Done!")
+        print("Done! \n")
         return self.energy, self.grad, hess_py  #, self.hessian#, self.apt
 
     def hess_apt(self, hess_py):

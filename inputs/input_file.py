@@ -2,20 +2,20 @@
 import sys
 
 #number of mim levels
-mim_levels = 2
+mim_levels = 1
 
 #can be 'distance' or 'graphical'
 frag_type = 'distance' 
 
 #smaller fragmentation level
-frag_deg = 1.6
+frag_deg = 2.6
 
 #larger fragmentation level
-frag_deg_large = 2.6
+frag_deg_large = 3.6
 
 #Basis set for quantum calculation
 basis_set_high = 'ccpvdz'
-basis_set_low = '631g*' 
+basis_set_low = '631g' 
 
 
 #Always need to define high_theory
@@ -25,7 +25,7 @@ high_theory = 'MP2'
 low_theory = 'DFT'
 
 #exchange-correlation functional for DFT
-xc = 'PBE'
+xc = 'LDA'
 
 #could be Pyscf or Psi4, and eventually Qchem, or Molcas
 software = 'Pyscf'  
@@ -34,15 +34,19 @@ software = 'Pyscf'
 stepsize = 0.001        
 
 #batch_size for running calculations
-batch_size = 22
+batch_size = 11
 
 #geometry optimization set to True or False
 opt = True
 
 #special params for primitive
-atom = 'Si'
+#atom = 'Si'
+#charge = -1
+#spin = 2 #2S+1
+
+atom = 'N'
 charge = -1
-spin = 2 #2S+1
+spin = 3 #2S+1
 
 #pbs/slurm/Local?
 queue = 'slurm'

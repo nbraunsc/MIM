@@ -1,8 +1,9 @@
 #!/bin/bash
-#SBATCH -p normal_q
+#####SBATCH -p normal_q
+#SBATCH -p preemptable_q
 #SBATCH -N 1  # this requests 1 node
-#SBATCH --mem=3G
-#SBATCH -t 00:20:00
+#SBATCH --mem=10GB
+#SBATCH -t 08:00:00
 #SBATCH --account=nmayhall_group
 #SBATCH --mail-user=nbraunsc@vt.edu
 #SBATCH --mail-type=FAIL
@@ -33,6 +34,9 @@ cd $SLURM_SUBMIT_DIR
 echo $LEVEL
 echo $BATCH
 
+export ERROR=${OUTFILE%%.*}.error
+echo $ERROR
+
 #python run_opt.py $LEVEL $BATCH $FOLDER
 
 #change batch_list into bash array
@@ -47,7 +51,8 @@ export len1=$(( $len + 1 ))
 for i in "${array[@]}"
 do
     echo ${i}
-    python run_opt.py $LEVEL $i $FOLDER $TEMP >> $LEVEL/"$i.out"
+    export FILE=$LEVEL/"$i.out"
+    python run_opt.py $LEVEL $i $FOLDER $TEMP &>> $FILE &
 done
 
 #check if #.status files = #jobs in batch
@@ -61,7 +66,12 @@ echo $len
 while [ $(ls -lR ./*.status | wc -l) != $len1 ]
 do
     echo "Jobs Not Done Yet"
-    sleep 2
+    if grep -q Killed $LEVEL/$ERROR; then
+        sendmail nbraunsc@vt.edu < $LEVEL/$OUTFILE
+        echo "Job Killed, email sent"
+        kill $$
+        fi
+    sleep 5
 done
 
 echo "Finished!"

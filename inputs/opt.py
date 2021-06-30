@@ -168,6 +168,7 @@ def opt_fnc(newcoords, cycle):
         slurm_job.write(info)
         slurm_job.close()
         os.system(cmd)
+        time.sleep(1800) #sleep for 30 mins before submitting checker.py
         os.system(opt_cmd)
 
     if queue == 'local':

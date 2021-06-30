@@ -9,6 +9,8 @@ single_frag = sys.argv[2]
 folder = sys.argv[3]
 tmpdir = sys.argv[4]
 frag_name = "fragment" + single_frag + ".dill"
+print(folder)
+print(directory)
 print("fragment name:", frag_name)
 
 os.chdir(folder)
@@ -26,7 +28,7 @@ except:
     status = -1
     name = "redo_frag" + single_frag + ".py"
     #submit_line ='sbatch %s -J %s -o "%s" --export=LEVEL="%s",BATCH="%s",FOLDER="%s"  slurm_pbs.sh'%(name+"redo", directory+"/"+name+"redo.log", directory, name, folder)     ##For TinkerCliffs/Huckleberry
-    submit_line = 'sbatch -J %s -o "%s" -c "%s" --export=LEVEL="%s",FOLDER="%s" %s "%s"'%(name+"redo", directory+"/"+name+"redo.log", 1, directory,folder, script, single_frag)     ##For TinkerCliffs/Huckleberry
+    submit_line = 'sbatch -J %s -o "%s" -c "%s" --export=LEVEL="%s",FOLDER="%s" slurm_pbs.sh "%s"'%(name+"redo", directory+"/"+name+"redo.log", 1, directory, folder, single_frag)     ##For TinkerCliffs/Huckleberry
     lines = """import os
 import sys
 import dill
@@ -51,7 +53,7 @@ os.system(cmd)
     "submit_line":submit_line
     }
 
-    with open(filename, "w") as myfile:
+    with open(name, "w") as myfile:
         myfile.write(lines.format(**context))
     
     myfile.close()
@@ -70,7 +72,6 @@ finally:
     out_stat.close()
 
     #put status file in $TMPDIR from Slurm
-    print("Temperary directoy:", tmpdir)
     os.chdir(tmpdir)
     out_stat = open(status_name, "w")
     out_stat.write("status is done")

@@ -27,6 +27,14 @@ if software == 'Pyscf':
 if software == 'Psi4':
     software = Psi4.Psi4
 
+### Need to give script to python batch and python opt commands
+#if software == 'qchem':
+#    software = Qchem.Qchem
+#    if opt == False:
+#        script = slurm_qchem_hessapt.sh
+#    if opt == True:
+#        script = slurm_qchem.sh
+
 #if software == "Molcas" or "OpenMolcas":
 #    software = Molcas.Molcas
 

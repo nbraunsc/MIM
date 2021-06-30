@@ -52,8 +52,9 @@ class Pyscf():
                 mf.xc = self.xc
                 e = mf.kernel()
                 g = mf.nuc_grad_method().kernel()
-                hess = mf.Hessian().kernel()
-                h = hess.transpose(0,2,1,3).reshape(len(input_xyz)*3, len(input_xyz)*3, order='C')
+                h = 0
+                #hess = mf.Hessian().kernel()
+                #h = hess.transpose(0,2,1,3).reshape(len(input_xyz)*3, len(input_xyz)*3, order='C')
 
             else:
                 mf = dft.RKS(mol)

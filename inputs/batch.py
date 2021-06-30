@@ -26,7 +26,7 @@ for filename in os.listdir():
         dirlist.append(filename)
 
 for i in dirlist:
-    slurm_jobs = open("slurm_info.txt", "w+")
+    slurm_jobs = open("slurm_info.txt", "a")
     os.chdir(i)
     files_dill = glob.glob('*.dill')
     if batch_size == None:
