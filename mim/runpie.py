@@ -1,4 +1,4 @@
-def recurse(f_old, start, derivs, fraglist, signlist, sign, frags):    #1st depth and on, finding intersection
+def recurse(f_old, start, derivs, fraglist, signlist, sign, checked_list, temp_list):    #1st depth and on, finding intersection
     """ 
     Recursive part of the pie
     
@@ -19,16 +19,61 @@ def recurse(f_old, start, derivs, fraglist, signlist, sign, frags):    #1st dept
     sign : int
         New sign that is determined based on PIE
     """
-    
+    print("start of recurse with frag:", f_old)
     for fj in range(start, len(fraglist)):
+        print("\nchecking", f_old, "with", fraglist[fj])
+        print("checked list:", checked_list)
+        #if fj in checked_list:
+        #    print("fj in checked list")
+        #    continue
         if fj > start:
             df_new = fraglist[fj].intersection(f_old)
+            print("fj", fj, "> start", start)
+            #print("fj", fj, "not in checked list and > start", start)
             if len(df_new) > 0:
+                temp_list.append(df_new)
+                print("intersection found:", df_new)
+                
+                if df_new not in temp_list:
+                    #empty checked list
+                    checked_list = []
+                    print("NEW INTERSECTION found:", df_new)
+                
+                #add fj to checked list
+                checked_list.append(fj)
+
+                #add new deriv to list
                 derivs.append(df_new)
+
+                #change sign and add to coeff list
                 df_newcoeff = sign * -1
                 signlist.append(df_newcoeff)
-                frags[str(sorted(df_new))] = df_newcoeff
-                recurse(df_new, fj, derivs, fraglist, signlist, df_newcoeff, frags)
+
+                #check for additional overlaps
+                recurse(df_new, fj, derivs, fraglist, signlist, df_newcoeff, checked_list)
+    
+    #print("start of recurse with frag:", f_old)
+    #for fj in range(start, len(fraglist)):
+    #    print("\nchecking", f_old, "with", fraglist[fj])
+    #    print("checked list:", checked_list)
+    #    if fj > start:
+    #        df_new = fraglist[fj].intersection(f_old)
+    #        print("fj", fj, "> start", start)
+    #        if len(df_new) > 0:
+    #            print("intersection found:", df_new)
+    #            
+    #            #add fj to checked list
+    #            checked_list.append(fj)
+
+    #            #add new deriv to list
+    #            derivs.append(df_new)
+
+    #            #change sign and add to coeff list
+    #            df_newcoeff = sign * -1
+    #            signlist.append(df_newcoeff)
+
+    #            #check for additional overlaps
+    #            recurse(df_new, fj, derivs, fraglist, signlist, df_newcoeff, checked_list)
 
 def runpie(fraglist):
     """ 
@@ -49,12 +94,12 @@ def runpie(fraglist):
     
     derivs = []
     signlist = []
-    frags = dict()
     for fi in range(0, len(fraglist)):  #0th depth, just initial frags
         dfi = fraglist[fi]
         dfi_coeff = 1
         derivs.append(dfi)
         signlist.append(dfi_coeff)
-        frags[str(sorted(dfi))] = dfi_coeff
-        recurse(fraglist[fi], fi, derivs, fraglist, signlist, dfi_coeff, frags)
-    return derivs, signlist, frags
+        checked_list = []
+        temp_list=[]
+        recurse(fraglist[fi], fi, derivs, fraglist, signlist, dfi_coeff, checked_list, temp_list)
+    return derivs, signlist

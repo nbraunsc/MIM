@@ -149,7 +149,7 @@ class Fragmentation():
                             continue
             self.attached.append(fragi) 
 
-    def remove_repeatingfrags(self, oldcoeff, derv_dict, derivs):
+    def remove_repeatingfrags(self, oldcoeff, derivs):
         """ Removes the repeating derivatives. Function gets called in self.do_fragmentation().
         
         The repeating derivatives are the exact same derivatives that would be added then subtracted
@@ -168,7 +168,7 @@ class Fragmentation():
             
         """
         unique = [list(tupl) for tupl in {tuple(item) for item in derivs }]
-        print("Unique fragments:\n", unique)
+        #print("Unique fragments:\n", unique)
         print("There are ", len(unique), "unique frags out of ", len(derivs))
         derv = []
         coeff =[]
@@ -398,10 +398,18 @@ class Fragmentation():
         
         """
         self.build_frags(frag_type=fragtype, value=value)
-        derivs, oldcoeff, deriv_dict = runpie.runpie(self.unique_frag)
-        self.derivs = self.remove_repeatingfrags(oldcoeff, deriv_dict, derivs)
+        print(self.unique_frag, len(self.unique_frag))
+        derivs, oldcoeff = runpie.runpie(self.unique_frag)
+        print("#derivs before remove repeating:", len(derivs))
+        self.derivs = self.remove_repeatingfrags(oldcoeff, derivs)
+        print(self.derivs)
         print(len(self.derivs))
-        exit()
+        count = []
+        for i in self.derivs:
+            count.append(len(i))
+        print(count)
+        large = np.argmax(count)
+        print("Largest deriv is frag #", large)
         #self.atomlist = [None] * len(self.derivs)
         
         self.atomlist = []
@@ -410,8 +418,11 @@ class Fragmentation():
             for prim in j:
                 temp.extend(list(self.molecule.prims[prim].atoms))
             self.atomlist.append(temp)
-        
+        print(len(self.atomlist[large]))
+
         vec = test_atoms(self.atomlist, self.coefflist, self.molecule.natoms)
+        print(vec)
+        exit()
         self.find_attached()
         
         #for i in range(0, len(self.derivs)):
