@@ -378,6 +378,17 @@ class Fragmentation():
         for x, atomtype in zip(self.moleculexyz.reshape(-1, 3), cycle(atomlabels)): 
             f.write("%s %.18g %.18g %.18g\n" % (atomtype, x[0], x[1], x[2]))
         f.close()
+    
+    def attached_frags(self, fraglist):
+        prim_dict = {}
+        for prim in range(0, len(self.molecule.prims)):
+            tmp = []
+            for frag in range(0, len(fraglist)):
+                if prim in fraglist[frag]:
+                    tmp.append(frag)
+            prim_dict[prim]=tmp
+        return prim_dict
+
 
     def do_fragmentation(self, fragtype=None, value=None):
         """ Main executeable for Fragmentation () class
@@ -399,7 +410,9 @@ class Fragmentation():
         """
         self.build_frags(frag_type=fragtype, value=value)
         print(self.unique_frag, len(self.unique_frag))
-        derivs, oldcoeff = runpie.runpie(self.unique_frag)
+        att_dict = self.attached_frags(self.unique_frag)
+        print("hello")
+        derivs, oldcoeff = runpie.runpie(self.unique_frag, att_dict)
         print("#derivs before remove repeating:", len(derivs))
         self.derivs = self.remove_repeatingfrags(oldcoeff, derivs)
         print(self.derivs)
