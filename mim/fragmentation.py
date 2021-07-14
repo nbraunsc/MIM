@@ -422,6 +422,10 @@ class Fragmentation():
 
         vec = test_atoms(self.atomlist, self.coefflist, self.molecule.natoms)
         print(vec)
+        for value in vec:
+            if value != 1:
+                raise ValueError("Not all atoms are counted only once!")
+                break
         exit()
         self.find_attached()
         
