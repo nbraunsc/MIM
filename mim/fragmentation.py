@@ -400,6 +400,8 @@ class Fragmentation():
         self.build_frags(frag_type=fragtype, value=value)
         derivs, oldcoeff, deriv_dict = runpie.runpie(self.unique_frag)
         self.derivs = self.remove_repeatingfrags(oldcoeff, deriv_dict, derivs)
+        print(len(self.derivs))
+        exit()
         #self.atomlist = [None] * len(self.derivs)
         
         self.atomlist = []
