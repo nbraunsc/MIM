@@ -1,4 +1,4 @@
-def recurse(f_old, start, derivs, fraglist, signlist, sign, checked_list, temp_list):    #1st depth and on, finding intersection
+def recurse(f_old, start, derivs, fraglist, signlist, sign, checked_list, temp_list):    #1st depth and on, finding intersection adding new
     """ 
     Recursive part of the pie
     
