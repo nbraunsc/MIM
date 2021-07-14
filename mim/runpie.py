@@ -19,7 +19,7 @@ def recurse(f_old, start, derivs, fraglist, signlist, sign, checked_list, level,
     sign : int
         New sign that is determined based on PIE
     """
-    print("\nLevel =:", level)
+    #print("\nLevel =:", level)
     print("start of recurse with frag:", f_old)
     for fj in range(start+1, len(fraglist)):
         print("\nchecking", f_old, "with", fraglist[fj])
@@ -52,6 +52,7 @@ def recurse(f_old, start, derivs, fraglist, signlist, sign, checked_list, level,
             #change sign and add to coeff list
             df_newcoeff = sign * -1
             signlist.append(df_newcoeff)
+            print("coeff:", df_newcoeff)
 
             #check for additional overlaps
             recurse(df_new, fj, derivs, fraglist, signlist, df_newcoeff, checked_list, level, temp_list)
