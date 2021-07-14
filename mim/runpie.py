@@ -1,4 +1,4 @@
-def recurse(f_old, start, derivs, fraglist, signlist, sign, checked_list, temp_list):    #1st depth and on, finding intersection adding new
+def recurse(f_old, start, derivs, fraglist, signlist, sign, checked_list, level, temp_list):    #1st depth and on, finding intersection adding new
     """ 
     Recursive part of the pie
     
@@ -19,26 +19,29 @@ def recurse(f_old, start, derivs, fraglist, signlist, sign, checked_list, temp_l
     sign : int
         New sign that is determined based on PIE
     """
+    print("\nLevel =:", level)
     print("start of recurse with frag:", f_old)
     for fj in range(start+1, len(fraglist)):
         print("\nchecking", f_old, "with", fraglist[fj])
         print("checked list:", checked_list)
-        if fj in checked_list:
-            print("fj in checked list")
-            continue
-        #if fj > start:
+        
         df_new = fraglist[fj].intersection(f_old)
-        print("fj", fj, "> start", start)
-        #print("fj", fj, "not in checked list and > start", start)
+        
+        #if fj in checked_list and len(df_new) > 0:
+        #    print("fj in checked list")
+        #    continue
+        
         if len(df_new) > 0:
-            print("intersection found:", df_new)
-            print(temp_list)
+            print("interstion:", df_new)
+            print("temp list:", temp_list)
+            #if df_new not in temp_list:
+            #    print("intersection not in temp_list")
+            #    temp_list.append(df_new)
+            #    level = level+1
+            #    checked_list = []
+            #    print("New level so checked list = 0", checked_list)
             
-            if df_new not in temp_list:
-                temp_list.append(df_new)
-                #empty checked list
-                checked_list = []
-                print("NEW INTERSECTION found:", df_new)
+            print("intersection found:", df_new)
             
             #add fj to checked list
             checked_list.append(fj)
@@ -51,7 +54,7 @@ def recurse(f_old, start, derivs, fraglist, signlist, sign, checked_list, temp_l
             signlist.append(df_newcoeff)
 
             #check for additional overlaps
-            recurse(df_new, fj, derivs, fraglist, signlist, df_newcoeff, checked_list, temp_list)
+            recurse(df_new, fj, derivs, fraglist, signlist, df_newcoeff, checked_list, level, temp_list)
     
     #print("start of recurse with frag:", f_old)
     #for fj in range(start, len(fraglist)):
@@ -101,6 +104,7 @@ def runpie(fraglist):
         derivs.append(dfi)
         signlist.append(dfi_coeff)
         checked_list = []
-        temp_list=[]
-        recurse(fraglist[fi], fi, derivs, fraglist, signlist, dfi_coeff, checked_list, temp_list)
+        level = 0
+        temp_list = []
+        recurse(fraglist[fi], fi, derivs, fraglist, signlist, dfi_coeff, checked_list, level, temp_list)
     return derivs, signlist
