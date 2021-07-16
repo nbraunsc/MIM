@@ -412,7 +412,7 @@ class Fragmentation():
         print(self.unique_frag, len(self.unique_frag))
         att_dict = self.attached_frags(self.unique_frag)
         print("hello")
-        derivs, oldcoeff = runpie.runpie(self.unique_frag, att_dict)
+        derivs, oldcoeff = runpie.start_pie(self.unique_frag, att_dict)
         print("#derivs before remove repeating:", len(derivs))
         self.derivs = self.remove_repeatingfrags(oldcoeff, derivs)
         print(self.derivs)
