@@ -10,7 +10,7 @@ from mendeleev import element
 from atom_count import *
 
 #import mim
-from mim import runpie, Molecule, fragmentation, Fragment, Pyscf
+from mim import runpie, Molecule, fragmentation, Fragment, Pyscf, oldpie, newpie
 
 class Fragmentation():
     """
@@ -255,22 +255,180 @@ class Fragmentation():
             self.frags.append(Fragment.Fragment(qc_fi, self.molecule, self.atomlist[fi], attachedlist, coeff=coeffi, step_size=step_size, local_coeff=local_coeff))
         print("done with initlaze frags")
 
-        #for fi in range(0, len(self.atomlist)):
-        #    coeffi = self.coefflist[fi]
-        #    attachedlist = self.attached[fi]
-        #    temp_atomlist = []
-        #    qc_fi = None
-        #    for atom in self.atomlist[fi]:
-        #        temp_atomlist.append(self.molecule.atomtable[atom][0])
-        #    #print(temp_atomlist)
-        #    #trying to assign negative charge to nv center
-        #    if 'N' in temp_atomlist:
-        #        qc_fi = self.qc_params(qc_backend=qc_backend, theory=theory, basis=basis, tol=tol, active_space=active_space, nelec_alpha=nelec_alpha, nelec_beta=nelec_beta, max_memory=max_memory, xc=xc, charge=-1, spin=3)
-        #        
-        #    else:
-        #        print("hello in initalize frag func")
-        #        qc_fi = qc_backend(theory=theory, basis=basis, tol=tol, active_space=active_space, nelec_alpha=nelec_alpha, nelec_beta=nelec_beta, max_memory=max_memory, xc=xc, charge=0, spin=0)
-        #    self.frags.append(Fragment.Fragment(qc_fi, self.molecule, self.atomlist[fi], attachedlist, coeff=coeffi, step_size=step_size, local_coeff=local_coeff))
+    def write_xyz(self, name):
+        """ Writes an xyz file with the atom labels, number of atoms, and respective Cartesian coords for geom_opt().
+
+        Parameters
+        ----------
+        name : str
+            Name of the molecule, must be same name as input.cml file
+        
+        Returns
+        -------
+        none
+        
+        """
+        molecule = np.array(self.molecule.atomtable)
+        atomlabels = []
+        for j in range(0, len(molecule)):
+            atomlabels.append(molecule[j][0])
+        coords = molecule[:, [1,2,3]]
+        self.moleculexyz = []
+        for i in coords:
+            #x = [i[1], i[2], i[3]]
+            y = np.array(i)
+            z = y.astype(float)
+            self.moleculexyz.append(z)
+        self.moleculexyz = np.array(self.moleculexyz)   #formatting full molecule coords
+        
+        f = open(name, "w+")
+        title = ""
+        f.write("%d\n%s\n" % (self.moleculexyz.size / 3, title))
+        for x, atomtype in zip(self.moleculexyz.reshape(-1, 3), cycle(atomlabels)): 
+            f.write("%s %.18g %.18g %.18g\n" % (atomtype, x[0], x[1], x[2]))
+        f.close()
+    
+    def attached_frags(self, fraglist):
+        prim_dict = {}
+        for prim in range(0, len(self.molecule.prims)):
+            tmp = []
+            for frag in range(0, len(fraglist)):
+                if prim in fraglist[frag]:
+                    tmp.append(frag)
+            prim_dict[prim]=tmp
+        return prim_dict
+
+
+    def do_fragmentation(self, fragtype=None, value=None):
+        """ Main executeable for Fragmentation () class
+
+        This function fragments the molecule, runs principle of inclusion-exculsion,
+        removes repeating fragments, creates attached pairs list, initalizes instances of Fragment() class.
+        
+        Parameters
+        ----------
+        frag_type : str
+            Either 'graphical' to do covalent network or 'radius' to do spacial fragmentation
+        value : int
+            Degree or radius of fragmentation wanted, gets used in self.build_frags()
+        
+        Returns
+        -------
+        none
+        
+        """
+        ### Builds inital fragments and pulls out frags that are fully represented by another fragment
+        self.build_frags(frag_type=fragtype, value=value)
+        print(self.unique_frag, len(self.unique_frag))
+
+        ### Builds dict to hold which primitives are in which fragments
+        att_dict = self.attached_frags(self.unique_frag)
+
+        ### Start of Priniciple inclusion/exculsion
+        start = time.time()
+        #derivs, oldcoeff = runpie.start_pie(self.unique_frag, att_dict)
+        #derivs, oldcoeff = oldpie.runpie(self.unique_frag)
+        derivs, oldcoeff = newpie.start_pie(self.unique_frag, att_dict)
+        end = time.time()
+        ### turning derivs into a list of atoms instead of a list of primitives
+        self.atomlist = []
+        for j in derivs:
+            temp = []
+            for prim in j:
+                temp.extend(list(self.molecule.prims[prim].atoms))
+            self.atomlist.append(temp)
+        
+        for frag in range(0, len(self.atomlist)):
+            for atom in self.atomlist[frag]:
+                if atom == 7:
+                    print("frag:", self.atomlist[frag])
+                    print("coeff:", oldcoeff[frag])
+        print("Atomlist:", self.atomlist)
+        ### testing to make sure all atoms are only counted once
+        vec = test_atoms(self.atomlist, oldcoeff, self.molecule.natoms)
+        print(vec)
+        print("time of pie:", end-start)
+        print("#derivs before remove repeating:", len(derivs))
+        exit()
+
+#############################################
+        ### Removes derivs that would otherwise get added then subtracted
+        self.derivs = self.remove_repeatingfrags(oldcoeff, derivs)
+        print(self.derivs)
+        print(len(self.derivs))
+        
+        ### Counting # atoms in largest fragment
+        count = []
+        for i in self.derivs:
+            count.append(len(i))
+        print(count)
+        large = np.argmax(count)
+        print("Largest deriv is frag #", large)
+        
+        ### turning derivs into a list of atoms instead of a list of primitives
+        self.atomlist = []
+        for j in self.derivs:
+            temp = []
+            for prim in j:
+                temp.extend(list(self.molecule.prims[prim].atoms))
+            self.atomlist.append(temp)
+        print(len(self.atomlist[large]))
+
+        ### testing to make sure all atoms are only counted once
+        vec = test_atoms(self.atomlist, self.coefflist, self.molecule.natoms)
+        print(vec)
+        print("time of pie:", end-start)
+        exit()
+        for value in vec:
+            if value != 1:
+                raise ValueError("Not all atoms are counted only once!")
+                break
+        exit()
+
+        ### Finding the attached atoms to help with adding link atoms in Fragment() class
+        self.find_attached()
+    
+    def mw_hessian(self, full_hessian):
+        """
+        Will compute the mass-weighted hessian, frequencies, and 
+        normal modes for the full system.
+        
+        Parameters
+        ----------
+        full_hessian : ndarray
+            This is the full hessian for the full molecule.
+
+        Returns
+        -------
+        freq : ndarray
+            1D np array holding the frequencies
+        modes : ndarray
+            2D ndarray holding normal modes in the columns
+        """
+        mass_xyz = np.zeros((self.molecule.natoms, 3))
+        mass_array = np.zeros((self.molecule.natoms))
+        for row in range(0, self.molecule.natoms):
+            #adding 1/np.sqrt(amu) units to xyz coords
+            x = element(self.molecule.atomtable[row][0])
+            value = np.sqrt(x.atomic_weight)
+            mass_array[row] = value
+            mass_xyz[row] = np.array(self.molecule.atomtable[row][1:])*(1/value)   #mass weighted coordinates
+            for column in range(0, len(self.molecule.atomtable)):    
+                y = element(self.molecule.atomtable[column][0])
+                z = x.atomic_weight*y.atomic_weight
+                value = np.sqrt(z)**-1
+                term = full_hessian[row][column]*value
+                full_hessian[row][column] = term
+                
+        reshape_mass_hess = full_hessian.transpose(0, 2, 1, 3)
+        x = reshape_mass_hess.reshape(reshape_mass_hess.shape[0]*reshape_mass_hess.shape[1],reshape_mass_hess.shape[2]*reshape_mass_hess.shape[3])
+        e_values, modes = LA.eigh(x)
+
+        #unit conversion of freq from H/B**2 amu -> 1/s**2
+        #factor = (4.3597482*10**-18)/(1.6603145*10**-27)/(1.0*10**-20)  #Angstrom to m
+        factor = 1.8897259886**2*(4.3597482*10**-18)/(1.6603145*10**-27)/(1.0*10**-20) #Bohr to Angstrom
+        freq = (np.sqrt(e_values*factor))/(2*np.pi*2.9979*10**10) #1/s^2 -> cm-1
+        return freq, modes
     
     #def qc_params(self, qc_backend=None, theory=None, basis=None, spin=None, tol=None, active_space=None, nelec=None, nelec_alpha=None, nelec_beta=None, max_memory=None, xc=None, charge=0):
     ##def qc_params(self, frag_index=[], qc_backend=None, theory=None, basis=None, spin=0, tol=0, active_space=0, nelec=0, nelec_alpha=0, nelec_beta=0, max_memory=0):
@@ -344,120 +502,6 @@ class Fragmentation():
     #        self.hessian += i.hessian
     #        apt += i_apt
     #    return self.etot, self.gradient, self.hessian, apt
-           
-    def write_xyz(self, name):
-        """ Writes an xyz file with the atom labels, number of atoms, and respective Cartesian coords for geom_opt().
-
-        Parameters
-        ----------
-        name : str
-            Name of the molecule, must be same name as input.cml file
-        
-        Returns
-        -------
-        none
-        
-        """
-        molecule = np.array(self.molecule.atomtable)
-        atomlabels = []
-        for j in range(0, len(molecule)):
-            atomlabels.append(molecule[j][0])
-        coords = molecule[:, [1,2,3]]
-        self.moleculexyz = []
-        for i in coords:
-            #x = [i[1], i[2], i[3]]
-            y = np.array(i)
-            z = y.astype(float)
-            self.moleculexyz.append(z)
-        self.moleculexyz = np.array(self.moleculexyz)   #formatting full molecule coords
-        
-        #f = open("../inputs/" + name + ".xyz", "w+")
-        f = open(name, "w+")
-        title = ""
-        f.write("%d\n%s\n" % (self.moleculexyz.size / 3, title))
-        for x, atomtype in zip(self.moleculexyz.reshape(-1, 3), cycle(atomlabels)): 
-            f.write("%s %.18g %.18g %.18g\n" % (atomtype, x[0], x[1], x[2]))
-        f.close()
-    
-    def attached_frags(self, fraglist):
-        prim_dict = {}
-        for prim in range(0, len(self.molecule.prims)):
-            tmp = []
-            for frag in range(0, len(fraglist)):
-                if prim in fraglist[frag]:
-                    tmp.append(frag)
-            prim_dict[prim]=tmp
-        return prim_dict
-
-
-    def do_fragmentation(self, fragtype=None, value=None):
-        """ Main executeable for Fragmentation () class
-
-        This function fragments the molecule, runs principle of inclusion-exculsion,
-        removes repeating fragments, creates attached pairs list, initalizes instances of Fragment() class.
-        
-        Parameters
-        ----------
-        frag_type : str
-            Either 'graphical' to do covalent network or 'radius' to do spacial fragmentation
-        value : int
-            Degree or radius of fragmentation wanted, gets used in self.build_frags()
-        
-        Returns
-        -------
-        none
-        
-        """
-        self.build_frags(frag_type=fragtype, value=value)
-        print(self.unique_frag, len(self.unique_frag))
-        att_dict = self.attached_frags(self.unique_frag)
-        print("hello")
-        derivs, oldcoeff = runpie.start_pie(self.unique_frag, att_dict)
-        print("#derivs before remove repeating:", len(derivs))
-        self.derivs = self.remove_repeatingfrags(oldcoeff, derivs)
-        print(self.derivs)
-        print(len(self.derivs))
-        count = []
-        for i in self.derivs:
-            count.append(len(i))
-        print(count)
-        large = np.argmax(count)
-        print("Largest deriv is frag #", large)
-        #self.atomlist = [None] * len(self.derivs)
-        
-        self.atomlist = []
-        for j in self.derivs:
-            temp = []
-            for prim in j:
-                temp.extend(list(self.molecule.prims[prim].atoms))
-            self.atomlist.append(temp)
-        print(len(self.atomlist[large]))
-
-        vec = test_atoms(self.atomlist, self.coefflist, self.molecule.natoms)
-        print(vec)
-        for value in vec:
-            if value != 1:
-                raise ValueError("Not all atoms are counted only once!")
-                break
-        exit()
-        self.find_attached()
-        
-        #for i in range(0, len(self.derivs)):
-        #    self.derivs[i] = list(self.derivs[i])
-        #for fragi in range(0, len(self.derivs)):    #changes prims into atoms
-        #    x = len(self.derivs[fragi])
-        #    for primi in range(0, x):
-        #        y = self.derivs[fragi][primi]
-        #        atoms = list(self.molecule.prims[y].atoms)
-        #        self.derivs[fragi][primi] = atoms
-        #
-        #for y in range(0, len(self.derivs)):
-        #    flatlist = [ item for elem in self.derivs[y] for item in elem]
-        #    self.atomlist[y] = flatlist     #now fragments are list of atoms
-        #
-        #for i in range(0, len(self.atomlist)):  #sorted atom numbers
-        #    self.atomlist[i] = list(sorted(self.atomlist[i]))
-
         
     #def do_geomopt(self, name, theory, basis):
     #    """ Completes the geometry optimization using pyberny from pyscf.
@@ -495,47 +539,6 @@ class Fragmentation():
     #    os.chdir('../')
     #    return self.etot_opt#, self.grad_opt
        
-    def mw_hessian(self, full_hessian):
-        """
-        Will compute the mass-weighted hessian, frequencies, and 
-        normal modes for the full system.
-        
-        Parameters
-        ----------
-        full_hessian : ndarray
-            This is the full hessian for the full molecule.
-
-        Returns
-        -------
-        freq : ndarray
-            1D np array holding the frequencies
-        modes : ndarray
-            2D ndarray holding normal modes in the columns
-        """
-        mass_xyz = np.zeros((self.molecule.natoms, 3))
-        mass_array = np.zeros((self.molecule.natoms))
-        for row in range(0, self.molecule.natoms):
-            #adding 1/np.sqrt(amu) units to xyz coords
-            x = element(self.molecule.atomtable[row][0])
-            value = np.sqrt(x.atomic_weight)
-            mass_array[row] = value
-            mass_xyz[row] = np.array(self.molecule.atomtable[row][1:])*(1/value)   #mass weighted coordinates
-            for column in range(0, len(self.molecule.atomtable)):    
-                y = element(self.molecule.atomtable[column][0])
-                z = x.atomic_weight*y.atomic_weight
-                value = np.sqrt(z)**-1
-                term = full_hessian[row][column]*value
-                full_hessian[row][column] = term
-                
-        reshape_mass_hess = full_hessian.transpose(0, 2, 1, 3)
-        x = reshape_mass_hess.reshape(reshape_mass_hess.shape[0]*reshape_mass_hess.shape[1],reshape_mass_hess.shape[2]*reshape_mass_hess.shape[3])
-        e_values, modes = LA.eigh(x)
-
-        #unit conversion of freq from H/B**2 amu -> 1/s**2
-        #factor = (4.3597482*10**-18)/(1.6603145*10**-27)/(1.0*10**-20)  #Angstrom to m
-        factor = 1.8897259886**2*(4.3597482*10**-18)/(1.6603145*10**-27)/(1.0*10**-20) #Bohr to Angstrom
-        freq = (np.sqrt(e_values*factor))/(2*np.pi*2.9979*10**10) #1/s^2 -> cm-1
-        return freq, modes
 
     #def global_apt(self):
     #    global_apt = np.zeros((self.molecule.natoms*3, 3))
