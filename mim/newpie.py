@@ -31,7 +31,7 @@ def dfs(visited, graph, f_curr, index, oldcoeff, signlist, dervlist, fraglist, s
                 print(visited)
 
         print("\n Current node:", index, "\nCurrent frag:", f_curr)
-        #print("adjacency list:", adj_list)
+        print("adjacency list:", adj_list)
         print("neighbour:", neighbour)
         print("visted:", visited)
         
