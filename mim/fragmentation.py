@@ -1,4 +1,6 @@
+import cProfile
 import time
+import pandas as pd
 import os
 import numpy as np
 from numpy import linalg as LA 
@@ -10,7 +12,8 @@ from mendeleev import element
 from atom_count import *
 
 #import mim
-from mim import runpie, Molecule, fragmentation, Fragment, Pyscf, oldpie, newpie
+#from mim import runpie, Molecule, fragmentation, Fragment, Pyscf, oldpie, newpie, newnewpie
+from mim import Molecule, fragmentation, Fragment, Pyscf, newnewpie
 
 class Fragmentation():
     """
@@ -119,6 +122,18 @@ class Fragmentation():
                 if i not in uniquefrags:
                     uniquefrags.append(i)   
         self.unique_frag = uniquefrags
+        #print(self.unique_frag)
+        #print("len of unique:", len(self.unique_frag))
+        #print("len of orig:", len(self.fragment))
+        
+        #for frag in self.unique_frag:
+        #    print(frag, len(frag))
+        #total = []
+        #for i in self.unique_frag[65]:
+        #    atoms = self.molecule.prims[i].atoms
+        #    total.extend(atoms)
+        #print(total)
+        #print(len(total))
 
     def find_attached(self):    #finding all the attached atoms that were cut during fragmentation
         """ Finds the atoms that were cut during the fragmentation.
@@ -149,6 +164,7 @@ class Fragmentation():
                             continue
             self.attached.append(fragi) 
 
+
     def remove_repeatingfrags(self, oldcoeff, derivs):
         """ Removes the repeating derivatives. Function gets called in self.do_fragmentation().
         
@@ -167,21 +183,26 @@ class Fragmentation():
             List of coefficents where index of coeff correlates to that fragment
             
         """
-        unique = [list(tupl) for tupl in {tuple(item) for item in derivs }]
+        #unique = [list(tupl) for tupl in {tuple(item) for item in derivs }]
+        unique = [list(x) for x in set(tuple(x) for x in derivs)]
+        
         #print("Unique fragments:\n", unique)
         print("There are ", len(unique), "unique frags out of ", len(derivs))
+        print(unique)
+        print(derivs)
+
         derv = []
         coeff =[]
 
         for x in range(0, len(unique)):
             index = []
             value = 1
-            count = derivs.count(set(unique[x]))
-
+            count = derivs.count(unique[x])
+            
             #if derv only appears once add it to final list
             if count == 1:
                 derv.append(unique[x])
-                index = derivs.index(set(unique[x]))
+                index = derivs.index(unique[x])
                 coeff.append(oldcoeff[index])
 
             #if derv appears more than once, add/subtract coeff to determine if needed
@@ -319,7 +340,7 @@ class Fragmentation():
         """
         ### Builds inital fragments and pulls out frags that are fully represented by another fragment
         self.build_frags(frag_type=fragtype, value=value)
-        print(self.unique_frag, len(self.unique_frag))
+        #print(self.unique_frag, len(self.unique_frag))
 
         ### Builds dict to hold which primitives are in which fragments
         att_dict = self.attached_frags(self.unique_frag)
@@ -328,30 +349,20 @@ class Fragmentation():
         start = time.time()
         #derivs, oldcoeff = runpie.start_pie(self.unique_frag, att_dict)
         #derivs, oldcoeff = oldpie.runpie(self.unique_frag)
-        derivs, oldcoeff = newpie.start_pie(self.unique_frag, att_dict)
-        end = time.time()
-        ### turning derivs into a list of atoms instead of a list of primitives
-        self.atomlist = []
-        for j in derivs:
-            temp = []
-            for prim in j:
-                temp.extend(list(self.molecule.prims[prim].atoms))
-            self.atomlist.append(temp)
-        
-        for frag in range(0, len(self.atomlist)):
-            for atom in self.atomlist[frag]:
-                if atom == 7:
-                    print("frag:", self.atomlist[frag])
-                    print("coeff:", oldcoeff[frag])
-        print("Atomlist:", self.atomlist)
-        ### testing to make sure all atoms are only counted once
-        vec = test_atoms(self.atomlist, oldcoeff, self.molecule.natoms)
-        print(vec)
-        print("time of pie:", end-start)
-        print("#derivs before remove repeating:", len(derivs))
+        #derivs, oldcoeff = newpie.start_pie(self.unique_frag, att_dict)
+
+        ## Function profile
+        string = 'mim.newnewpie.start_pie(' + str(self.unique_frag) + ', ' + str(att_dict) + ')'
+        cProfile.run(string, 'restats')
         exit()
 
-#############################################
+
+        derivs, oldcoeff = newnewpie.start_pie(self.unique_frag, att_dict)
+        print("derivs:", derivs, len(derivs))
+        exit() 
+        
+        end = time.time()
+        
         ### Removes derivs that would otherwise get added then subtracted
         self.derivs = self.remove_repeatingfrags(oldcoeff, derivs)
         print(self.derivs)
@@ -361,7 +372,6 @@ class Fragmentation():
         count = []
         for i in self.derivs:
             count.append(len(i))
-        print(count)
         large = np.argmax(count)
         print("Largest deriv is frag #", large)
         
@@ -378,7 +388,7 @@ class Fragmentation():
         vec = test_atoms(self.atomlist, self.coefflist, self.molecule.natoms)
         print(vec)
         print("time of pie:", end-start)
-        exit()
+        
         for value in vec:
             if value != 1:
                 raise ValueError("Not all atoms are counted only once!")
