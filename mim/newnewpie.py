@@ -24,7 +24,8 @@ def recurse(f_curr, indexes, old_coeff, fraglist, dervlist, signlist, prim_dict,
     adj_list = connected(f_curr, prim_dict)
     #print("Adj list:", adj_list)
     for fk in adj_list:
-        if max(indexes) >= fk:
+        max_ind = max(indexes)
+        if max_ind >= fk: 
             continue
         f_new = sorted(set(f_curr).intersection(fraglist[fk]))
         if len(f_new) == 0:
