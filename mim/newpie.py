@@ -14,8 +14,8 @@ def dfs(visited, graph, f_curr, index, oldcoeff, signlist, dervlist, fraglist, s
     adj_list = connected(f_curr, graph, visited)
     
     #when on last fragment, should not have anymore intersections so end recursive function
-    if len(visited) == len(fraglist):
-        return
+    #if len(visited) == len(fraglist):
+    #    return
      
     for neighbour in adj_list:
         # When back to top layer reset visited list
