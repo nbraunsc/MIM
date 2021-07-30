@@ -352,17 +352,29 @@ class Fragmentation():
         #derivs, oldcoeff = newpie.start_pie(self.unique_frag, att_dict)
 
         ## Function profile
-        string = 'mim.newnewpie.start_pie(' + str(self.unique_frag) + ', ' + str(att_dict) + ')'
-        cProfile.run(string, 'restats')
-        exit()
+        #string = 'mim.newnewpie.start_pie(' + str(self.unique_frag) + ', ' + str(att_dict) + ')'
+        #cProfile.run(string, 'restats')
+        #exit()
 
 
-        derivs, oldcoeff = newnewpie.start_pie(self.unique_frag, att_dict)
-        print("derivs:", derivs, len(derivs))
+        derivs, oldcoeff, totaltime = newnewpie.start_pie(self.unique_frag, att_dict)
+        print("derivs:", len(derivs))
+
+        ### turning derivs into a list of atoms instead of a list of primitives
+        self.atomlist = []
+        for j in derivs:
+            temp = []
+            for prim in j:
+                temp.extend(list(self.molecule.prims[prim].atoms))
+            self.atomlist.append(temp)
+
+        ### testing to make sure all atoms are only counted once
+        vec = test_atoms(self.atomlist, oldcoeff, self.molecule.natoms)
+        print(vec)
+        print("Time recursion took:", totaltime, "seconds")
         exit() 
-        
         end = time.time()
-        
+        ################################ NEED TO FIX REMOVE REPEATING BELOW! 
         ### Removes derivs that would otherwise get added then subtracted
         self.derivs = self.remove_repeatingfrags(oldcoeff, derivs)
         print(self.derivs)
