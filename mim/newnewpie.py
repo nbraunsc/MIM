@@ -40,29 +40,29 @@ def recurse(f_curr, indices, old_coeff, fraglist, dervlist, signlist, prim_dict,
     if not adj_list:
         return
 
-    print("Adj list:", adj_list)
+    #print("Adj list:", adj_list)
     for fk in adj_list:
         #max_ind = max(indices)
         #if max_ind >= fk: 
         #    continue
         #f_new = sorted(set(f_curr).intersection(fraglist[fk]))
         f_new = f_curr.intersection(fraglist[fk])
-        if len(f_new) == 0:
-            raise ValueError("Len of intersection = 0")
-            exit()
-            return
-        else:
-            print("\nNew intersection found:", f_new)
-            new_coeff = old_coeff*-1
-            end = time.time()
-            if end-starttime > 30:
-                exit()
-            #print("New coeff:", new_coeff)
-            indexfk = indices + [fk]
-            #print("index list:", indexfk)
-            dervlist.append(f_new)
-            signlist.append(new_coeff)
-            recurse(f_new, indexfk, new_coeff, fraglist, dervlist, signlist, prim_dict, starttime)
+        #if len(f_new) == 0:
+        #    raise ValueError("Len of intersection = 0")
+        #    exit()
+        #    return
+        #else:
+       #print("\nNew intersection found:", f_new)
+       new_coeff = old_coeff*-1
+       end = time.time()
+       if end-starttime > 30:
+           exit()
+       #print("New coeff:", new_coeff)
+       indexfk = indices + [fk]
+       #print("index list:", indexfk)
+       dervlist.append(f_new)
+       signlist.append(new_coeff)
+       recurse(f_new, indexfk, new_coeff, fraglist, dervlist, signlist, prim_dict, starttime)
 
 
 def start_pie(fraglist, prim_dict):

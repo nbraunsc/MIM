@@ -352,9 +352,9 @@ class Fragmentation():
         #derivs, oldcoeff = newpie.start_pie(self.unique_frag, att_dict)
 
         ## Function profile
-        #string = 'mim.newnewpie.start_pie(' + str(self.unique_frag) + ', ' + str(att_dict) + ')'
-        #cProfile.run(string, 'restats')
-        #exit()
+        string = 'mim.newnewpie.start_pie(' + str(self.unique_frag) + ', ' + str(att_dict) + ')'
+        cProfile.run(string, 'restats')
+        exit()
 
 
         derivs, oldcoeff, totaltime = newnewpie.start_pie(self.unique_frag, att_dict)
