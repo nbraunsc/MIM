@@ -183,6 +183,11 @@ class Fragmentation():
             List of coefficents where index of coeff correlates to that fragment
             
         """
+
+        ### issue at this point
+        # - the fragments are no longer sorted
+        #
+
         #unique = [list(tupl) for tupl in {tuple(item) for item in derivs }]
         unique = [list(x) for x in set(tuple(x) for x in derivs)]
         
