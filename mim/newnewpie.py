@@ -19,6 +19,7 @@ def connected(fragment, prim_dict, max_ind):
     final : numpy array
         Array of connected fragment indices
     """
+    'Numpy array method'
     #arr = np.zeros((len(prim_dict)))
     #for prim in fragment:
     #    for f2 in prim_dict[prim]:
@@ -29,7 +30,9 @@ def connected(fragment, prim_dict, max_ind):
     #pull out fragments that are higher than max index
     #final = x[x > max_ind]
     #return final
+    #return x
     
+    'List method'
     #out = []
     #for prim in fragment:
     #    out.extend(prim_dict[prim])
@@ -39,21 +42,18 @@ def connected(fragment, prim_dict, max_ind):
     #new = [x for x in final if x > max_ind]
     #return new 
     
-    #return final
-    
+    'Dict method'
     out = {}
     for prim in fragment:
         for f2 in prim_dict[prim]:
-            out[f2]=1
-    #        if f2 > max_ind:
-    #            out[f2]=1
-    #        else:
-    #            continue
+    ##        out[f2]=1
+            if f2 > max_ind:
+                out[f2]=1
+            else:
+                continue
     keylist = list(out.keys())
-    #keylist.sort()
+    ##keylist.sort()
     return keylist
-
-
 
 def recurse(f_curr, indices, old_coeff, fraglist, dervlist, signlist, prim_dict, starttime):
     """
@@ -68,11 +68,11 @@ def recurse(f_curr, indices, old_coeff, fraglist, dervlist, signlist, prim_dict,
     adj_list = connected(f_curr, prim_dict, max_ind)
     
     for fk in adj_list:
-        if max_ind >= fk:
-            continue
-        end = time.time()
-        if end-starttime > 30:
-            exit()
+        #if max_ind >= fk:
+        #    continue
+        #end = time.time()
+        #if end-starttime > 30:
+        #    exit()
         f_new = f_curr.intersection(fraglist[fk])
         new_coeff = old_coeff*-1
         indexfk = indices + [fk]
@@ -99,8 +99,6 @@ def recurse(f_curr, indices, old_coeff, fraglist, dervlist, signlist, prim_dict,
         #    exit()
         #print("New coeff:", new_coeff)
         #print("index list:", indexfk)
-
-
 
 def start_pie(fraglist, prim_dict):
     dervlist = []

@@ -1,5 +1,6 @@
 import mim
-from mim import runpie, Molecule, fragmentation, Fragment, Pyscf, Psi4
+from mim import Molecule, fragmentation, Fragment, Pyscf, Psi4
+#from mim import runpie, Molecule, fragmentation, Fragment, Pyscf, Psi4
 
 import numpy as np
 import os
