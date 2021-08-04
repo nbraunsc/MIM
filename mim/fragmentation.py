@@ -1,3 +1,4 @@
+from collections import Counter
 import cProfile
 import time
 import pandas as pd
@@ -183,52 +184,115 @@ class Fragmentation():
             List of coefficents where index of coeff correlates to that fragment
             
         """
-
-        #unique = [list(tupl) for tupl in {tuple(item) for item in derivs }]
-        unique = [list(x) for x in set(tuple(x) for x in derivs)]
-        
-        #print("Unique fragments:\n", unique)
-        print("There are ", len(unique), "unique frags out of ", len(derivs))
+        start = time.time()
         derv = []
         coeff =[]
+        
+        #x = Counter(map(tuple, derivs))
+        #keylist = list(x.keys())
+        #print(x)
+        #print("keylist:", len(keylist))
+        #print("keylist:", keylist, len(keylist))
 
-        for x in range(0, len(unique)):
-            index = []
-            value = 1
-            count = derivs.count(set(unique[x]))
-            
-            #if derv only appears once add it to final list
+
+        #testing sorted thing
+        sortlist = []
+        for frag in derivs:
+            #sorted makes into a list
+            newfrag = sorted(frag)
+            sortlist.append(newfrag)
+        
+        y = Counter(map(tuple, sortlist))
+        #keylist is a list of tuples
+        keylist = list(y.keys())
+        
+        for i in keylist:
+            count = y[i]
+            #count = x[i]
             if count == 1:
-                derv.append(unique[x])
-                index = derivs.index(set(unique[x]))
-                coeff.append(oldcoeff[index])
-
-            #if derv appears more than once, add/subtract coeff to determine if needed
-            if count > 1:
-                indices = [index for index, element in enumerate(derivs) if element == set(unique[x])]
-                temp_coef = []
-                for num in indices: 
-                    temp_coef.append(oldcoeff[num])
-                sum_coeff = float(sum(temp_coef))
+                derv.append(set(i))
+                position = sortlist.index(list(i))
+                #position = derivs.index(set(i))
+                coeff.append(oldcoeff[position])
+            else:
+                #indices = [index for index, element in enumerate(derivs) if element == set(i)]
+                indices = [index for index, element in enumerate(sortlist) if element == list(i)]
+                sum_value = 0
+                for num in indices:
+                    sum_value += oldcoeff[num]
                 
-                #if overall neg, add derv that amount of times with -1 as coeff
-                if sum_coeff < 0:
-                    for i in range(0, int(abs(sum_coeff))):
-                        derv.append(unique[x])
-                        coeff.append(-1)
+                #print("Fragment", i, "has sum value of :", sum_value)
 
-                #if overall positive, add derv that amount of times with +1 as coeff
-                if sum_coeff > 0:
-                    for i in range(0, int(sum_coeff)):
-                        derv.append(unique[x])
+                if sum_value > 0:
+                    for k in range(0, abs(sum_value)):
+                        derv.append(set(i))
                         coeff.append(1)
-                
-                #if sum_coeff == 0:
-                    #print("indices >0, but sum of coeff ==0, dont add")
-                    #print(unique[x])
-            
-                
+                    #print("now deriv:", derv)
+                    #print("now coeff:", coeff)
+
+                if sum_value < 0:
+                    for j in range(0, abs(sum_value)):
+                        derv.append(set(i))
+                        coeff.append(-1)
+                    #print("now deriv:", derv)
+                    #print("now coeff:", coeff)
+
+        #print(derv)
+        end = time.time()
+        print("\nTotal time of remove repeating:", end-start)
         self.coefflist = coeff
+        print("\nOriginal length of dervs from pie:", len(derivs))
+        print("Final length after remove repeating:", len(derv))
+
+
+
+        
+        ##unique = [list(tupl) for tupl in {tuple(item) for item in derivs }]
+        #unique = [list(x) for x in set(tuple(x) for x in derivs)]
+        #
+        ##print("Unique fragments:\n", unique)
+        #print("There are ", len(unique), "unique frags out of ", len(derivs))
+        #exit()
+        #derv = []
+        #coeff =[]
+
+        #for x in range(0, len(unique)):
+        #    index = []
+        #    value = 1
+        #    count = derivs.count(set(unique[x]))
+        #    
+        #    #if derv only appears once add it to final list
+        #    if count == 1:
+        #        derv.append(unique[x])
+        #        index = derivs.index(set(unique[x]))
+        #        coeff.append(oldcoeff[index])
+
+        #    #if derv appears more than once, add/subtract coeff to determine if needed
+        #    if count > 1:
+        #        indices = [index for index, element in enumerate(derivs) if element == set(unique[x])]
+        #        temp_coef = []
+        #        for num in indices: 
+        #            temp_coef.append(oldcoeff[num])
+        #        sum_coeff = float(sum(temp_coef))
+        #        
+        #        #if overall neg, add derv that amount of times with -1 as coeff
+        #        if sum_coeff < 0:
+        #            for i in range(0, int(abs(sum_coeff))):
+        #                derv.append(unique[x])
+        #                coeff.append(-1)
+
+        #        #if overall positive, add derv that amount of times with +1 as coeff
+        #        if sum_coeff > 0:
+        #            for i in range(0, int(sum_coeff)):
+        #                derv.append(unique[x])
+        #                coeff.append(1)
+        #        
+        #        #if sum_coeff == 0:
+        #            #print("indices >0, but sum of coeff ==0, dont add")
+        #            #print(unique[x])
+        #    
+                
+        #self.coefflist = coeff
 
         #derivatives = [list(tupl) for tupl in {tuple(item) for item in derivs }]
 
@@ -237,7 +301,6 @@ class Fragmentation():
         #    self.coefflist.append(derv_dict[key])
         #print(derivatives)
         #print(self.coefflist)
-        print(derv)
         return derv
 
     def initalize_Frag_objects(self, theory=None, basis=None, qc_backend=None, spin=None, tol=None, active_space=None, nelec=None, nelec_alpha=None, nelec_beta=None, max_memory=None, xc=None, charge=0, step_size=0.001, local_coeff=1):
@@ -359,12 +422,27 @@ class Fragmentation():
         derivs, oldcoeff, totaltime = newnewpie.start_pie(self.unique_frag, att_dict)
         end = time.time()
         print("derivs:", len(derivs))
+        
+        ### turning derivs into a list of atoms instead of a list of primitives
+        self.atomlist = []
+        for j in derivs:
+            temp = []
+            for prim in j:
+                temp.extend(list(self.molecule.prims[prim].atoms))
+            self.atomlist.append(temp)
+        
+        ### testing to make sure all atoms are only counted once
+        vec = test_atoms(self.atomlist, oldcoeff, self.molecule.natoms)
+        print("Vec should be all 1's:\n", vec)
+        print("\nTime of pie:", end-start)
+        summ = sum(vec)
+        if summ != len(vec):
+            raise ValueError("Not all atoms are counted only once!")
 
         
         ### Removes derivs that would otherwise get added then subtracted
         self.derivs = self.remove_repeatingfrags(oldcoeff, derivs)
         #print(self.derivs)
-        print("Len after remove:", len(self.derivs))
         
         ### turning derivs into a list of atoms instead of a list of primitives
         self.atomlist = []
@@ -396,7 +474,7 @@ class Fragmentation():
         #    if value != 1:
         #        raise ValueError("Not all atoms are counted only once!")
         #        break
-        #exit()
+        exit()
 
         ### Finding the attached atoms to help with adding link atoms in Fragment() class
         self.find_attached()
