@@ -419,34 +419,23 @@ class Fragmentation():
         #exit()
 
 
-        derivs, oldcoeff, totaltime = newnewpie.start_pie(self.unique_frag, att_dict)
+        derivs, oldcoeff, totaltime, derv_dict = newnewpie.start_pie(self.unique_frag, att_dict)
         end = time.time()
-        print("derivs:", len(derivs))
+        
+        #pulling out all non zero coeff fragments
+        new_dervs = []
+        new_coeff = []
+        for frag in list(derv_dict.keys()):
+            value = derv_dict[frag]
+            if value == 0:
+                continue
+            else:
+                new_dervs.append(list(frag))
+                new_coeff.append(value)
         
         ### turning derivs into a list of atoms instead of a list of primitives
         self.atomlist = []
-        for j in derivs:
-            temp = []
-            for prim in j:
-                temp.extend(list(self.molecule.prims[prim].atoms))
-            self.atomlist.append(temp)
-        
-        ### testing to make sure all atoms are only counted once
-        vec = test_atoms(self.atomlist, oldcoeff, self.molecule.natoms)
-        print("Vec should be all 1's:\n", vec)
-        print("\nTime of pie:", end-start)
-        summ = sum(vec)
-        if summ != len(vec):
-            raise ValueError("Not all atoms are counted only once!")
-
-        
-        ### Removes derivs that would otherwise get added then subtracted
-        self.derivs = self.remove_repeatingfrags(oldcoeff, derivs)
-        #print(self.derivs)
-        
-        ### turning derivs into a list of atoms instead of a list of primitives
-        self.atomlist = []
-        for j in self.derivs:
+        for j in new_dervs:
             temp = []
             for prim in j:
                 temp.extend(list(self.molecule.prims[prim].atoms))
@@ -460,14 +449,44 @@ class Fragmentation():
         print("\nLargest deriv is frag #", large)
         
         print("With", len(self.atomlist[large]), "atoms\n")
-
+        
         ### testing to make sure all atoms are only counted once
-        vec = test_atoms(self.atomlist, self.coefflist, self.molecule.natoms)
+        vec = test_atoms(self.atomlist, new_coeff, self.molecule.natoms)
         print("Vec should be all 1's:\n", vec)
         print("\nTime of pie:", end-start)
+        print("Total # of dervs:", len(self.atomlist))
         summ = sum(vec)
         if summ != len(vec):
             raise ValueError("Not all atoms are counted only once!")
+
+        ### Removes derivs that would otherwise get added then subtracted
+        #self.derivs = self.remove_repeatingfrags(oldcoeff, derivs)
+        #print(self.derivs)
+        
+        ### turning derivs into a list of atoms instead of a list of primitives
+        #self.atomlist = []
+        #for j in self.derivs:
+        #    temp = []
+        #    for prim in j:
+        #        temp.extend(list(self.molecule.prims[prim].atoms))
+        #    self.atomlist.append(temp)
+        
+        ### Counting # atoms in largest fragment
+        #count = []
+        #for i in self.atomlist:
+        #    count.append(len(i))
+        #large = np.argmax(count)
+        #print("\nLargest deriv is frag #", large)
+        
+        #print("With", len(self.atomlist[large]), "atoms\n")
+
+        ### testing to make sure all atoms are only counted once
+        #vec = test_atoms(self.atomlist, self.coefflist, self.molecule.natoms)
+        #print("Vec should be all 1's:\n", vec)
+        #print("\nTime of pie:", end-start)
+        #summ = sum(vec)
+        #if summ != len(vec):
+        #    raise ValueError("Not all atoms are counted only once!")
         #exit()
         
         #for value in vec:
