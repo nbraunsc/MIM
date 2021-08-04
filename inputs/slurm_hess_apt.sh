@@ -2,8 +2,8 @@
 #####SBATCH -p normal_q
 #SBATCH -p preemptable_q
 #SBATCH -N 1  # this requests 1 node
-#SBATCH --mem=10GB
-#SBATCH -t 08:00:00
+#SBATCH --mem=2GB
+#SBATCH -t 01:00:00
 #SBATCH --account=nmayhall_group
 #SBATCH --mail-user=nbraunsc@vt.edu
 #SBATCH --mail-type=FAIL
@@ -36,6 +36,10 @@ echo $BATCH
 
 export ERROR=${OUTFILE%%.*}.error
 echo $ERROR
+
+export TEMP=$LEVEL/"$OUTFILE.reap"
+mkdir $TEMP
+echo $TEMP
 
 #python run_opt.py $LEVEL $BATCH $FOLDER
 
