@@ -3,9 +3,9 @@
 ###SBATCH -p normal_q
 #SBATCH -p preemptable_q
 #SBATCH -N 1  # this requests 1 node. 
-#SBATCH --mem=2GB
+#SBATCH --mem=10GB
 ##SBATCH --mem-per-cpu=10GB #memory requested for each core (or CPU)
-#SBATCH -t 04:00:00
+#SBATCH -t 10:00:00
 #SBATCH --account=nmayhall_group
 ##SBATCH --mail-user=nbraunsc@vt.edu
 ##SBATCH --mail-type=FAIL,ARRAY_TASKS

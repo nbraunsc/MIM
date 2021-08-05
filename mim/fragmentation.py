@@ -324,7 +324,7 @@ class Fragmentation():
         
         self.frags = []
 
-        for fi in range(0, len(self.derivs)):
+        for fi in range(0, len(self.atomlist)):
             coeffi = self.coefflist[fi]
             attachedlist = self.attached[fi]
             frag_charge = 0
@@ -419,7 +419,7 @@ class Fragmentation():
 
 
         start = time.time()
-        derivs, oldcoeff, totaltime, derv_dict = newnewpie.start_pie(self.unique_frag, att_dict)
+        derv_dict = newnewpie.start_pie(self.unique_frag, att_dict)
         end = time.time()
         
         #pulling out all non zero coeff fragments
@@ -432,7 +432,10 @@ class Fragmentation():
             else:
                 new_dervs.append(list(frag))
                 new_coeff.append(value)
-        
+
+        self.coefflist = new_coeff 
+        self.derivs = new_dervs
+
         ### turning derivs into a list of atoms instead of a list of primitives
         self.atomlist = []
         for j in new_dervs:
