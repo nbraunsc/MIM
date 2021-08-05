@@ -408,7 +408,6 @@ class Fragmentation():
         att_dict = self.attached_frags(self.unique_frag)
 
         ### Start of Priniciple inclusion/exculsion
-        start = time.time()
         #derivs, oldcoeff = runpie.start_pie(self.unique_frag, att_dict)
         #derivs, oldcoeff = oldpie.runpie(self.unique_frag)
         #derivs, oldcoeff = newpie.start_pie(self.unique_frag, att_dict)
@@ -419,6 +418,7 @@ class Fragmentation():
         #exit()
 
 
+        start = time.time()
         derivs, oldcoeff, totaltime, derv_dict = newnewpie.start_pie(self.unique_frag, att_dict)
         end = time.time()
         
@@ -493,7 +493,8 @@ class Fragmentation():
         #    if value != 1:
         #        raise ValueError("Not all atoms are counted only once!")
         #        break
-        exit()
+        
+        #exit()
 
         ### Finding the attached atoms to help with adding link atoms in Fragment() class
         self.find_attached()

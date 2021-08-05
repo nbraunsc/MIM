@@ -9,7 +9,7 @@ mim_levels = 1
 frag_type = 'distance' 
 
 #smaller fragmentation level
-frag_deg = 2.6
+frag_deg = 1.6
 
 #larger fragmentation level
 frag_deg_large = 3.6

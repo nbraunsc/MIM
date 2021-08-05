@@ -49,7 +49,7 @@ for i in dirlist:
             print(bash)
             if queue == 'local':
                 #cmd = 'python %s %s %s %s >> run_error.txt'%(script, path, string_num, folder)
-                cmd = 'python %s %s %s %s'%(script, path, string_num, folder)
+                cmd = 'python %s %s %s %s dumb.txt'%(script, path, string_num, folder)
             if queue =='slurm':
                 #cmd = 'sbatch -e %s -J %s -o "%s" --export=LEVEL="%s",FOLDER="%s",BATCH="%s",OUTFILE="%s" %s'%(path+"/"+submit_name[:10]+".error", submit_name[:10], path+"/"+submit_name[:10]+".log", path, folder, string_num, submit_name[:10]+".log", script)     ##For TinkerCliffs/Huckleberry
                 cmd = 'sbatch -e %s -J %s -o "%s" -c "%s" --export=LEVEL="%s",FOLDER="%s",OUTFILE="%s" %s "%s"'%(path+"/"+submit_name[:10]+".error", submit_name[:10], path+"/"+submit_name[:10]+".log", len(batch_list), path, folder, submit_name[:10]+".log", script, bash)     ##For TinkerCliffs/Huckleberry
