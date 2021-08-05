@@ -1,8 +1,12 @@
+
+import os
+import sys
+os.environ['OPENBLAS_NUM_THREADS'] = '1'
+
 import numpy as np
 import pickle
 import dill
-import os
-import sys
+
 
 directory = sys.argv[1] #should be the directory of mim level
 single_frag = sys.argv[2]
