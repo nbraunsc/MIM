@@ -31,6 +31,7 @@ for i in levels:
             if var == -1:
                 infile.close()
                 print(status)
+                print(j, "has the issue")
                 exit()
             status_list.append(var)
             infile.close()

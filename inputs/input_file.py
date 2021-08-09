@@ -38,7 +38,7 @@ stepsize = 0.001
 batch_size = 11
 
 #geometry optimization set to True or False
-opt = True
+opt = False
 
 #special params for primitive
 #atom = 'Si'
