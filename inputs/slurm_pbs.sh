@@ -1,12 +1,15 @@
 #!/bin/bash
 
 ###SBATCH -p normal_q
+
 #SBATCH -p preemptable_q
 #SBATCH -N 1  # this requests 1 node. 
-#SBATCH --mem=10GB
+##SBATCH --mem=30GB
 ##SBATCH --mem-per-cpu=10GB #memory requested for each core (or CPU)
 #SBATCH -t 10:00:00
 #SBATCH --account=nmayhall_group
+#SBATCH --exclusive # this requests exclusive access to node for interactive jobs
+
 ##SBATCH --mail-user=nbraunsc@vt.edu
 ##SBATCH --mail-type=FAIL,ARRAY_TASKS
 
@@ -36,8 +39,16 @@ echo $OUTFILE
 export ERROR=${OUTFILE%%.*}.error
 echo $ERROR
 
+
 export TEMP=$LEVEL/"$OUTFILE.scr"
-mkdir $TEMP
+if [ -d $TEMP ] 
+then
+    rm -r $TEMP
+    mkdir $TEMP
+else
+    mkdir $TEMP
+fi
+
 echo $TEMP
 
 #Start an rsync command which runs in the background and keeps a local version of the output file up to date
@@ -70,8 +81,9 @@ echo $len
 while [ $(ls -lR ./*.status | wc -l) != $len1 ]
 do
     echo "Jobs Not Done Yet"
-    if grep -q Killed $LEVEL/$ERROR; then
-        sendmail nbraunsc@vt.edu < $LEVEL/$OUTFILE
+    if grep -w 'Killed\|child\|Segmentation\|memory\|TIME' $LEVEL/$ERROR; then
+        echo $SBATCH_JOB_NAME >> $LEVEL/$ERROR 
+        sendmail nbraunsc@vt.edu < $LEVEL/$ERROR 
         echo "Job Killed, email sent"
         kill $$
         fi

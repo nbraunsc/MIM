@@ -74,7 +74,6 @@ for i in dirlist:
     os.chdir('../')
 os.chdir('../')
 
-print("Command list:", command_list)
 for command in command_list:
     print("\n Submitting job:", command, "\n")
     os.system(command)
