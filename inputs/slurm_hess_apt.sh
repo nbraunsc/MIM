@@ -1,10 +1,10 @@
 #!/bin/bash
-###SBATCH -p normal_q
+#SBATCH -p normal_q
 
-#SBATCH -p preemptable_q
+###SBATCH -p preemptable_q
 #SBATCH -N 1  # this requests 1 node
 ##SBATCH --mem=10GB
-#SBATCH -t 10:05:00
+#SBATCH -t 6:00:00
 #SBATCH --account=nmayhall_group
 #SBATCH --exclusive # this requests exclusive access to node for interactive jobs
 
