@@ -1,17 +1,19 @@
 #!/bin/bash
 
-###SBATCH -p normal_q
+#SBATCH -p normal_q
 
-#SBATCH -p preemptable_q
+##SBATCH -p preemptable_q
 #SBATCH -N 1  # this requests 1 node. 
-##SBATCH --mem=30GB
+##SBATCH --mem=100GB
 ##SBATCH --mem-per-cpu=10GB #memory requested for each core (or CPU)
-#SBATCH -t 10:00:00
+#SBATCH -t 05:00:00
 #SBATCH --account=nmayhall_group
 #SBATCH --exclusive # this requests exclusive access to node for interactive jobs
 
 ##SBATCH --mail-user=nbraunsc@vt.edu
 ##SBATCH --mail-type=FAIL,ARRAY_TASKS
+
+export OMP_NUM_THREADS=2
 
 #Remake my environment if HOME variable not set
 if [ -z ${HOME+x} ];
