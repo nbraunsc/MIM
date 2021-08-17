@@ -172,84 +172,84 @@ class Fragmentation():
             self.attached.append(fragi) 
 
 
-    def remove_repeatingfrags(self, oldcoeff, derivs):
-        """ Removes the repeating derivatives. Function gets called in self.do_fragmentation().
-        
-        The repeating derivatives are the exact same derivatives that would be added then subtracted
-        again during the principle of inclusion-exculsion process of MIM.  This also updates the self.derivs
-        and self.coefflist that are used with Fragment() class instances.
-        
-        Parameters
-        ----------
-        oldcoeff : list
-            List of coefficients that is the output of runpie() function that is called in self.do_fragmentation().
-        
-        Returns
-        -------
-        self.coefflist : list
-            List of coefficents where index of coeff correlates to that fragment
-            
-        """
-        start = time.time()
-        derv = []
-        coeff =[]
-        
-        #x = Counter(map(tuple, derivs))
-        #keylist = list(x.keys())
-        #print(x)
-        #print("keylist:", len(keylist))
-        #print("keylist:", keylist, len(keylist))
-
-
-        #testing sorted thing
-        sortlist = []
-        for frag in derivs:
-            #sorted makes into a list
-            newfrag = sorted(frag)
-            sortlist.append(newfrag)
-        
-        y = Counter(map(tuple, sortlist))
-        #keylist is a list of tuples
-        keylist = list(y.keys())
-        
-        for i in keylist:
-            count = y[i]
-            #count = x[i]
-            if count == 1:
-                derv.append(set(i))
-                position = sortlist.index(list(i))
-                #position = derivs.index(set(i))
-                coeff.append(oldcoeff[position])
-            else:
-                #indices = [index for index, element in enumerate(derivs) if element == set(i)]
-                indices = [index for index, element in enumerate(sortlist) if element == list(i)]
-                sum_value = 0
-                for num in indices:
-                    sum_value += oldcoeff[num]
-                
-                #print("Fragment", i, "has sum value of :", sum_value)
-
-                if sum_value > 0:
-                    for k in range(0, abs(sum_value)):
-                        derv.append(set(i))
-                        coeff.append(1)
-                    #print("now deriv:", derv)
-                    #print("now coeff:", coeff)
-
-                if sum_value < 0:
-                    for j in range(0, abs(sum_value)):
-                        derv.append(set(i))
-                        coeff.append(-1)
-                    #print("now deriv:", derv)
-                    #print("now coeff:", coeff)
-
-        #print(derv)
-        end = time.time()
-        print("\nTotal time of remove repeating:", end-start)
-        self.coefflist = coeff
-        print("\nOriginal length of dervs from pie:", len(derivs))
-        print("Final length after remove repeating:", len(derv))
-
+#    def remove_repeatingfrags(self, oldcoeff, derivs):
+#        """ Removes the repeating derivatives. Function gets called in self.do_fragmentation().
+#        
+#        The repeating derivatives are the exact same derivatives that would be added then subtracted
+#        again during the principle of inclusion-exculsion process of MIM.  This also updates the self.derivs
+#        and self.coefflist that are used with Fragment() class instances.
+#        
+#        Parameters
+#        ----------
+#        oldcoeff : list
+#            List of coefficients that is the output of runpie() function that is called in self.do_fragmentation().
+#        
+#        Returns
+#        -------
+#        self.coefflist : list
+#            List of coefficents where index of coeff correlates to that fragment
+#            
+#        """
+#        start = time.time()
+#        derv = []
+#        coeff =[]
+#        
+#        #x = Counter(map(tuple, derivs))
+#        #keylist = list(x.keys())
+#        #print(x)
+#        #print("keylist:", len(keylist))
+#        #print("keylist:", keylist, len(keylist))
+#
+#
+#        #testing sorted thing
+#        sortlist = []
+#        for frag in derivs:
+#            #sorted makes into a list
+#            newfrag = sorted(frag)
+#            sortlist.append(newfrag)
+#        
+#        y = Counter(map(tuple, sortlist))
+#        #keylist is a list of tuples
+#        keylist = list(y.keys())
+#        
+#        for i in keylist:
+#            count = y[i]
+#            #count = x[i]
+#            if count == 1:
+#                derv.append(set(i))
+#                position = sortlist.index(list(i))
+#                #position = derivs.index(set(i))
+#                coeff.append(oldcoeff[position])
+#            else:
+#                #indices = [index for index, element in enumerate(derivs) if element == set(i)]
+#                indices = [index for index, element in enumerate(sortlist) if element == list(i)]
+#                sum_value = 0
+#                for num in indices:
+#                    sum_value += oldcoeff[num]
+#                
+#                #print("Fragment", i, "has sum value of :", sum_value)
+#
+#                if sum_value > 0:
+#                    for k in range(0, abs(sum_value)):
+#                        derv.append(set(i))
+#                        coeff.append(1)
+#                    #print("now deriv:", derv)
+#                    #print("now coeff:", coeff)
+#
+#                if sum_value < 0:
+#                    for j in range(0, abs(sum_value)):
+#                        derv.append(set(i))
+#                        coeff.append(-1)
+#                    #print("now deriv:", derv)
+#                    #print("now coeff:", coeff)
+#
+#        #print(derv)
+#        end = time.time()
+#        print("\nTotal time of remove repeating:", end-start)
+#        self.coefflist = coeff
+#        print("\nOriginal length of dervs from pie:", len(derivs))
+#        print("Final length after remove repeating:", len(derv))
+#
 
 
         
