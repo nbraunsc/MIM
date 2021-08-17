@@ -74,7 +74,7 @@ def recurse(f_curr, indices, old_coeff, fraglist, prim_dict, derv_dict):
         #    exit()
         f_new = sorted(set(f_curr).intersection(set(fraglist[fk])))
         try:
-            derv_dict[tuple(f_new)]+=old_coeff*-1
+            derv_dict[tuple(f_new)]+= old_coeff*-1
         except:
             derv_dict[tuple(f_new)] = old_coeff*-1
         #f_new = f_curr.intersection(fraglist[fk])
