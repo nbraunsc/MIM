@@ -17,14 +17,14 @@ path = os.getcwd() + "/" + folder
 x = np.load(path + 'freq.npy')
 ydata = np.load(path + 'intensity.npy')
 
-freq = np.array(x[68:])
-y = np.array(ydata[68:])
+freq = np.array(x[1000:])
+y = np.array(ydata[1000:])
 print(freq)
 print(freq.shape)
-print(type(freq))
+#print(type(freq))
 y_log = np.log(y)
-print(y_log)
-print(y_log.shape, type(y_log))
+#print(y_log)
+#print(y_log.shape, type(y_log))
 
 def gaussian(freq, y_log):
     xvalues = []
@@ -52,8 +52,8 @@ def mult_lorentizan(freq, y, peak_width):
     xvalues = []
     yvalues = []
     for i in range(0, freq.shape[0]):
-        x_data = np.arange(freq[i]-200, freq[i]+200, 10)
-        print(len(x_data))
+        x_data = np.arange(freq[i]-400, freq[i]+400, 10)
+        #print(len(x_data))
         x0 = freq[i]
         scale = 1/(np.pi*y[i])
         tempy = []
@@ -87,10 +87,13 @@ final[:,2] = -np.log10(finaly/100)    #%abs
 final[:,3] = finaly/100 #%transmittance
 pd.DataFrame(final).to_csv("xy.csv")
 
+#Save x and y values
+np.save("x4", finalx)
+np.save("y4", finaly)
 
 plt.plot(finalx, finaly)
 #plt.xlim([np.min(finalx)-5, np.max(finalx)+5])
-plt.xlim([5000, 300])
+plt.xlim([3200, 900])
 #plt.ylim(max(y_data), min(y_data))
 plt.show()
 

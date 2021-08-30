@@ -1,0 +1,2306 @@
+test240/
+/home/nbraunsc/MIM/inputs/test240/frag1
+fragment name: fragment85.dill
+spin: 0
+charge: 0
+converged SCF energy = -79.6834563013859
+--------------- RKS gradients ---------------
+         x                y                z
+0 C    -0.0060570891    -0.0056677716     0.0056987997
+1 C     0.0056677717     0.0060570891    -0.0056987997
+2 H     0.0023402231     0.0031512858    -0.0022468605
+3 H     0.0032392554     0.0021329636    -0.0021336775
+4 H     0.0023430207     0.0022489404    -0.0031573671
+5 H    -0.0022489404    -0.0023430207     0.0031573671
+6 H    -0.0031512858    -0.0023402231     0.0022468605
+7 H    -0.0021329636    -0.0032392554     0.0021336775
+----------------------------------------------
+/home/nbraunsc/.conda/envs/mim_env/lib/python3.7/site-packages/pyscf/lib/misc.py:46: H5pyDeprecationWarning: Using default_file_mode other than 'r' is deprecated. Pass the mode to h5py.File() instead.
+  h5py.get_config().default_file_mode = 'a'
+Done! 
+
+test240/
+/home/nbraunsc/MIM/inputs/test240/frag1
+fragment name: fragment85.dill
+spin: 0
+charge: 0
+converged SCF energy = -79.683407290399
+--------------- RKS gradients ---------------
+         x                y                z
+0 C    -0.0061336861    -0.0058418237     0.0058861437
+1 C     0.0058887216     0.0061698591    -0.0059133712
+2 H     0.0001814851     0.0050574566    -0.0000994297
+3 H     0.0051285974     0.0000321056    -0.0000154808
+4 H     0.0001279570     0.0000627405    -0.0050947329
+5 H    -0.0001145501    -0.0001806361     0.0050328418
+6 H    -0.0050082904    -0.0002245823     0.0001461516
+7 H    -0.0000702413    -0.0050751251     0.0000578798
+----------------------------------------------
+/home/nbraunsc/.conda/envs/mim_env/lib/python3.7/site-packages/pyscf/lib/misc.py:46: H5pyDeprecationWarning: Using default_file_mode other than 'r' is deprecated. Pass the mode to h5py.File() instead.
+  h5py.get_config().default_file_mode = 'a'
+Done! 
+
+test240/
+/home/nbraunsc/MIM/inputs/test240/frag1
+fragment name: fragment85.dill
+spin: 0
+charge: 0
+converged SCF energy = -79.683000158075
+--------------- RKS gradients ---------------
+         x                y                z
+0 C    -0.0060811963    -0.0059577690     0.0061429019
+1 C     0.0061178521     0.0062326081    -0.0057234634
+2 H    -0.0021695149     0.0071377207     0.0022425152
+3 H     0.0071712598    -0.0022273536     0.0022768415
+4 H    -0.0023762533    -0.0023991263    -0.0072845659
+5 H     0.0022007042     0.0021787987     0.0070640501
+6 H    -0.0071896315     0.0022578735    -0.0023358754
+7 H     0.0023267588    -0.0072227840    -0.0023824255
+----------------------------------------------
+/home/nbraunsc/.conda/envs/mim_env/lib/python3.7/site-packages/pyscf/lib/misc.py:46: H5pyDeprecationWarning: Using default_file_mode other than 'r' is deprecated. Pass the mode to h5py.File() instead.
+  h5py.get_config().default_file_mode = 'a'
+Done! 
+
+test240/
+/home/nbraunsc/MIM/inputs/test240/frag1
+fragment name: fragment85.dill
+spin: 0
+charge: 0
+converged SCF energy = -79.6827728580751
+--------------- RKS gradients ---------------
+         x                y                z
+0 C    -0.0059713484    -0.0059466959     0.0062850948
+1 C     0.0061783280     0.0062157033    -0.0048003677
+2 H    -0.0028092723     0.0077136695     0.0028935675
+3 H     0.0077181758    -0.0028211263     0.0028989973
+4 H    -0.0031502309    -0.0031567901    -0.0079660004
+5 H     0.0028518062     0.0028479352     0.0076414478
+6 H    -0.0082750643     0.0034361121    -0.0034678040
+7 H     0.0034575721    -0.0082888466    -0.0034850660
+----------------------------------------------
+/home/nbraunsc/.conda/envs/mim_env/lib/python3.7/site-packages/pyscf/lib/misc.py:46: H5pyDeprecationWarning: Using default_file_mode other than 'r' is deprecated. Pass the mode to h5py.File() instead.
+  h5py.get_config().default_file_mode = 'a'
+Done! 
+
+test240/
+/home/nbraunsc/MIM/inputs/test240/frag1
+fragment name: fragment85.dill
+spin: 0
+charge: 0
+converged SCF energy = -79.6826865010089
+--------------- RKS gradients ---------------
+         x                y                z
+0 C    -0.0058872434    -0.0059003231     0.0063826383
+1 C     0.0061646548     0.0061694291    -0.0038134139
+2 H    -0.0029103546     0.0077254898     0.0029226657
+3 H     0.0077213845    -0.0029035802     0.0029181201
+4 H    -0.0031385214    -0.0031367420    -0.0079607005
+5 H     0.0028682934     0.0028702887     0.0077646886
+6 H    -0.0090273025     0.0042072502    -0.0041053623
+7 H     0.0042090821    -0.0090318187    -0.0041089176
+----------------------------------------------
+/home/nbraunsc/.conda/envs/mim_env/lib/python3.7/site-packages/pyscf/lib/misc.py:46: H5pyDeprecationWarning: Using default_file_mode other than 'r' is deprecated. Pass the mode to h5py.File() instead.
+  h5py.get_config().default_file_mode = 'a'
+Done! 
+
+test240/
+/home/nbraunsc/MIM/inputs/test240/frag1
+fragment name: fragment85.dill
+spin: 0
+charge: 0
+converged SCF energy = -79.6827441711881
+--------------- RKS gradients ---------------
+         x                y                z
+0 C    -0.0060366422    -0.0060482675     0.0062212230
+1 C     0.0061713612     0.0061732031    -0.0028406288
+2 H    -0.0025420914     0.0074765104     0.0026346814
+3 H     0.0074726119    -0.0025368983     0.0026311250
+4 H    -0.0028211553    -0.0028198465    -0.0076566189
+5 H     0.0026191850     0.0026201104     0.0074696131
+6 H    -0.0091340593     0.0042709927    -0.0042296343
+7 H     0.0042707764    -0.0091358172    -0.0042300994
+----------------------------------------------
+/home/nbraunsc/.conda/envs/mim_env/lib/python3.7/site-packages/pyscf/lib/misc.py:46: H5pyDeprecationWarning: Using default_file_mode other than 'r' is deprecated. Pass the mode to h5py.File() instead.
+  h5py.get_config().default_file_mode = 'a'
+Done! 
+
+spin: 0
+charge: 0
+converged SCF energy = -79.682744171188
+--------------- RKS gradients ---------------
+         x                y                z
+0 C    -0.0060366422    -0.0060482675     0.0062212230
+1 C     0.0061713612     0.0061732031    -0.0028406288
+2 H    -0.0025420914     0.0074765104     0.0026346814
+3 H     0.0074726119    -0.0025368983     0.0026311250
+4 H    -0.0028211553    -0.0028198465    -0.0076566189
+5 H     0.0026191850     0.0026201104     0.0074696131
+6 H    -0.0091340593     0.0042709927    -0.0042296343
+7 H     0.0042707764    -0.0091358172    -0.0042300994
+----------------------------------------------
+Done! 
+
+converged SCF energy = -79.1921460597944
+Dipole moment(X, Y, Z, Debye): -0.00023, -0.00102,  0.00708
+converged SCF energy = -79.6827546144385
+**** MO energy ****
+MO #1   energy= -9.88255043714853  occ= 2
+MO #2   energy= -9.88171569720049  occ= 2
+MO #3   energy= -0.669415602417191 occ= 2
+MO #4   energy= -0.541032823742928 occ= 2
+MO #5   energy= -0.379509046769067 occ= 2
+MO #6   energy= -0.379197310478722 occ= 2
+MO #7   energy= -0.307519341319603 occ= 2
+MO #8   energy= -0.294260665868131 occ= 2
+MO #9   energy= -0.293904163445503 occ= 2
+MO #10  energy= 0.07539243102824   occ= 0
+MO #11  energy= 0.128913444628811  occ= 0
+MO #12  energy= 0.132976094279914  occ= 0
+MO #13  energy= 0.133488833504591  occ= 0
+MO #14  energy= 0.156248055937131  occ= 0
+MO #15  energy= 0.156686127660067  occ= 0
+MO #16  energy= 0.190799995602171  occ= 0
+MO #17  energy= 0.513296794355796  occ= 0
+MO #18  energy= 0.539255178667628  occ= 0
+MO #19  energy= 0.53974687621604   occ= 0
+MO #20  energy= 0.608278214029398  occ= 0
+MO #21  energy= 0.608534019636982  occ= 0
+MO #22  energy= 0.60897255140035   occ= 0
+MO #23  energy= 0.827530505862531  occ= 0
+MO #24  energy= 0.867049575040032  occ= 0
+MO #25  energy= 0.868039350067533  occ= 0
+MO #26  energy= 0.908248854297182  occ= 0
+MO #27  energy= 0.919037366256734  occ= 0
+MO #28  energy= 0.919960860758848  occ= 0
+MO #29  energy= 1.04561366058323   occ= 0
+MO #30  energy= 1.39100754763407   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31269
+charge of  1C =     -0.31098
+charge of  2H =      0.10420
+charge of  3H =      0.10452
+charge of  4H =      0.10416
+charge of  5H =      0.10440
+charge of  6H =      0.10321
+charge of  7H =      0.10318
+Dipole moment(X, Y, Z, Debye): -0.00044, -0.00090,  0.00603
+Dipole moment(X, Y, Z, Debye): -0.00044, -0.00090,  0.00603
+converged SCF energy = -79.192135941021
+Dipole moment(X, Y, Z, Debye): -0.00140, -0.00062,  0.00667
+converged SCF energy = -79.6827319746764
+**** MO energy ****
+MO #1   energy= -9.88258168976466  occ= 2
+MO #2   energy= -9.88167422355318  occ= 2
+MO #3   energy= -0.669260074109273 occ= 2
+MO #4   energy= -0.541099705621399 occ= 2
+MO #5   energy= -0.379549774154825 occ= 2
+MO #6   energy= -0.379108799539625 occ= 2
+MO #7   energy= -0.307250482226045 occ= 2
+MO #8   energy= -0.294473854052632 occ= 2
+MO #9   energy= -0.293946662750947 occ= 2
+MO #10  energy= 0.0753999551790011 occ= 0
+MO #11  energy= 0.128929235901598  occ= 0
+MO #12  energy= 0.133093509305822  occ= 0
+MO #13  energy= 0.133700502084998  occ= 0
+MO #14  energy= 0.156127560145963  occ= 0
+MO #15  energy= 0.156778477075902  occ= 0
+MO #16  energy= 0.190357658828866  occ= 0
+MO #17  energy= 0.5136137440865    occ= 0
+MO #18  energy= 0.539064611027994  occ= 0
+MO #19  energy= 0.539721425854817  occ= 0
+MO #20  energy= 0.608231663893481  occ= 0
+MO #21  energy= 0.608249383568899  occ= 0
+MO #22  energy= 0.608602125282045  occ= 0
+MO #23  energy= 0.82751151006001   occ= 0
+MO #24  energy= 0.867117448441056  occ= 0
+MO #25  energy= 0.868402357407415  occ= 0
+MO #26  energy= 0.908486109437573  occ= 0
+MO #27  energy= 0.918955594627497  occ= 0
+MO #28  energy= 0.920180590728696  occ= 0
+MO #29  energy= 1.04573814219685   occ= 0
+MO #30  energy= 1.39087052513103   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31297
+charge of  1C =     -0.31105
+charge of  2H =      0.10455
+charge of  3H =      0.10424
+charge of  4H =      0.10450
+charge of  5H =      0.10440
+charge of  6H =      0.10315
+charge of  7H =      0.10318
+Dipole moment(X, Y, Z, Debye): -0.00108, -0.00062,  0.00575
+Dipole moment(X, Y, Z, Debye): -0.00108, -0.00062,  0.00575
+converged SCF energy = -79.1921460832718
+Dipole moment(X, Y, Z, Debye): -0.00102, -0.00024,  0.00708
+converged SCF energy = -79.6827546364111
+**** MO energy ****
+MO #1   energy= -9.88255043593087  occ= 2
+MO #2   energy= -9.88171569499753  occ= 2
+MO #3   energy= -0.669415602063877 occ= 2
+MO #4   energy= -0.541032820094171 occ= 2
+MO #5   energy= -0.37950856296519  occ= 2
+MO #6   energy= -0.37919778858146  occ= 2
+MO #7   energy= -0.307519318424069 occ= 2
+MO #8   energy= -0.294259917877862 occ= 2
+MO #9   energy= -0.293904939627944 occ= 2
+MO #10  energy= 0.0753924362815763 occ= 0
+MO #11  energy= 0.128913463018328  occ= 0
+MO #12  energy= 0.132976280576511  occ= 0
+MO #13  energy= 0.133488654926843  occ= 0
+MO #14  energy= 0.156249047144852  occ= 0
+MO #15  energy= 0.156685119082217  occ= 0
+MO #16  energy= 0.190799997025819  occ= 0
+MO #17  energy= 0.513296801649103  occ= 0
+MO #18  energy= 0.539255781133235  occ= 0
+MO #19  energy= 0.53974626845772   occ= 0
+MO #20  energy= 0.608278796397826  occ= 0
+MO #21  energy= 0.608534894514049  occ= 0
+MO #22  energy= 0.608971087118824  occ= 0
+MO #23  energy= 0.82753051646929   occ= 0
+MO #24  energy= 0.867050664942775  occ= 0
+MO #25  energy= 0.868038315395035  occ= 0
+MO #26  energy= 0.90824890361504   occ= 0
+MO #27  energy= 0.919038677055256  occ= 0
+MO #28  energy= 0.919959411245724  occ= 0
+MO #29  energy= 1.04561364288125   occ= 0
+MO #30  energy= 1.39100754594689   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31269
+charge of  1C =     -0.31098
+charge of  2H =      0.10452
+charge of  3H =      0.10421
+charge of  4H =      0.10416
+charge of  5H =      0.10440
+charge of  6H =      0.10318
+charge of  7H =      0.10321
+Dipole moment(X, Y, Z, Debye): -0.00090, -0.00044,  0.00603
+Dipole moment(X, Y, Z, Debye): -0.00090, -0.00044,  0.00603
+converged SCF energy = -79.192135917561
+Dipole moment(X, Y, Z, Debye): -0.00062, -0.00141,  0.00667
+converged SCF energy = -79.6827319527235
+**** MO energy ****
+MO #1   energy= -9.88258169098287  occ= 2
+MO #2   energy= -9.88167422575305  occ= 2
+MO #3   energy= -0.669260074467251 occ= 2
+MO #4   energy= -0.541099709248355 occ= 2
+MO #5   energy= -0.379550120060579 occ= 2
+MO #6   energy= -0.379108459377996 occ= 2
+MO #7   energy= -0.30725050514722  occ= 2
+MO #8   energy= -0.294474365597601 occ= 2
+MO #9   energy= -0.293946122950872 occ= 2
+MO #10  energy= 0.0753999499159055 occ= 0
+MO #11  energy= 0.128929217753108  occ= 0
+MO #12  energy= 0.133093354595407  occ= 0
+MO #13  energy= 0.133700648767276  occ= 0
+MO #14  energy= 0.15612689696693   occ= 0
+MO #15  energy= 0.156779157672781  occ= 0
+MO #16  energy= 0.190357657423801  occ= 0
+MO #17  energy= 0.513613736596987  occ= 0
+MO #18  energy= 0.539064165533976  occ= 0
+MO #19  energy= 0.539721876809559  occ= 0
+MO #20  energy= 0.608230328453706  occ= 0
+MO #21  energy= 0.608248572559617  occ= 0
+MO #22  energy= 0.608604278917149  occ= 0
+MO #23  energy= 0.827511499502741  occ= 0
+MO #24  energy= 0.867116599776017  occ= 0
+MO #25  energy= 0.868403150730644  occ= 0
+MO #26  energy= 0.908486055599096  occ= 0
+MO #27  energy= 0.918954656796832  occ= 0
+MO #28  energy= 0.920181671862226  occ= 0
+MO #29  energy= 1.04573815978888   occ= 0
+MO #30  energy= 1.39087052675606   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31297
+charge of  1C =     -0.31105
+charge of  2H =      0.10423
+charge of  3H =      0.10455
+charge of  4H =      0.10450
+charge of  5H =      0.10440
+charge of  6H =      0.10318
+charge of  7H =      0.10315
+Dipole moment(X, Y, Z, Debye): -0.00062, -0.00108,  0.00575
+Dipole moment(X, Y, Z, Debye): -0.00062, -0.00108,  0.00575
+converged SCF energy = -79.1921357094799
+Dipole moment(X, Y, Z, Debye): -0.00061, -0.00062,  0.00746
+converged SCF energy = -79.6827316258177
+**** MO energy ****
+MO #1   energy= -9.88258154463244  occ= 2
+MO #2   energy= -9.88167393356552  occ= 2
+MO #3   energy= -0.669260312301325 occ= 2
+MO #4   energy= -0.54109960201088  occ= 2
+MO #5   energy= -0.379438552093689 occ= 2
+MO #6   energy= -0.379221312570312 occ= 2
+MO #7   energy= -0.3072462158233   occ= 2
+MO #8   energy= -0.29432329966532  occ= 2
+MO #9   energy= -0.294100197598419 occ= 2
+MO #10  energy= 0.0753991107785572 occ= 0
+MO #11  energy= 0.128933292904824  occ= 0
+MO #12  energy= 0.133161875181589  occ= 0
+MO #13  energy= 0.133624089109146  occ= 0
+MO #14  energy= 0.156322078268278  occ= 0
+MO #15  energy= 0.156589866128253  occ= 0
+MO #16  energy= 0.190357256173822  occ= 0
+MO #17  energy= 0.513611120045376  occ= 0
+MO #18  energy= 0.53920477551982   occ= 0
+MO #19  energy= 0.539584954532866  occ= 0
+MO #20  energy= 0.608027822100957  occ= 0
+MO #21  energy= 0.608516749261076  occ= 0
+MO #22  energy= 0.608536901704793  occ= 0
+MO #23  energy= 0.827500058142953  occ= 0
+MO #24  energy= 0.867368277790998  occ= 0
+MO #25  energy= 0.868169187934687  occ= 0
+MO #26  energy= 0.90841673727757   occ= 0
+MO #27  energy= 0.919258710229943  occ= 0
+MO #28  energy= 0.919944726308288  occ= 0
+MO #29  energy= 1.04573624320014   occ= 0
+MO #30  energy= 1.39087003586697   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31297
+charge of  1C =     -0.31105
+charge of  2H =      0.10455
+charge of  3H =      0.10455
+charge of  4H =      0.10419
+charge of  5H =      0.10437
+charge of  6H =      0.10318
+charge of  7H =      0.10318
+Dipole moment(X, Y, Z, Debye): -0.00062, -0.00062,  0.00621
+Dipole moment(X, Y, Z, Debye): -0.00062, -0.00062,  0.00621
+converged SCF energy = -79.1921462913265
+Dipole moment(X, Y, Z, Debye): -0.00102, -0.00103,  0.00629
+converged SCF energy = -79.6827549632743
+**** MO energy ****
+MO #1   energy= -9.88255058318697  occ= 2
+MO #2   energy= -9.88171598667198  occ= 2
+MO #3   energy= -0.669415363866711 occ= 2
+MO #4   energy= -0.54103292747059  occ= 2
+MO #5   energy= -0.37959947494565  occ= 2
+MO #6   energy= -0.37910559312188  occ= 2
+MO #7   energy= -0.307523593996968 occ= 2
+MO #8   energy= -0.294376828895438 occ= 2
+MO #9   energy= -0.293785032859643 occ= 2
+MO #10  energy= 0.0753932792665555 occ= 0
+MO #11  energy= 0.128909317522236  occ= 0
+MO #12  energy= 0.132912504886514  occ= 0
+MO #13  energy= 0.13356051132435   occ= 0
+MO #14  energy= 0.156095100513934  occ= 0
+MO #15  energy= 0.156833209841984  occ= 0
+MO #16  energy= 0.190800389035121  occ= 0
+MO #17  energy= 0.513299379598709  occ= 0
+MO #18  energy= 0.539134071851061  occ= 0
+MO #19  energy= 0.539864365029852  occ= 0
+MO #20  energy= 0.608308911803069  occ= 0
+MO #21  energy= 0.608586802651984  occ= 0
+MO #22  energy= 0.608890729349718  occ= 0
+MO #23  energy= 0.827542003792979  occ= 0
+MO #24  energy= 0.866836904013264  occ= 0
+MO #25  energy= 0.868234039059423  occ= 0
+MO #26  energy= 0.90831714529084   occ= 0
+MO #27  energy= 0.918791849175763  occ= 0
+MO #28  energy= 0.92014046972337   occ= 0
+MO #29  energy= 1.04561557647127   occ= 0
+MO #30  energy= 1.39100804148021   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31269
+charge of  1C =     -0.31098
+charge of  2H =      0.10420
+charge of  3H =      0.10421
+charge of  4H =      0.10447
+charge of  5H =      0.10443
+charge of  6H =      0.10318
+charge of  7H =      0.10318
+Dipole moment(X, Y, Z, Debye): -0.00090, -0.00090,  0.00557
+Dipole moment(X, Y, Z, Debye): -0.00090, -0.00090,  0.00557
+converged SCF energy = -79.1921357758185
+Dipole moment(X, Y, Z, Debye): -0.00022, -0.00105,  0.00708
+converged SCF energy = -79.6827317262482
+**** MO energy ****
+MO #1   energy= -9.88254529657229  occ= 2
+MO #2   energy= -9.88171040478804  occ= 2
+MO #3   energy= -0.669259671014868 occ= 2
+MO #4   energy= -0.541100716587036 occ= 2
+MO #5   energy= -0.379548618204753 occ= 2
+MO #6   energy= -0.379108914441626 occ= 2
+MO #7   energy= -0.307250562368228 occ= 2
+MO #8   energy= -0.294474225219927 occ= 2
+MO #9   energy= -0.293946542525661 occ= 2
+MO #10  energy= 0.0753993226903044 occ= 0
+MO #11  energy= 0.12892847131147   occ= 0
+MO #12  energy= 0.133090839153657  occ= 0
+MO #13  energy= 0.133703786724028  occ= 0
+MO #14  energy= 0.156131475396797  occ= 0
+MO #15  energy= 0.156775631173313  occ= 0
+MO #16  energy= 0.190358170352801  occ= 0
+MO #17  energy= 0.513612257863405  occ= 0
+MO #18  energy= 0.539066371421416  occ= 0
+MO #19  energy= 0.539723886517559  occ= 0
+MO #20  energy= 0.60808403980214   occ= 0
+MO #21  energy= 0.608373832492165  occ= 0
+MO #22  energy= 0.608622353862897  occ= 0
+MO #23  energy= 0.827508304141031  occ= 0
+MO #24  energy= 0.867118090700232  occ= 0
+MO #25  energy= 0.868414607113299  occ= 0
+MO #26  energy= 0.908446845839939  occ= 0
+MO #27  energy= 0.91896721989082   occ= 0
+MO #28  energy= 0.920200109372323  occ= 0
+MO #29  energy= 1.04573825606731   occ= 0
+MO #30  energy= 1.39087083106155   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31286
+charge of  1C =     -0.31115
+charge of  2H =      0.10437
+charge of  3H =      0.10435
+charge of  4H =      0.10433
+charge of  5H =      0.10457
+charge of  6H =      0.10303
+charge of  7H =      0.10335
+Dipole moment(X, Y, Z, Debye): -0.00042, -0.00092,  0.00603
+Dipole moment(X, Y, Z, Debye): -0.00042, -0.00092,  0.00603
+converged SCF energy = -79.19214624244
+Dipole moment(X, Y, Z, Debye): -0.00142, -0.00060,  0.00668
+converged SCF energy = -79.6827548794546
+**** MO energy ****
+MO #1   energy= -9.88258695721105  occ= 2
+MO #2   energy= -9.8816793857333   occ= 2
+MO #3   energy= -0.669416005322595 occ= 2
+MO #4   energy= -0.541031811334553 occ= 2
+MO #5   energy= -0.379509467352565 occ= 2
+MO #6   energy= -0.379197930329665 occ= 2
+MO #7   energy= -0.307519266719427 occ= 2
+MO #8   energy= -0.294260989248583 occ= 2
+MO #9   energy= -0.293903585752612 occ= 2
+MO #10  energy= 0.0753930530101373 occ= 0
+MO #11  energy= 0.12891415673012   occ= 0
+MO #12  energy= 0.132977441444312  occ= 0
+MO #13  energy= 0.133486870582743  occ= 0
+MO #14  energy= 0.156248401711373  occ= 0
+MO #15  energy= 0.15668479063997   occ= 0
+MO #16  energy= 0.190799478518341  occ= 0
+MO #17  energy= 0.513298260701313  occ= 0
+MO #18  energy= 0.539252865089216  occ= 0
+MO #19  energy= 0.539744998851692  occ= 0
+MO #20  energy= 0.608282145114523  occ= 0
+MO #21  energy= 0.608604924571424  occ= 0
+MO #22  energy= 0.608900637791428  occ= 0
+MO #23  energy= 0.827533592370309  occ= 0
+MO #24  energy= 0.867049076342915  occ= 0
+MO #25  energy= 0.868027141729657  occ= 0
+MO #26  energy= 0.908287773899735  occ= 0
+MO #27  energy= 0.919050607348935  occ= 0
+MO #28  energy= 0.919916786849619  occ= 0
+MO #29  energy= 1.04561350976576   occ= 0
+MO #30  energy= 1.39100723293582   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31280
+charge of  1C =     -0.31088
+charge of  2H =      0.10438
+charge of  3H =      0.10441
+charge of  4H =      0.10433
+charge of  5H =      0.10423
+charge of  6H =      0.10332
+charge of  7H =      0.10300
+Dipole moment(X, Y, Z, Debye): -0.00110, -0.00061,  0.00576
+Dipole moment(X, Y, Z, Debye): -0.00110, -0.00061,  0.00576
+converged SCF energy = -79.1921357721197
+Dipole moment(X, Y, Z, Debye): -0.00104, -0.00022,  0.00708
+converged SCF energy = -79.6827317227638
+**** MO energy ****
+MO #1   energy= -9.88254529668741  occ= 2
+MO #2   energy= -9.88171040609659  occ= 2
+MO #3   energy= -0.669259669546646 occ= 2
+MO #4   energy= -0.541100719323669 occ= 2
+MO #5   energy= -0.379548949176784 occ= 2
+MO #6   energy= -0.379108575479157 occ= 2
+MO #7   energy= -0.307250585024384 occ= 2
+MO #8   energy= -0.294474749547794 occ= 2
+MO #9   energy= -0.293946003246118 occ= 2
+MO #10  energy= 0.0753993225237003 occ= 0
+MO #11  energy= 0.128928456551551  occ= 0
+MO #12  energy= 0.133090687897264  occ= 0
+MO #13  energy= 0.133703969449551  occ= 0
+MO #14  energy= 0.156130823914374  occ= 0
+MO #15  energy= 0.156776262681663  occ= 0
+MO #16  energy= 0.190358172379453  occ= 0
+MO #17  energy= 0.513612271764517  occ= 0
+MO #18  energy= 0.539065911496604  occ= 0
+MO #19  energy= 0.53972432032313   occ= 0
+MO #20  energy= 0.608084851050713  occ= 0
+MO #21  energy= 0.608371907336548  occ= 0
+MO #22  energy= 0.608623473772344  occ= 0
+MO #23  energy= 0.82750831871949   occ= 0
+MO #24  energy= 0.867117253085257  occ= 0
+MO #25  energy= 0.868415428574598  occ= 0
+MO #26  energy= 0.90844699554465   occ= 0
+MO #27  energy= 0.918966296747137  occ= 0
+MO #28  energy= 0.920200893111776  occ= 0
+MO #29  energy= 1.04573827025431   occ= 0
+MO #30  energy= 1.39087081953623   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31286
+charge of  1C =     -0.31115
+charge of  2H =      0.10435
+charge of  3H =      0.10438
+charge of  4H =      0.10433
+charge of  5H =      0.10457
+charge of  6H =      0.10335
+charge of  7H =      0.10303
+Dipole moment(X, Y, Z, Debye): -0.00091, -0.00042,  0.00603
+Dipole moment(X, Y, Z, Debye): -0.00091, -0.00042,  0.00603
+converged SCF energy = -79.192146246131
+Dipole moment(X, Y, Z, Debye): -0.00060, -0.00143,  0.00668
+converged SCF energy = -79.6827548829296
+**** MO energy ****
+MO #1   energy= -9.88258695709727  occ= 2
+MO #2   energy= -9.8816793844155   occ= 2
+MO #3   energy= -0.669416006797118 occ= 2
+MO #4   energy= -0.541031808593169 occ= 2
+MO #5   energy= -0.379508998383851 occ= 2
+MO #6   energy= -0.379198407274519 occ= 2
+MO #7   energy= -0.30751924415169  occ= 2
+MO #8   energy= -0.294260231359182 occ= 2
+MO #9   energy= -0.293904358527544 occ= 2
+MO #10  energy= 0.0753930531627213 occ= 0
+MO #11  energy= 0.128914171871542  occ= 0
+MO #12  energy= 0.132977627671326  occ= 0
+MO #13  energy= 0.133486652587623  occ= 0
+MO #14  energy= 0.15624936221259   occ= 0
+MO #15  energy= 0.156683850015251  occ= 0
+MO #16  energy= 0.190799476544322  occ= 0
+MO #17  energy= 0.513298246946463  occ= 0
+MO #18  energy= 0.539253483340094  occ= 0
+MO #19  energy= 0.539744406467131  occ= 0
+MO #20  energy= 0.608282908743789  occ= 0
+MO #21  energy= 0.608603476934437  occ= 0
+MO #22  energy= 0.608901315866294  occ= 0
+MO #23  energy= 0.827533577677243  occ= 0
+MO #24  energy= 0.867050162505868  occ= 0
+MO #25  energy= 0.868026072704088  occ= 0
+MO #26  energy= 0.908287624543164  occ= 0
+MO #27  energy= 0.919051868194888  occ= 0
+MO #28  energy= 0.919915664265014  occ= 0
+MO #29  energy= 1.04561349550036   occ= 0
+MO #30  energy= 1.39100724445989   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31280
+charge of  1C =     -0.31088
+charge of  2H =      0.10441
+charge of  3H =      0.10438
+charge of  4H =      0.10433
+charge of  5H =      0.10423
+charge of  6H =      0.10300
+charge of  7H =      0.10332
+Dipole moment(X, Y, Z, Debye): -0.00061, -0.00110,  0.00576
+Dipole moment(X, Y, Z, Debye): -0.00061, -0.00110,  0.00576
+converged SCF energy = -79.1921398408641
+Dipole moment(X, Y, Z, Debye): -0.00062, -0.00062,  0.00749
+converged SCF energy = -79.6827485840374
+**** MO energy ****
+MO #1   energy= -9.8825870427797   occ= 2
+MO #2   energy= -9.88167968205464  occ= 2
+MO #3   energy= -0.669416545806851 occ= 2
+MO #4   energy= -0.541033210263227 occ= 2
+MO #5   energy= -0.37959903773332  occ= 2
+MO #6   energy= -0.37910935042282  occ= 2
+MO #7   energy= -0.30752374057956  occ= 2
+MO #8   energy= -0.294376478302809 occ= 2
+MO #9   energy= -0.293783377436301 occ= 2
+MO #10  energy= 0.0753908640247477 occ= 0
+MO #11  energy= 0.128908497588728  occ= 0
+MO #12  energy= 0.132899387639092  occ= 0
+MO #13  energy= 0.133563586985056  occ= 0
+MO #14  energy= 0.156107256147675  occ= 0
+MO #15  energy= 0.156832053378935  occ= 0
+MO #16  energy= 0.190800718011039  occ= 0
+MO #17  energy= 0.513296007895583  occ= 0
+MO #18  energy= 0.539136392113546  occ= 0
+MO #19  energy= 0.539861735532385  occ= 0
+MO #20  energy= 0.608310083501887  occ= 0
+MO #21  energy= 0.608456885853109  occ= 0
+MO #22  energy= 0.609020377264379  occ= 0
+MO #23  energy= 0.827522240390003  occ= 0
+MO #24  energy= 0.866818002618087  occ= 0
+MO #25  energy= 0.868252946983461  occ= 0
+MO #26  energy= 0.908255426358212  occ= 0
+MO #27  energy= 0.918823259471778  occ= 0
+MO #28  energy= 0.920206075168802  occ= 0
+MO #29  energy= 1.04561793283937   occ= 0
+MO #30  energy= 1.39100519766667   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31280
+charge of  1C =     -0.31088
+charge of  2H =      0.10438
+charge of  3H =      0.10438
+charge of  4H =      0.10436
+charge of  5H =      0.10455
+charge of  6H =      0.10301
+charge of  7H =      0.10301
+Dipole moment(X, Y, Z, Debye): -0.00062, -0.00063,  0.00624
+Dipole moment(X, Y, Z, Debye): -0.00062, -0.00063,  0.00624
+converged SCF energy = -79.1921421769144
+Dipole moment(X, Y, Z, Debye): -0.00102, -0.00103,  0.00627
+converged SCF energy = -79.6827380213078
+**** MO energy ****
+MO #1   energy= -9.88254521159099  occ= 2
+MO #2   energy= -9.88171010873709  occ= 2
+MO #3   energy= -0.669259129598016 occ= 2
+MO #4   energy= -0.541099322938573 occ= 2
+MO #5   energy= -0.379438989957278 occ= 2
+MO #6   energy= -0.379217543716776 occ= 2
+MO #7   energy= -0.307246078540984 occ= 2
+MO #8   energy= -0.294323638782299 occ= 2
+MO #9   energy= -0.294101863162798 occ= 2
+MO #10  energy= 0.0754015164344328 occ= 0
+MO #11  energy= 0.12893419902942   occ= 0
+MO #12  energy= 0.133175008548258  occ= 0
+MO #13  energy= 0.133620928937078  occ= 0
+MO #14  energy= 0.156309914778769  occ= 0
+MO #15  energy= 0.156591034724175  occ= 0
+MO #16  energy= 0.190356923744452  occ= 0
+MO #17  energy= 0.513614555056958  occ= 0
+MO #18  energy= 0.539202400303395  occ= 0
+MO #19  energy= 0.539587536477603  occ= 0
+MO #20  energy= 0.608187974050967  occ= 0
+MO #21  energy= 0.608376869125356  occ= 0
+MO #22  energy= 0.608515748800115  occ= 0
+MO #23  energy= 0.827519641102741  occ= 0
+MO #24  energy= 0.867387428447754  occ= 0
+MO #25  energy= 0.868150625001564  occ= 0
+MO #26  energy= 0.908480955254808  occ= 0
+MO #27  energy= 0.919227026714596  occ= 0
+MO #28  energy= 0.919876517387544  occ= 0
+MO #29  energy= 1.04573384692468   occ= 0
+MO #30  energy= 1.39087286884604   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31286
+charge of  1C =     -0.31115
+charge of  2H =      0.10437
+charge of  3H =      0.10438
+charge of  4H =      0.10430
+charge of  5H =      0.10426
+charge of  6H =      0.10335
+charge of  7H =      0.10335
+Dipole moment(X, Y, Z, Debye): -0.00090, -0.00090,  0.00555
+Dipole moment(X, Y, Z, Debye): -0.00090, -0.00090,  0.00555
+converged SCF energy = -79.1921609517513
+Dipole moment(X, Y, Z, Debye): -0.00104, -0.00055,  0.00738
+converged SCF energy = -79.6827487527597
+**** MO energy ****
+MO #1   energy= -9.88255657360429  occ= 2
+MO #2   energy= -9.88163560347294  occ= 2
+MO #3   energy= -0.669355814894088 occ= 2
+MO #4   energy= -0.541082264935374 occ= 2
+MO #5   energy= -0.379554595090521 occ= 2
+MO #6   energy= -0.379168118081034 occ= 2
+MO #7   energy= -0.307366783438351 occ= 2
+MO #8   energy= -0.294382417155208 occ= 2
+MO #9   energy= -0.293939329513593 occ= 2
+MO #10  energy= 0.0754120299361576 occ= 0
+MO #11  energy= 0.12896057503702   occ= 0
+MO #12  energy= 0.133094592046049  occ= 0
+MO #13  energy= 0.133616352593449  occ= 0
+MO #14  energy= 0.156220934886615  occ= 0
+MO #15  energy= 0.156738208983583  occ= 0
+MO #16  energy= 0.190578776190854  occ= 0
+MO #17  energy= 0.513442597573328  occ= 0
+MO #18  energy= 0.539195724352777  occ= 0
+MO #19  energy= 0.539670486254114  occ= 0
+MO #20  energy= 0.608294314568133  occ= 0
+MO #21  energy= 0.608381941129956  occ= 0
+MO #22  energy= 0.608702504699934  occ= 0
+MO #23  energy= 0.827604305090154  occ= 0
+MO #24  energy= 0.867184446391716  occ= 0
+MO #25  energy= 0.868249909809144  occ= 0
+MO #26  energy= 0.908460418399442  occ= 0
+MO #27  energy= 0.919062350377146  occ= 0
+MO #28  energy= 0.920153319761246  occ= 0
+MO #29  energy= 1.04572055887413   occ= 0
+MO #30  energy= 1.39097271604158   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31294
+charge of  1C =     -0.31101
+charge of  2H =      0.10451
+charge of  3H =      0.10437
+charge of  4H =      0.10434
+charge of  5H =      0.10439
+charge of  6H =      0.10317
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00089, -0.00051,  0.00638
+Dipole moment(X, Y, Z, Debye): -0.00089, -0.00051,  0.00638
+converged SCF energy = -79.1921224560851
+Dipole moment(X, Y, Z, Debye): -0.00060, -0.00110,  0.00637
+converged SCF energy = -79.6827391056595
+**** MO energy ****
+MO #1   energy= -9.88257548141168  occ= 2
+MO #2   energy= -9.88175414465439  occ= 2
+MO #3   energy= -0.669319747097666 occ= 2
+MO #4   energy= -0.541050092534696 occ= 2
+MO #5   energy= -0.379490577331473 occ= 2
+MO #6   energy= -0.379151308821164 occ= 2
+MO #7   energy= -0.307401404929311 occ= 2
+MO #8   energy= -0.294324002333174 occ= 2
+MO #9   energy= -0.293941511776932 occ= 2
+MO #10  energy= 0.0753806845011678 occ= 0
+MO #11  energy= 0.128881426038969  occ= 0
+MO #12  energy= 0.132977229734383  occ= 0
+MO #13  energy= 0.133572855696858  occ= 0
+MO #14  energy= 0.156192489346591  occ= 0
+MO #15  energy= 0.156687953085414  occ= 0
+MO #16  energy= 0.190578629036573  occ= 0
+MO #17  energy= 0.513468153809631  occ= 0
+MO #18  energy= 0.539143524700503  occ= 0
+MO #19  energy= 0.539778624657296  occ= 0
+MO #20  energy= 0.60828376406571   occ= 0
+MO #21  energy= 0.60850672244594   occ= 0
+MO #22  energy= 0.608697322747157  occ= 0
+MO #23  energy= 0.827438556560347  occ= 0
+MO #24  energy= 0.867016098500687  occ= 0
+MO #25  energy= 0.868160102191847  occ= 0
+MO #26  energy= 0.908276003812242  occ= 0
+MO #27  energy= 0.918968771587398  occ= 0
+MO #28  energy= 0.919945859543293  occ= 0
+MO #29  energy= 1.04563004362936   occ= 0
+MO #30  energy= 1.39090530183642   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31272
+charge of  1C =     -0.31102
+charge of  2H =      0.10424
+charge of  3H =      0.10439
+charge of  4H =      0.10432
+charge of  5H =      0.10441
+charge of  6H =      0.10319
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00063, -0.00101,  0.00540
+Dipole moment(X, Y, Z, Debye): -0.00063, -0.00101,  0.00540
+converged SCF energy = -79.1921118760058
+Dipole moment(X, Y, Z, Debye): -0.00039, -0.00097,  0.00645
+converged SCF energy = -79.6827298078398
+**** MO energy ****
+MO #1   energy= -9.88256390496098  occ= 2
+MO #2   energy= -9.88175601933499  occ= 2
+MO #3   energy= -0.669331969424441 occ= 2
+MO #4   energy= -0.541022780734552 occ= 2
+MO #5   energy= -0.37952358155515  occ= 2
+MO #6   energy= -0.379164627073987 occ= 2
+MO #7   energy= -0.307356681685234 occ= 2
+MO #8   energy= -0.294349215473154 occ= 2
+MO #9   energy= -0.293928972830114 occ= 2
+MO #10  energy= 0.0753594016350407 occ= 0
+MO #11  energy= 0.128910249310449  occ= 0
+MO #12  energy= 0.132998151811358  occ= 0
+MO #13  energy= 0.133576367350998  occ= 0
+MO #14  energy= 0.156152452559231  occ= 0
+MO #15  energy= 0.156692151177417  occ= 0
+MO #16  energy= 0.190550765873868  occ= 0
+MO #17  energy= 0.513443450043369  occ= 0
+MO #18  energy= 0.539188705858577  occ= 0
+MO #19  energy= 0.539833890431359  occ= 0
+MO #20  energy= 0.608304444248701  occ= 0
+MO #21  energy= 0.608384389303419  occ= 0
+MO #22  energy= 0.608679993028919  occ= 0
+MO #23  energy= 0.827382870590822  occ= 0
+MO #24  energy= 0.866988107091829  occ= 0
+MO #25  energy= 0.868156906428348  occ= 0
+MO #26  energy= 0.90828451805074   occ= 0
+MO #27  energy= 0.918989592413597  occ= 0
+MO #28  energy= 0.920017683492842  occ= 0
+MO #29  energy= 1.04566256932783   occ= 0
+MO #30  energy= 1.39093153671747   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31272
+charge of  1C =     -0.31102
+charge of  2H =      0.10425
+charge of  3H =      0.10439
+charge of  4H =      0.10434
+charge of  5H =      0.10440
+charge of  6H =      0.10318
+charge of  7H =      0.10316
+Dipole moment(X, Y, Z, Debye): -0.00038, -0.00083,  0.00551
+Dipole moment(X, Y, Z, Debye): -0.00038, -0.00083,  0.00551
+converged SCF energy = -79.1921715225347
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00068,  0.00731
+converged SCF energy = -79.6827580417731
+**** MO energy ****
+MO #1   energy= -9.88256816630819  occ= 2
+MO #2   energy= -9.88163373154978  occ= 2
+MO #3   energy= -0.669343552174422 occ= 2
+MO #4   energy= -0.541109675327157 occ= 2
+MO #5   energy= -0.379514604979129 occ= 2
+MO #6   energy= -0.379161665620793 occ= 2
+MO #7   energy= -0.307411924978153 occ= 2
+MO #8   energy= -0.294353147822092 occ= 2
+MO #9   energy= -0.29395556571558  occ= 2
+MO #10  energy= 0.0754331891425013 occ= 0
+MO #11  energy= 0.128932910615636  occ= 0
+MO #12  energy= 0.133075843664712  occ= 0
+MO #13  energy= 0.133609632702327  occ= 0
+MO #14  energy= 0.15626117119119   occ= 0
+MO #15  energy= 0.156733674788585  occ= 0
+MO #16  energy= 0.190606825698095  occ= 0
+MO #17  energy= 0.513467557910402  occ= 0
+MO #18  energy= 0.539135058463409  occ= 0
+MO #19  energy= 0.539630546307761  occ= 0
+MO #20  energy= 0.60833703491404   occ= 0
+MO #21  energy= 0.608444023526487  occ= 0
+MO #22  energy= 0.608716560185149  occ= 0
+MO #23  energy= 0.827659517279759  occ= 0
+MO #24  energy= 0.867210818001577  occ= 0
+MO #25  energy= 0.868255333005178  occ= 0
+MO #26  energy= 0.908453210499959  occ= 0
+MO #27  energy= 0.91905886214887   occ= 0
+MO #28  energy= 0.920062661210567  occ= 0
+MO #29  energy= 1.04568798059792   occ= 0
+MO #30  energy= 1.39094614567471   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31294
+charge of  1C =     -0.31102
+charge of  2H =      0.10450
+charge of  3H =      0.10437
+charge of  4H =      0.10432
+charge of  5H =      0.10440
+charge of  6H =      0.10318
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00114, -0.00070,  0.00627
+Dipole moment(X, Y, Z, Debye): -0.00114, -0.00070,  0.00627
+converged SCF energy = -79.1921222362974
+Dipole moment(X, Y, Z, Debye): -0.00031, -0.00110,  0.00666
+converged SCF energy = -79.6827389304999
+**** MO energy ****
+MO #1   energy= -9.88257548668386  occ= 2
+MO #2   energy= -9.88175422475233  occ= 2
+MO #3   energy= -0.669319789387773 occ= 2
+MO #4   energy= -0.541050080555422 occ= 2
+MO #5   energy= -0.379535477286844 occ= 2
+MO #6   energy= -0.379106111627569 occ= 2
+MO #7   energy= -0.307400848126414 occ= 2
+MO #8   energy= -0.29437137213034  occ= 2
+MO #9   energy= -0.293894885956935 occ= 2
+MO #10  energy= 0.075380715371331  occ= 0
+MO #11  energy= 0.128880773705727  occ= 0
+MO #12  energy= 0.132972913509942  occ= 0
+MO #13  energy= 0.133578323348582  occ= 0
+MO #14  energy= 0.156160575919548  occ= 0
+MO #15  energy= 0.156718752528523  occ= 0
+MO #16  energy= 0.190578886320047  occ= 0
+MO #17  energy= 0.513468495618923  occ= 0
+MO #18  energy= 0.539201638808261  occ= 0
+MO #19  energy= 0.539718418630335  occ= 0
+MO #20  energy= 0.608353855234963  occ= 0
+MO #21  energy= 0.608472271161894  occ= 0
+MO #22  energy= 0.608663861224805  occ= 0
+MO #23  energy= 0.827439158287618  occ= 0
+MO #24  energy= 0.867007259082942  occ= 0
+MO #25  energy= 0.868171931319419  occ= 0
+MO #26  energy= 0.908270002439756  occ= 0
+MO #27  energy= 0.918865840337482  occ= 0
+MO #28  energy= 0.920050813351265  occ= 0
+MO #29  energy= 1.04563052827282   occ= 0
+MO #30  energy= 1.39090597078266   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31272
+charge of  1C =     -0.31102
+charge of  2H =      0.10424
+charge of  3H =      0.10437
+charge of  4H =      0.10434
+charge of  5H =      0.10441
+charge of  6H =      0.10319
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00027, -0.00102,  0.00576
+Dipole moment(X, Y, Z, Debye): -0.00027, -0.00102,  0.00576
+converged SCF energy = -79.1921611712811
+Dipole moment(X, Y, Z, Debye): -0.00132, -0.00055,  0.00710
+converged SCF energy = -79.6827489275937
+**** MO energy ****
+MO #1   energy= -9.88255656861273  occ= 2
+MO #2   energy= -9.88163552300784  occ= 2
+MO #3   energy= -0.669355772466817 occ= 2
+MO #4   energy= -0.541082277044138 occ= 2
+MO #5   energy= -0.37950291530483  occ= 2
+MO #6   energy= -0.379220095938759 occ= 2
+MO #7   energy= -0.307367340743154 occ= 2
+MO #8   energy= -0.294330481520371 occ= 2
+MO #9   energy= -0.293990520324875 occ= 2
+MO #10  energy= 0.0754119988698877 occ= 0
+MO #11  energy= 0.128961237230008  occ= 0
+MO #12  energy= 0.13309970075927   occ= 0
+MO #13  energy= 0.133610071163594  occ= 0
+MO #14  energy= 0.156255996779151  occ= 0
+MO #15  energy= 0.156704274161756  occ= 0
+MO #16  energy= 0.19057851764435   occ= 0
+MO #17  energy= 0.51344225170291   occ= 0
+MO #18  energy= 0.539133718403608  occ= 0
+MO #19  energy= 0.539734589049632  occ= 0
+MO #20  energy= 0.608238591517839  occ= 0
+MO #21  energy= 0.608400598219304  occ= 0
+MO #22  energy= 0.608737389152818  occ= 0
+MO #23  energy= 0.827603711916951  occ= 0
+MO #24  energy= 0.867194360298595  occ= 0
+MO #25  energy= 0.868236979957842  occ= 0
+MO #26  energy= 0.908466013571386  occ= 0
+MO #27  energy= 0.919183377160924  occ= 0
+MO #28  energy= 0.92003069492283   occ= 0
+MO #29  energy= 1.04572007659352   occ= 0
+MO #30  energy= 1.39097204466044   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31294
+charge of  1C =     -0.31101
+charge of  2H =      0.10451
+charge of  3H =      0.10439
+charge of  4H =      0.10432
+charge of  5H =      0.10439
+charge of  6H =      0.10317
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00051,  0.00602
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00051,  0.00602
+converged SCF energy = -79.1921118830948
+Dipole moment(X, Y, Z, Debye): -0.00096, -0.00039,  0.00645
+converged SCF energy = -79.6827298151965
+**** MO energy ****
+MO #1   energy= -9.88256390463144  occ= 2
+MO #2   energy= -9.88175602034554  occ= 2
+MO #3   energy= -0.669331968501538 occ= 2
+MO #4   energy= -0.541022778269779 occ= 2
+MO #5   energy= -0.379523560222243 occ= 2
+MO #6   energy= -0.379164648562864 occ= 2
+MO #7   energy= -0.307356668042775 occ= 2
+MO #8   energy= -0.294349128715216 occ= 2
+MO #9   energy= -0.293929071149821 occ= 2
+MO #10  energy= 0.0753594041058802 occ= 0
+MO #11  energy= 0.128910260350703  occ= 0
+MO #12  energy= 0.132998226620417  occ= 0
+MO #13  energy= 0.133576289047333  occ= 0
+MO #14  energy= 0.156152664462904  occ= 0
+MO #15  energy= 0.156691928701734  occ= 0
+MO #16  energy= 0.190550764225177  occ= 0
+MO #17  energy= 0.513443451186108  occ= 0
+MO #18  energy= 0.539189115440445  occ= 0
+MO #19  energy= 0.539833484156718  occ= 0
+MO #20  energy= 0.608304455947135  occ= 0
+MO #21  energy= 0.608384515608462  occ= 0
+MO #22  energy= 0.6086798564347    occ= 0
+MO #23  energy= 0.827382878871562  occ= 0
+MO #24  energy= 0.866988518181067  occ= 0
+MO #25  energy= 0.86815651297432   occ= 0
+MO #26  energy= 0.908284542868879  occ= 0
+MO #27  energy= 0.91898969617268   occ= 0
+MO #28  energy= 0.920017504625623  occ= 0
+MO #29  energy= 1.04566256219918   occ= 0
+MO #30  energy= 1.39093153771514   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31272
+charge of  1C =     -0.31102
+charge of  2H =      0.10439
+charge of  3H =      0.10426
+charge of  4H =      0.10434
+charge of  5H =      0.10440
+charge of  6H =      0.10316
+charge of  7H =      0.10318
+Dipole moment(X, Y, Z, Debye): -0.00082, -0.00038,  0.00551
+Dipole moment(X, Y, Z, Debye): -0.00082, -0.00038,  0.00551
+converged SCF energy = -79.1921715154128
+Dipole moment(X, Y, Z, Debye): -0.00068, -0.00125,  0.00731
+converged SCF energy = -79.6827580343842
+**** MO energy ****
+MO #1   energy= -9.88256816663843  occ= 2
+MO #2   energy= -9.88163373054128  occ= 2
+MO #3   energy= -0.669343553098263 occ= 2
+MO #4   energy= -0.541109677795364 occ= 2
+MO #5   energy= -0.379514626433571 occ= 2
+MO #6   energy= -0.379161644004607 occ= 2
+MO #7   energy= -0.307411938650096 occ= 2
+MO #8   energy= -0.294353237122151 occ= 2
+MO #9   energy= -0.293955464827479 occ= 2
+MO #10  energy= 0.0754331866853956 occ= 0
+MO #11  energy= 0.128932899942813  occ= 0
+MO #12  energy= 0.13307576223459   occ= 0
+MO #13  energy= 0.133609717246169  occ= 0
+MO #14  energy= 0.156260926379192  occ= 0
+MO #15  energy= 0.156733930139043  occ= 0
+MO #16  energy= 0.190606827371956  occ= 0
+MO #17  energy= 0.513467556765867  occ= 0
+MO #18  energy= 0.539134525380752  occ= 0
+MO #19  energy= 0.539631076080483  occ= 0
+MO #20  energy= 0.608337016663189  occ= 0
+MO #21  energy= 0.608443896983488  occ= 0
+MO #22  energy= 0.608716703589457  occ= 0
+MO #23  energy= 0.827659509108609  occ= 0
+MO #24  energy= 0.867210362114386  occ= 0
+MO #25  energy= 0.868255770801468  occ= 0
+MO #26  energy= 0.908453184584832  occ= 0
+MO #27  energy= 0.919058744173967  occ= 0
+MO #28  energy= 0.92006285575154   occ= 0
+MO #29  energy= 1.04568798775894   occ= 0
+MO #30  energy= 1.39094614471225   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31294
+charge of  1C =     -0.31102
+charge of  2H =      0.10437
+charge of  3H =      0.10450
+charge of  4H =      0.10432
+charge of  5H =      0.10440
+charge of  6H =      0.10319
+charge of  7H =      0.10318
+Dipole moment(X, Y, Z, Debye): -0.00070, -0.00114,  0.00627
+Dipole moment(X, Y, Z, Debye): -0.00070, -0.00114,  0.00627
+converged SCF energy = -79.1921609411697
+Dipole moment(X, Y, Z, Debye): -0.00054, -0.00104,  0.00738
+converged SCF energy = -79.6827487429464
+**** MO energy ****
+MO #1   energy= -9.88255657384672  occ= 2
+MO #2   energy= -9.8816356055797   occ= 2
+MO #3   energy= -0.66935581586132  occ= 2
+MO #4   energy= -0.54108226489672  occ= 2
+MO #5   energy= -0.379554825956597 occ= 2
+MO #6   energy= -0.379167891225718 occ= 2
+MO #7   energy= -0.307366779333267 occ= 2
+MO #8   energy= -0.294382640044158 occ= 2
+MO #9   energy= -0.293939106900719 occ= 2
+MO #10  energy= 0.0754120276149306 occ= 0
+MO #11  energy= 0.128960546708122  occ= 0
+MO #12  energy= 0.133094445456443  occ= 0
+MO #13  energy= 0.133616512920087  occ= 0
+MO #14  energy= 0.156220700558875  occ= 0
+MO #15  energy= 0.156738450717685  occ= 0
+MO #16  energy= 0.190578775399082  occ= 0
+MO #17  energy= 0.513442589176675  occ= 0
+MO #18  energy= 0.539195754586395  occ= 0
+MO #19  energy= 0.539670469264837  occ= 0
+MO #20  energy= 0.608294208935173  occ= 0
+MO #21  energy= 0.608381694370612  occ= 0
+MO #22  energy= 0.608702853418073  occ= 0
+MO #23  energy= 0.827604296708669  occ= 0
+MO #24  energy= 0.867184052826657  occ= 0
+MO #25  energy= 0.868250269589988  occ= 0
+MO #26  energy= 0.908460377702054  occ= 0
+MO #27  energy= 0.919061736770901  occ= 0
+MO #28  energy= 0.920154018831069  occ= 0
+MO #29  energy= 1.04572056277769   occ= 0
+MO #30  energy= 1.39097271607402   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31294
+charge of  1C =     -0.31101
+charge of  2H =      0.10437
+charge of  3H =      0.10452
+charge of  4H =      0.10434
+charge of  5H =      0.10439
+charge of  6H =      0.10317
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00051, -0.00089,  0.00638
+Dipole moment(X, Y, Z, Debye): -0.00051, -0.00089,  0.00638
+converged SCF energy = -79.1921224666604
+Dipole moment(X, Y, Z, Debye): -0.00110, -0.00060,  0.00637
+converged SCF energy = -79.6827391154687
+**** MO energy ****
+MO #1   energy= -9.88257548117159  occ= 2
+MO #2   energy= -9.88175414255233  occ= 2
+MO #3   energy= -0.669319746128853 occ= 2
+MO #4   energy= -0.541050092567338 occ= 2
+MO #5   energy= -0.379490315102263 occ= 2
+MO #6   energy= -0.379151567038923 occ= 2
+MO #7   energy= -0.30740140901397  occ= 2
+MO #8   energy= -0.294323742838678 occ= 2
+MO #9   energy= -0.293941771008673 occ= 2
+MO #10  energy= 0.0753806868409689 occ= 0
+MO #11  energy= 0.12888145545711   occ= 0
+MO #12  energy= 0.132977353330342  occ= 0
+MO #13  energy= 0.133572717235842  occ= 0
+MO #14  energy= 0.156192731599979  occ= 0
+MO #15  energy= 0.156687703426966  occ= 0
+MO #16  energy= 0.19057862982971   occ= 0
+MO #17  energy= 0.513468162160813  occ= 0
+MO #18  energy= 0.539143501908252  occ= 0
+MO #19  energy= 0.539778634290194  occ= 0
+MO #20  energy= 0.608283769325132  occ= 0
+MO #21  energy= 0.608507355999666  occ= 0
+MO #22  energy= 0.608696687627368  occ= 0
+MO #23  energy= 0.827438565062644  occ= 0
+MO #24  energy= 0.867016471364614  occ= 0
+MO #25  energy= 0.868159762982483  occ= 0
+MO #26  energy= 0.908276044388658  occ= 0
+MO #27  energy= 0.918969433712015  occ= 0
+MO #28  energy= 0.919945111992066  occ= 0
+MO #29  energy= 1.04563003973273   occ= 0
+MO #30  energy= 1.39090530182372   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31272
+charge of  1C =     -0.31102
+charge of  2H =      0.10439
+charge of  3H =      0.10425
+charge of  4H =      0.10432
+charge of  5H =      0.10441
+charge of  6H =      0.10319
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00101, -0.00063,  0.00540
+Dipole moment(X, Y, Z, Debye): -0.00101, -0.00063,  0.00540
+converged SCF energy = -79.1921222424402
+Dipole moment(X, Y, Z, Debye): -0.00110, -0.00032,  0.00666
+converged SCF energy = -79.6827389371913
+**** MO energy ****
+MO #1   energy= -9.88257548653841  occ= 2
+MO #2   energy= -9.88175422620061  occ= 2
+MO #3   energy= -0.669319787953464 occ= 2
+MO #4   energy= -0.541050078748325 occ= 2
+MO #5   energy= -0.379535435703755 occ= 2
+MO #6   energy= -0.379106151895804 occ= 2
+MO #7   energy= -0.307400848422153 occ= 2
+MO #8   energy= -0.294371358564023 occ= 2
+MO #9   energy= -0.293894897931419 occ= 2
+MO #10  energy= 0.0753807165377948 occ= 0
+MO #11  energy= 0.128880801532379  occ= 0
+MO #12  energy= 0.132973011353625  occ= 0
+MO #13  energy= 0.133578202676045  occ= 0
+MO #14  energy= 0.156160631542168  occ= 0
+MO #15  energy= 0.156718688430901  occ= 0
+MO #16  energy= 0.190578885907541  occ= 0
+MO #17  energy= 0.513468501431325  occ= 0
+MO #18  energy= 0.539201892476945  occ= 0
+MO #19  energy= 0.539718158290737  occ= 0
+MO #20  energy= 0.608353735487563  occ= 0
+MO #21  energy= 0.608471648076149  occ= 0
+MO #22  energy= 0.608664615532861  occ= 0
+MO #23  energy= 0.827439165865508  occ= 0
+MO #24  energy= 0.867007581868933  occ= 0
+MO #25  energy= 0.868171628045828  occ= 0
+MO #26  energy= 0.908270052090876  occ= 0
+MO #27  energy= 0.918865957044168  occ= 0
+MO #28  energy= 0.920050590597722  occ= 0
+MO #29  energy= 1.04563052527629   occ= 0
+MO #30  energy= 1.3909059793955    occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31272
+charge of  1C =     -0.31102
+charge of  2H =      0.10437
+charge of  3H =      0.10424
+charge of  4H =      0.10434
+charge of  5H =      0.10441
+charge of  6H =      0.10319
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00101, -0.00027,  0.00576
+Dipole moment(X, Y, Z, Debye): -0.00101, -0.00027,  0.00576
+converged SCF energy = -79.1921611651038
+Dipole moment(X, Y, Z, Debye): -0.00054, -0.00133,  0.00710
+converged SCF energy = -79.6827489208679
+**** MO energy ****
+MO #1   energy= -9.88255656875815  occ= 2
+MO #2   energy= -9.88163552156059  occ= 2
+MO #3   energy= -0.66935577390424  occ= 2
+MO #4   energy= -0.541082278851503 occ= 2
+MO #5   energy= -0.379502977813155 occ= 2
+MO #6   energy= -0.3792200347409   occ= 2
+MO #7   energy= -0.307367340424109 occ= 2
+MO #8   energy= -0.294330499870285 occ= 2
+MO #9   energy= -0.29399050359171  occ= 2
+MO #10  energy= 0.0754119977136234 occ= 0
+MO #11  energy= 0.128961210419428  occ= 0
+MO #12  energy= 0.133099576157731  occ= 0
+MO #13  energy= 0.133610217492846  occ= 0
+MO #14  energy= 0.156255925102794  occ= 0
+MO #15  energy= 0.156704354378271  occ= 0
+MO #16  energy= 0.190578518061442  occ= 0
+MO #17  energy= 0.513442245854925  occ= 0
+MO #18  energy= 0.539133500963432  occ= 0
+MO #19  energy= 0.539734813202291  occ= 0
+MO #20  energy= 0.608238695749609  occ= 0
+MO #21  energy= 0.608400905103622  occ= 0
+MO #22  energy= 0.608736966559919  occ= 0
+MO #23  energy= 0.827603704386824  occ= 0
+MO #24  energy= 0.867194006030381  occ= 0
+MO #25  energy= 0.868237314584656  occ= 0
+MO #26  energy= 0.908465963865708  occ= 0
+MO #27  energy= 0.919183157661626  occ= 0
+MO #28  energy= 0.920031020644597  occ= 0
+MO #29  energy= 1.04572007961258   occ= 0
+MO #30  energy= 1.3909720360538    occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31294
+charge of  1C =     -0.31101
+charge of  2H =      0.10438
+charge of  3H =      0.10452
+charge of  4H =      0.10432
+charge of  5H =      0.10439
+charge of  6H =      0.10317
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00051, -0.00125,  0.00602
+Dipole moment(X, Y, Z, Debye): -0.00051, -0.00125,  0.00602
+converged SCF energy = -79.1921615180475
+Dipole moment(X, Y, Z, Debye): -0.00104, -0.00133,  0.00660
+converged SCF energy = -79.6827492802111
+**** MO energy ****
+MO #1   energy= -9.88255656361712  occ= 2
+MO #2   energy= -9.8816355637359   occ= 2
+MO #3   energy= -0.669355642034008 occ= 2
+MO #4   energy= -0.541082257944137 occ= 2
+MO #5   energy= -0.379565276464122 occ= 2
+MO #6   energy= -0.3791572615387   occ= 2
+MO #7   energy= -0.30736675966558  occ= 2
+MO #8   energy= -0.294385783296407 occ= 2
+MO #9   energy= -0.293936289049842 occ= 2
+MO #10  energy= 0.0754124849187155 occ= 0
+MO #11  energy= 0.128953087958234  occ= 0
+MO #12  energy= 0.133038500672546  occ= 0
+MO #13  energy= 0.133682183516501  occ= 0
+MO #14  energy= 0.156206319251469  occ= 0
+MO #15  energy= 0.15675063557021   occ= 0
+MO #16  energy= 0.190578654992652  occ= 0
+MO #17  energy= 0.513443678305818  occ= 0
+MO #18  energy= 0.539136179237225  occ= 0
+MO #19  energy= 0.539730752309778  occ= 0
+MO #20  energy= 0.608278279081558  occ= 0
+MO #21  energy= 0.608420151779776  occ= 0
+MO #22  energy= 0.608677714554232  occ= 0
+MO #23  energy= 0.827607682710789  occ= 0
+MO #24  energy= 0.867108933948545  occ= 0
+MO #25  energy= 0.868315103428267  occ= 0
+MO #26  energy= 0.908507151282615  occ= 0
+MO #27  energy= 0.919023747657232  occ= 0
+MO #28  energy= 0.920151582427153  occ= 0
+MO #29  energy= 1.04572049911457   occ= 0
+MO #30  energy= 1.3909726641946    occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31294
+charge of  1C =     -0.31101
+charge of  2H =      0.10438
+charge of  3H =      0.10437
+charge of  4H =      0.10446
+charge of  5H =      0.10439
+charge of  6H =      0.10317
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00089, -0.00125,  0.00564
+Dipole moment(X, Y, Z, Debye): -0.00089, -0.00125,  0.00564
+converged SCF energy = -79.1921218905616
+Dipole moment(X, Y, Z, Debye): -0.00060, -0.00032,  0.00716
+converged SCF energy = -79.6827385788948
+**** MO energy ****
+MO #1   energy= -9.88257549133764  occ= 2
+MO #2   energy= -9.88175418415497  occ= 2
+MO #3   energy= -0.669319919696351 occ= 2
+MO #4   energy= -0.541050099679819 occ= 2
+MO #5   energy= -0.379477385211321 occ= 2
+MO #6   energy= -0.379164677869014 occ= 2
+MO #7   energy= -0.307401424402167 occ= 2
+MO #8   energy= -0.29431994760731  occ= 2
+MO #9   energy= -0.293945243649219 occ= 2
+MO #10  energy= 0.0753802265473898 occ= 0
+MO #11  energy= 0.128889214219204  occ= 0
+MO #12  energy= 0.133036868488772  occ= 0
+MO #13  energy= 0.133503179847731  occ= 0
+MO #14  energy= 0.156208768008221  occ= 0
+MO #15  energy= 0.156673863921934  occ= 0
+MO #16  energy= 0.190578749533147  occ= 0
+MO #17  energy= 0.513467073693869  occ= 0
+MO #18  energy= 0.539198472798557  occ= 0
+MO #19  energy= 0.539722958600936  occ= 0
+MO #20  energy= 0.608346416526576  occ= 0
+MO #21  energy= 0.608395032530031  occ= 0
+MO #22  energy= 0.60874897104268   occ= 0
+MO #23  energy= 0.82743516968226   occ= 0
+MO #24  energy= 0.867097632547674  occ= 0
+MO #25  energy= 0.868088872099933  occ= 0
+MO #26  energy= 0.908229314155418  occ= 0
+MO #27  energy= 0.919016392806455  occ= 0
+MO #28  energy= 0.919938559402917  occ= 0
+MO #29  energy= 1.04563010436213   occ= 0
+MO #30  energy= 1.39090535230365   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31272
+charge of  1C =     -0.31102
+charge of  2H =      0.10437
+charge of  3H =      0.10439
+charge of  4H =      0.10419
+charge of  5H =      0.10441
+charge of  6H =      0.10319
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00063, -0.00027,  0.00614
+Dipole moment(X, Y, Z, Debye): -0.00063, -0.00027,  0.00614
+converged SCF energy = -79.1921615151566
+Dipole moment(X, Y, Z, Debye): -0.00132, -0.00104,  0.00660
+converged SCF energy = -79.6827492777383
+**** MO energy ****
+MO #1   energy= -9.88255656350935  occ= 2
+MO #2   energy= -9.88163556369608  occ= 2
+MO #3   energy= -0.669355642281779 occ= 2
+MO #4   energy= -0.541082257904113 occ= 2
+MO #5   energy= -0.379565449473615 occ= 2
+MO #6   energy= -0.379157092265342 occ= 2
+MO #7   energy= -0.307366756204739 occ= 2
+MO #8   energy= -0.294385986513965 occ= 2
+MO #9   energy= -0.293936085836374 occ= 2
+MO #10  energy= 0.0754124853548895 occ= 0
+MO #11  energy= 0.128953087443001  occ= 0
+MO #12  energy= 0.133038492428083  occ= 0
+MO #13  energy= 0.133682189780541  occ= 0
+MO #14  energy= 0.156206170817769  occ= 0
+MO #15  energy= 0.156750784545477  occ= 0
+MO #16  energy= 0.19057865456828   occ= 0
+MO #17  energy= 0.513443675763296  occ= 0
+MO #18  energy= 0.539136426456413  occ= 0
+MO #19  energy= 0.539730507237556  occ= 0
+MO #20  energy= 0.608278135933834  occ= 0
+MO #21  energy= 0.608419291001571  occ= 0
+MO #22  energy= 0.608678725217672  occ= 0
+MO #23  energy= 0.827607688389766  occ= 0
+MO #24  energy= 0.867108899789482  occ= 0
+MO #25  energy= 0.86831513188604   occ= 0
+MO #26  energy= 0.908507166491531  occ= 0
+MO #27  energy= 0.91902331363393   occ= 0
+MO #28  energy= 0.920152001973461  occ= 0
+MO #29  energy= 1.04572050204301   occ= 0
+MO #30  energy= 1.3909726736275    occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31294
+charge of  1C =     -0.31101
+charge of  2H =      0.10437
+charge of  3H =      0.10439
+charge of  4H =      0.10446
+charge of  5H =      0.10439
+charge of  6H =      0.10317
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00089,  0.00564
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00089,  0.00564
+converged SCF energy = -79.1921218934459
+Dipole moment(X, Y, Z, Debye): -0.00031, -0.00060,  0.00716
+converged SCF energy = -79.6827385813617
+**** MO energy ****
+MO #1   energy= -9.88257549144831  occ= 2
+MO #2   energy= -9.88175418419269  occ= 2
+MO #3   energy= -0.669319919450391 occ= 2
+MO #4   energy= -0.541050099719441 occ= 2
+MO #5   energy= -0.379477160865462 occ= 2
+MO #6   energy= -0.379164898487074 occ= 2
+MO #7   energy= -0.307401427861542 occ= 2
+MO #8   energy= -0.294319702761737 occ= 2
+MO #9   energy= -0.293945488487384 occ= 2
+MO #10  energy= 0.0753802261115725 occ= 0
+MO #11  energy= 0.12888921465197   occ= 0
+MO #12  energy= 0.133036880911679  occ= 0
+MO #13  energy= 0.133503169513694  occ= 0
+MO #14  energy= 0.156208940323705  occ= 0
+MO #15  energy= 0.156673691031026  occ= 0
+MO #16  energy= 0.190578749958665  occ= 0
+MO #17  energy= 0.513467076211736  occ= 0
+MO #18  energy= 0.539198194502035  occ= 0
+MO #19  energy= 0.539723234783694  occ= 0
+MO #20  energy= 0.608346340389555  occ= 0
+MO #21  energy= 0.608395913197555  occ= 0
+MO #22  energy= 0.608748159781844  occ= 0
+MO #23  energy= 0.827435164008312  occ= 0
+MO #24  energy= 0.867097673069405  occ= 0
+MO #25  energy= 0.868088837244623  occ= 0
+MO #26  energy= 0.90822929907409   occ= 0
+MO #27  energy= 0.91901691979404   occ= 0
+MO #28  energy= 0.919938046808735  occ= 0
+MO #29  energy= 1.0456301014301    occ= 0
+MO #30  energy= 1.39090534287276   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31272
+charge of  1C =     -0.31102
+charge of  2H =      0.10439
+charge of  3H =      0.10437
+charge of  4H =      0.10419
+charge of  5H =      0.10441
+charge of  6H =      0.10319
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00027, -0.00063,  0.00614
+Dipole moment(X, Y, Z, Debye): -0.00027, -0.00063,  0.00614
+converged SCF energy = -79.1921718499346
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00125,  0.00674
+converged SCF energy = -79.6827583824479
+**** MO energy ****
+MO #1   energy= -9.88256820497442  occ= 2
+MO #2   energy= -9.88163381077824  occ= 2
+MO #3   energy= -0.669343537422291 occ= 2
+MO #4   energy= -0.541109634573354 occ= 2
+MO #5   energy= -0.379518848708589 occ= 2
+MO #6   energy= -0.379157026903142 occ= 2
+MO #7   energy= -0.307414226209762 occ= 2
+MO #8   energy= -0.294368748666709 occ= 2
+MO #9   energy= -0.293938194554396 occ= 2
+MO #10  energy= 0.0754337878348539 occ= 0
+MO #11  energy= 0.128930070941916  occ= 0
+MO #12  energy= 0.133043161329519  occ= 0
+MO #13  energy= 0.133646273199781  occ= 0
+MO #14  energy= 0.156213691416318  occ= 0
+MO #15  energy= 0.156779612833401  occ= 0
+MO #16  energy= 0.190606582577986  occ= 0
+MO #17  energy= 0.513467864592581  occ= 0
+MO #18  energy= 0.539030229681504  occ= 0
+MO #19  energy= 0.539736064967522  occ= 0
+MO #20  energy= 0.608353527398527  occ= 0
+MO #21  energy= 0.608419118331252  occ= 0
+MO #22  energy= 0.608724043293165  occ= 0
+MO #23  energy= 0.8276660086382    occ= 0
+MO #24  energy= 0.867111672799037  occ= 0
+MO #25  energy= 0.868341000119542  occ= 0
+MO #26  energy= 0.908487497220731  occ= 0
+MO #27  energy= 0.919028575911332  occ= 0
+MO #28  energy= 0.920063954051846  occ= 0
+MO #29  energy= 1.0456882722582    occ= 0
+MO #30  energy= 1.39094572044074   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31294
+charge of  1C =     -0.31102
+charge of  2H =      0.10437
+charge of  3H =      0.10437
+charge of  4H =      0.10445
+charge of  5H =      0.10442
+charge of  6H =      0.10318
+charge of  7H =      0.10318
+Dipole moment(X, Y, Z, Debye): -0.00114, -0.00114,  0.00583
+Dipole moment(X, Y, Z, Debye): -0.00114, -0.00114,  0.00583
+converged SCF energy = -79.1921115496567
+Dipole moment(X, Y, Z, Debye): -0.00039, -0.00039,  0.00702
+converged SCF energy = -79.6827294682031
+**** MO energy ****
+MO #1   energy= -9.88256386625178  occ= 2
+MO #2   energy= -9.88175593995467  occ= 2
+MO #3   energy= -0.66933198419453  occ= 2
+MO #4   energy= -0.541022821304227 occ= 2
+MO #5   energy= -0.379519237119922 occ= 2
+MO #6   energy= -0.379169366441028 occ= 2
+MO #7   energy= -0.307354390615924 occ= 2
+MO #8   energy= -0.294332627236618 occ= 2
+MO #9   energy= -0.293947321199311 occ= 2
+MO #10  energy= 0.0753588021213418 occ= 0
+MO #11  energy= 0.128913178750423  occ= 0
+MO #12  energy= 0.133032261567109  occ= 0
+MO #13  energy= 0.133538200159456  occ= 0
+MO #14  energy= 0.156202779053468  occ= 0
+MO #15  energy= 0.156643378125762  occ= 0
+MO #16  energy= 0.190551007788004  occ= 0
+MO #17  energy= 0.513443144364332  occ= 0
+MO #18  energy= 0.539308920807509  occ= 0
+MO #19  energy= 0.539712981758419  occ= 0
+MO #20  energy= 0.608290725519549  occ= 0
+MO #21  energy= 0.608406406776778  occ= 0
+MO #22  energy= 0.608672627548383  occ= 0
+MO #23  energy= 0.827376376716331  occ= 0
+MO #24  energy= 0.867094959918218  occ= 0
+MO #25  energy= 0.868063488196161  occ= 0
+MO #26  energy= 0.908250909014076  occ= 0
+MO #27  energy= 0.919019140440542  occ= 0
+MO #28  energy= 0.920016497389707  occ= 0
+MO #29  energy= 1.04566227658444   occ= 0
+MO #30  energy= 1.39093196312193   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31272
+charge of  1C =     -0.31102
+charge of  2H =      0.10439
+charge of  3H =      0.10439
+charge of  4H =      0.10421
+charge of  5H =      0.10439
+charge of  6H =      0.10318
+charge of  7H =      0.10318
+Dipole moment(X, Y, Z, Debye): -0.00038, -0.00038,  0.00595
+Dipole moment(X, Y, Z, Debye): -0.00038, -0.00038,  0.00595
+converged SCF energy = -79.1921222300631
+Dipole moment(X, Y, Z, Debye): -0.00104, -0.00132,  0.00660
+converged SCF energy = -79.6827389599043
+**** MO energy ****
+MO #1   energy= -9.88262534251293  occ= 2
+MO #2   energy= -9.88170437449367  occ= 2
+MO #3   energy= -0.669319971028012 occ= 2
+MO #4   energy= -0.541049470751353 occ= 2
+MO #5   energy= -0.379477828401782 occ= 2
+MO #6   energy= -0.379164718093823 occ= 2
+MO #7   energy= -0.307401435076458 occ= 2
+MO #8   energy= -0.294319868359468 occ= 2
+MO #9   energy= -0.293945186878322 occ= 2
+MO #10  energy= 0.0753803592902087 occ= 0
+MO #11  energy= 0.128890852040682  occ= 0
+MO #12  energy= 0.133037201306178  occ= 0
+MO #13  energy= 0.133501016813622  occ= 0
+MO #14  energy= 0.156208433926468  occ= 0
+MO #15  energy= 0.156674423902145  occ= 0
+MO #16  energy= 0.19057851902769   occ= 0
+MO #17  energy= 0.513469039824338  occ= 0
+MO #18  energy= 0.539195632270072  occ= 0
+MO #19  energy= 0.539722709037843  occ= 0
+MO #20  energy= 0.60835250724102   occ= 0
+MO #21  energy= 0.608448466780414  occ= 0
+MO #22  energy= 0.608690401422122  occ= 0
+MO #23  energy= 0.827435963659299  occ= 0
+MO #24  energy= 0.867097524461671  occ= 0
+MO #25  energy= 0.868077996949535  occ= 0
+MO #26  energy= 0.908282944833218  occ= 0
+MO #27  energy= 0.919015943676806  occ= 0
+MO #28  energy= 0.919894922316975  occ= 0
+MO #29  energy= 1.0456299336611    occ= 0
+MO #30  energy= 1.39090565013562   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31091
+charge of  2H =      0.10439
+charge of  3H =      0.10439
+charge of  4H =      0.10434
+charge of  5H =      0.10427
+charge of  6H =      0.10319
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00089, -0.00125,  0.00564
+Dipole moment(X, Y, Z, Debye): -0.00089, -0.00125,  0.00564
+converged SCF energy = -79.1921611773076
+Dipole moment(X, Y, Z, Debye): -0.00060, -0.00032,  0.00715
+converged SCF energy = -79.6827488980125
+**** MO energy ****
+MO #1   energy= -9.88250674446622  occ= 2
+MO #2   energy= -9.88168534133528  occ= 2
+MO #3   energy= -0.669355590713075 occ= 2
+MO #4   energy= -0.541082886973485 occ= 2
+MO #5   energy= -0.379564724406286 occ= 2
+MO #6   energy= -0.379157328881063 occ= 2
+MO #7   energy= -0.307366749677933 occ= 2
+MO #8   energy= -0.294385968965435 occ= 2
+MO #9   energy= -0.293936239391467 occ= 2
+MO #10  energy= 0.0754123534020527 occ= 0
+MO #11  energy= 0.12895149962957   occ= 0
+MO #12  energy= 0.133038118885407  occ= 0
+MO #13  energy= 0.133684341301392  occ= 0
+MO #14  energy= 0.156206680433026  occ= 0
+MO #15  energy= 0.156750050614462  occ= 0
+MO #16  energy= 0.190578886709382  occ= 0
+MO #17  energy= 0.513441706328359  occ= 0
+MO #18  energy= 0.539139514483147  occ= 0
+MO #19  energy= 0.539730510233729  occ= 0
+MO #20  energy= 0.608227332703178  occ= 0
+MO #21  energy= 0.608434898758063  occ= 0
+MO #22  energy= 0.60871296028142   occ= 0
+MO #23  energy= 0.8276068811937    occ= 0
+MO #24  energy= 0.867108982980825  occ= 0
+MO #25  energy= 0.868326061504812  occ= 0
+MO #26  energy= 0.90845360960427   occ= 0
+MO #27  energy= 0.919023521264811  occ= 0
+MO #28  energy= 0.920195794085134  occ= 0
+MO #29  energy= 1.0457206696353    occ= 0
+MO #30  energy= 1.39097236844449   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31112
+charge of  2H =      0.10437
+charge of  3H =      0.10437
+charge of  4H =      0.10432
+charge of  5H =      0.10454
+charge of  6H =      0.10317
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00063, -0.00028,  0.00614
+Dipole moment(X, Y, Z, Debye): -0.00063, -0.00028,  0.00614
+converged SCF energy = -79.1921222277258
+Dipole moment(X, Y, Z, Debye): -0.00132, -0.00105,  0.00660
+converged SCF energy = -79.6827389581479
+**** MO energy ****
+MO #1   energy= -9.88262534399152  occ= 2
+MO #2   energy= -9.88170437463749  occ= 2
+MO #3   energy= -0.669319970627723 occ= 2
+MO #4   energy= -0.541049470620948 occ= 2
+MO #5   energy= -0.379477607458759 occ= 2
+MO #6   energy= -0.379164940894789 occ= 2
+MO #7   energy= -0.307401437981355 occ= 2
+MO #8   energy= -0.294319615597749 occ= 2
+MO #9   energy= -0.293945432923847 occ= 2
+MO #10  energy= 0.0753803582009762 occ= 0
+MO #11  energy= 0.128890851804436  occ= 0
+MO #12  energy= 0.133037222881314  occ= 0
+MO #13  energy= 0.133500988784277  occ= 0
+MO #14  energy= 0.156208607947923  occ= 0
+MO #15  energy= 0.156674250662332  occ= 0
+MO #16  energy= 0.19057851956168   occ= 0
+MO #17  energy= 0.513469038524323  occ= 0
+MO #18  energy= 0.539195373970321  occ= 0
+MO #19  energy= 0.539722974379595  occ= 0
+MO #20  energy= 0.608352172692927  occ= 0
+MO #21  energy= 0.608448721382681  occ= 0
+MO #22  energy= 0.608690482669124  occ= 0
+MO #23  energy= 0.827435957037715  occ= 0
+MO #24  energy= 0.867097573959957  occ= 0
+MO #25  energy= 0.868077934046802  occ= 0
+MO #26  energy= 0.908282950983059  occ= 0
+MO #27  energy= 0.919016488560032  occ= 0
+MO #28  energy= 0.919894379904679  occ= 0
+MO #29  energy= 1.04562992743407   occ= 0
+MO #30  energy= 1.39090565044767   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31091
+charge of  2H =      0.10439
+charge of  3H =      0.10439
+charge of  4H =      0.10434
+charge of  5H =      0.10427
+charge of  6H =      0.10317
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00089,  0.00564
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00089,  0.00564
+converged SCF energy = -79.1921611796318
+Dipole moment(X, Y, Z, Debye): -0.00032, -0.00060,  0.00715
+converged SCF energy = -79.6827488997556
+**** MO energy ****
+MO #1   energy= -9.88250674298722  occ= 2
+MO #2   energy= -9.88168534118935  occ= 2
+MO #3   energy= -0.669355591116493 occ= 2
+MO #4   energy= -0.541082887104236 occ= 2
+MO #5   energy= -0.379564894087982 occ= 2
+MO #6   energy= -0.379157157340407 occ= 2
+MO #7   energy= -0.307366746765772 occ= 2
+MO #8   energy= -0.294386179937197 occ= 2
+MO #9   energy= -0.29393603514971  occ= 2
+MO #10  energy= 0.0754123544861445 occ= 0
+MO #11  energy= 0.128951499745949  occ= 0
+MO #12  energy= 0.133038104020801  occ= 0
+MO #13  energy= 0.133684362783465  occ= 0
+MO #14  energy= 0.156206530043465  occ= 0
+MO #15  energy= 0.156750200190791  occ= 0
+MO #16  energy= 0.190578886174448  occ= 0
+MO #17  energy= 0.513441707639081  occ= 0
+MO #18  energy= 0.539139744628847  occ= 0
+MO #19  energy= 0.539730273000466  occ= 0
+MO #20  energy= 0.608227214538031  occ= 0
+MO #21  energy= 0.608435291809284  occ= 0
+MO #22  energy= 0.608712684105669  occ= 0
+MO #23  energy= 0.827606887782614  occ= 0
+MO #24  energy= 0.867108943382299  occ= 0
+MO #25  energy= 0.868326114551119  occ= 0
+MO #26  energy= 0.908453604233397  occ= 0
+MO #27  energy= 0.919023102055207  occ= 0
+MO #28  energy= 0.920196210105676  occ= 0
+MO #29  energy= 1.04572067586142   occ= 0
+MO #30  energy= 1.39097236812373   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31112
+charge of  2H =      0.10437
+charge of  3H =      0.10437
+charge of  4H =      0.10432
+charge of  5H =      0.10454
+charge of  6H =      0.10319
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00027, -0.00063,  0.00614
+Dipole moment(X, Y, Z, Debye): -0.00027, -0.00063,  0.00614
+converged SCF energy = -79.1921118849709
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00125,  0.00673
+converged SCF energy = -79.6827298215118
+**** MO energy ****
+MO #1   energy= -9.88262703072578  occ= 2
+MO #2   energy= -9.88169263171456  occ= 2
+MO #3   energy= -0.669332115900991 occ= 2
+MO #4   energy= -0.541022229699047 occ= 2
+MO #5   energy= -0.379519130076115 occ= 2
+MO #6   energy= -0.379169269252944 occ= 2
+MO #7   energy= -0.307354376333851 occ= 2
+MO #8   energy= -0.294332938812331 occ= 2
+MO #9   energy= -0.293947340379626 occ= 2
+MO #10  energy= 0.075359056521103  occ= 0
+MO #11  energy= 0.128914492751987  occ= 0
+MO #12  energy= 0.133031954197966  occ= 0
+MO #13  energy= 0.133535539551311  occ= 0
+MO #14  energy= 0.156203112758644  occ= 0
+MO #15  energy= 0.156645531072124  occ= 0
+MO #16  energy= 0.190550045562464  occ= 0
+MO #17  energy= 0.513443475210191  occ= 0
+MO #18  energy= 0.539307937546409  occ= 0
+MO #19  energy= 0.539713311104235  occ= 0
+MO #20  energy= 0.608290063301881  occ= 0
+MO #21  energy= 0.608405999637976  occ= 0
+MO #22  energy= 0.608673881797101  occ= 0
+MO #23  energy= 0.827380350887633  occ= 0
+MO #24  energy= 0.867094631841694  occ= 0
+MO #25  energy= 0.868048837105461  occ= 0
+MO #26  energy= 0.908293919095891  occ= 0
+MO #27  energy= 0.919019634553715  occ= 0
+MO #28  energy= 0.919984294125334  occ= 0
+MO #29  energy= 1.04566198125096   occ= 0
+MO #30  energy= 1.39093264907752   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31090
+charge of  2H =      0.10438
+charge of  3H =      0.10438
+charge of  4H =      0.10431
+charge of  5H =      0.10428
+charge of  6H =      0.10319
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00114, -0.00114,  0.00582
+Dipole moment(X, Y, Z, Debye): -0.00114, -0.00114,  0.00582
+converged SCF energy = -79.1921715142329
+Dipole moment(X, Y, Z, Debye): -0.00039, -0.00039,  0.00703
+converged SCF energy = -79.682758028825
+**** MO energy ****
+MO #1   energy= -9.88250506077713  occ= 2
+MO #2   energy= -9.88169709914044  occ= 2
+MO #3   energy= -0.66934340514374  occ= 2
+MO #4   energy= -0.541110226096871 occ= 2
+MO #5   energy= -0.379518956775818 occ= 2
+MO #6   energy= -0.379157123974052 occ= 2
+MO #7   energy= -0.307414241604478 occ= 2
+MO #8   energy= -0.294368435694015 occ= 2
+MO #9   energy= -0.293938175601718 occ= 2
+MO #10  energy= 0.0754335331166976 occ= 0
+MO #11  energy= 0.128928789255185  occ= 0
+MO #12  energy= 0.133043469361001  occ= 0
+MO #13  energy= 0.133648903222954  occ= 0
+MO #14  energy= 0.156213356898103  occ= 0
+MO #15  energy= 0.156777454027427  occ= 0
+MO #16  energy= 0.190607548271763  occ= 0
+MO #17  energy= 0.513467533071073  occ= 0
+MO #18  energy= 0.539031207426766  occ= 0
+MO #19  energy= 0.539735734441718  occ= 0
+MO #20  energy= 0.608354427009686  occ= 0
+MO #21  energy= 0.608419526234638  occ= 0
+MO #22  energy= 0.60872255827925   occ= 0
+MO #23  energy= 0.827662030301541  occ= 0
+MO #24  energy= 0.867111999481386  occ= 0
+MO #25  energy= 0.868355736128077  occ= 0
+MO #26  energy= 0.908443906969081  occ= 0
+MO #27  energy= 0.919028083038916  occ= 0
+MO #28  energy= 0.920096654596555  occ= 0
+MO #29  energy= 1.04568856885866   occ= 0
+MO #30  energy= 1.3909450345966    occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31113
+charge of  2H =      0.10438
+charge of  3H =      0.10438
+charge of  4H =      0.10434
+charge of  5H =      0.10453
+charge of  6H =      0.10317
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00038, -0.00038,  0.00596
+Dipole moment(X, Y, Z, Debye): -0.00038, -0.00038,  0.00596
+converged SCF energy = -79.1921746853095
+Dipole moment(X, Y, Z, Debye): -0.00097, -0.00039,  0.00645
+converged SCF energy = -79.6827611795494
+**** MO energy ****
+MO #1   energy= -9.88250510906894  occ= 2
+MO #2   energy= -9.88169697015223  occ= 2
+MO #3   energy= -0.66934315181821  occ= 2
+MO #4   energy= -0.541109245753101 occ= 2
+MO #5   energy= -0.379514511379677 occ= 2
+MO #6   energy= -0.379161567810477 occ= 2
+MO #7   energy= -0.307411921135026 occ= 2
+MO #8   energy= -0.294353357683734 occ= 2
+MO #9   energy= -0.293955562162673 occ= 2
+MO #10  energy= 0.075434924293015  occ= 0
+MO #11  energy= 0.128932857011879  occ= 0
+MO #12  energy= 0.13308122324151   occ= 0
+MO #13  energy= 0.133609743441205  occ= 0
+MO #14  energy= 0.156255454088299  occ= 0
+MO #15  energy= 0.156733364151932  occ= 0
+MO #16  energy= 0.190606065112239  occ= 0
+MO #17  energy= 0.51346769219666   occ= 0
+MO #18  energy= 0.539134995623163  occ= 0
+MO #19  energy= 0.539633648870812  occ= 0
+MO #20  energy= 0.608336763174095  occ= 0
+MO #21  energy= 0.608441373696899  occ= 0
+MO #22  energy= 0.608717365853224  occ= 0
+MO #23  energy= 0.827671398674629  occ= 0
+MO #24  energy= 0.86721687012654   occ= 0
+MO #25  energy= 0.868249569136103  occ= 0
+MO #26  energy= 0.908460223561274  occ= 0
+MO #27  energy= 0.919048919467641  occ= 0
+MO #28  energy= 0.920043684850691  occ= 0
+MO #29  energy= 1.04568750971877   occ= 0
+MO #30  energy= 1.39094607488811   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31113
+charge of  2H =      0.10438
+charge of  3H =      0.10440
+charge of  4H =      0.10433
+charge of  5H =      0.10439
+charge of  6H =      0.10330
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00083, -0.00038,  0.00551
+Dipole moment(X, Y, Z, Debye): -0.00083, -0.00038,  0.00551
+converged SCF energy = -79.192108722837
+Dipole moment(X, Y, Z, Debye): -0.00067, -0.00126,  0.00731
+converged SCF energy = -79.682726679302
+**** MO energy ****
+MO #1   energy= -9.88262698099633  occ= 2
+MO #2   energy= -9.88169276039345  occ= 2
+MO #3   energy= -0.669332369156054 occ= 2
+MO #4   energy= -0.541023209666584 occ= 2
+MO #5   energy= -0.37952367132026  occ= 2
+MO #6   energy= -0.379164730188755 occ= 2
+MO #7   energy= -0.307356688951241 occ= 2
+MO #8   energy= -0.294349030849638 occ= 2
+MO #9   energy= -0.293928948164807 occ= 2
+MO #10  energy= 0.0753576576321553 occ= 0
+MO #11  energy= 0.128910285096101  occ= 0
+MO #12  energy= 0.132992586995557  occ= 0
+MO #13  energy= 0.133576458701255  occ= 0
+MO #14  energy= 0.156158527754132  occ= 0
+MO #15  energy= 0.1566921254372    occ= 0
+MO #16  energy= 0.190551517866823  occ= 0
+MO #17  energy= 0.513443315743562  occ= 0
+MO #18  energy= 0.539189217221473  occ= 0
+MO #19  energy= 0.539830320046043  occ= 0
+MO #20  energy= 0.608305181242055  occ= 0
+MO #21  energy= 0.608386481224466  occ= 0
+MO #22  energy= 0.608679290259293  occ= 0
+MO #23  energy= 0.827370939359566  occ= 0
+MO #24  energy= 0.866982921982938  occ= 0
+MO #25  energy= 0.86816201417725   occ= 0
+MO #26  energy= 0.908278119172861  occ= 0
+MO #27  energy= 0.91900026973023   occ= 0
+MO #28  energy= 0.920035158293653  occ= 0
+MO #29  energy= 1.0456630323444    occ= 0
+MO #30  energy= 1.39093160775826   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31090
+charge of  2H =      0.10438
+charge of  3H =      0.10437
+charge of  4H =      0.10433
+charge of  5H =      0.10441
+charge of  6H =      0.10306
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00069, -0.00114,  0.00627
+Dipole moment(X, Y, Z, Debye): -0.00069, -0.00114,  0.00627
+converged SCF energy = -79.1921191288427
+Dipole moment(X, Y, Z, Debye): -0.00053, -0.00105,  0.00739
+converged SCF energy = -79.682735844217
+**** MO energy ****
+MO #1   energy= -9.88262518448984  occ= 2
+MO #2   energy= -9.88170442615077  occ= 2
+MO #3   energy= -0.669320499598576 occ= 2
+MO #4   energy= -0.541050141666477 occ= 2
+MO #5   energy= -0.379490664117925 occ= 2
+MO #6   energy= -0.379151975753379 occ= 2
+MO #7   energy= -0.307401339261862 occ= 2
+MO #8   energy= -0.294323728717531 occ= 2
+MO #9   energy= -0.293941442352434 occ= 2
+MO #10  energy= 0.0753794332103713 occ= 0
+MO #11  energy= 0.128880560979312  occ= 0
+MO #12  energy= 0.13297342382107   occ= 0
+MO #13  energy= 0.133572402728679  occ= 0
+MO #14  energy= 0.156196795079325  occ= 0
+MO #15  energy= 0.156688442846412  occ= 0
+MO #16  energy= 0.190579101469224  occ= 0
+MO #17  energy= 0.51346752213981   occ= 0
+MO #18  energy= 0.539144518354393  occ= 0
+MO #19  energy= 0.539773472521664  occ= 0
+MO #20  energy= 0.60831815094917   occ= 0
+MO #21  energy= 0.608492120783889  occ= 0
+MO #22  energy= 0.608681633412649  occ= 0
+MO #23  energy= 0.827428961891478  occ= 0
+MO #24  energy= 0.867010076949404  occ= 0
+MO #25  energy= 0.86816417201568   occ= 0
+MO #26  energy= 0.908254825564983  occ= 0
+MO #27  energy= 0.918983536105149  occ= 0
+MO #28  energy= 0.919972685312774  occ= 0
+MO #29  energy= 1.0456305486676    occ= 0
+MO #30  energy= 1.39090475807893   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31091
+charge of  2H =      0.10439
+charge of  3H =      0.10439
+charge of  4H =      0.10434
+charge of  5H =      0.10439
+charge of  6H =      0.10304
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00050, -0.00090,  0.00638
+Dipole moment(X, Y, Z, Debye): -0.00050, -0.00090,  0.00638
+converged SCF energy = -79.192164288117
+Dipole moment(X, Y, Z, Debye): -0.00110, -0.00059,  0.00637
+converged SCF energy = -79.6827520229512
+**** MO energy ****
+MO #1   energy= -9.88250690122523  occ= 2
+MO #2   energy= -9.88168528981189  occ= 2
+MO #3   energy= -0.669355061321082 occ= 2
+MO #4   energy= -0.541082216386687 occ= 2
+MO #5   energy= -0.379554227848166 occ= 2
+MO #6   energy= -0.379167733958362 occ= 2
+MO #7   energy= -0.307366848304382 occ= 2
+MO #8   energy= -0.294382742739837 occ= 2
+MO #9   energy= -0.293939347227462 occ= 2
+MO #10  energy= 0.0754132723645772 occ= 0
+MO #11  energy= 0.12896133998273   occ= 0
+MO #12  energy= 0.133098135822529  occ= 0
+MO #13  energy= 0.133617200581352  occ= 0
+MO #14  energy= 0.156217354139734  occ= 0
+MO #15  energy= 0.156736976984556  occ= 0
+MO #16  energy= 0.190578300746586  occ= 0
+MO #17  energy= 0.513443234701384  occ= 0
+MO #18  energy= 0.539194745922006  occ= 0
+MO #19  energy= 0.53967561903059   occ= 0
+MO #20  energy= 0.608315336409077  occ= 0
+MO #21  energy= 0.608326203320364  occ= 0
+MO #22  energy= 0.608733112685641  occ= 0
+MO #23  energy= 0.827613850424538  occ= 0
+MO #24  energy= 0.867190352669285  occ= 0
+MO #25  energy= 0.868246040616451  occ= 0
+MO #26  energy= 0.908481838767679  occ= 0
+MO #27  energy= 0.919056085431774  occ= 0
+MO #28  energy= 0.9201177233768    occ= 0
+MO #29  energy= 1.04572004821501   occ= 0
+MO #30  energy= 1.3909732549423    occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31112
+charge of  2H =      0.10437
+charge of  3H =      0.10437
+charge of  4H =      0.10432
+charge of  5H =      0.10441
+charge of  6H =      0.10331
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00102, -0.00063,  0.00540
+Dipole moment(X, Y, Z, Debye): -0.00102, -0.00063,  0.00540
+converged SCF energy = -79.1921642338823
+Dipole moment(X, Y, Z, Debye): -0.00110, -0.00032,  0.00665
+converged SCF energy = -79.6827519448613
+**** MO energy ****
+MO #1   energy= -9.8825068082711   occ= 2
+MO #2   energy= -9.88168527525541  occ= 2
+MO #3   energy= -0.669355115599325 occ= 2
+MO #4   energy= -0.541082434511925 occ= 2
+MO #5   energy= -0.37950325268281  occ= 2
+MO #6   energy= -0.379218198034393 occ= 2
+MO #7   energy= -0.307367276521008 occ= 2
+MO #8   energy= -0.294330521960918 occ= 2
+MO #9   energy= -0.293991318992393 occ= 2
+MO #10  energy= 0.0754130723093134 occ= 0
+MO #11  energy= 0.12896096116547   occ= 0
+MO #12  energy= 0.133106073792424  occ= 0
+MO #13  energy= 0.133610256861328  occ= 0
+MO #14  energy= 0.156249705030035  occ= 0
+MO #15  energy= 0.15670381035326   occ= 0
+MO #16  energy= 0.190578835470179  occ= 0
+MO #17  energy= 0.513443794082012  occ= 0
+MO #18  energy= 0.539132897216857  occ= 0
+MO #19  energy= 0.539735856728486  occ= 0
+MO #20  energy= 0.608296120642201  occ= 0
+MO #21  energy= 0.60841051645619   occ= 0
+MO #22  energy= 0.608669395605746  occ= 0
+MO #23  energy= 0.827611522215845  occ= 0
+MO #24  energy= 0.867203818124003  occ= 0
+MO #25  energy= 0.868235226634972  occ= 0
+MO #26  energy= 0.908476249523741  occ= 0
+MO #27  energy= 0.919168370116297  occ= 0
+MO #28  energy= 0.920012065294316  occ= 0
+MO #29  energy= 1.04571903383211   occ= 0
+MO #30  energy= 1.3909731191513    occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31112
+charge of  2H =      0.10437
+charge of  3H =      0.10437
+charge of  4H =      0.10432
+charge of  5H =      0.10439
+charge of  6H =      0.10331
+charge of  7H =      0.10319
+Dipole moment(X, Y, Z, Debye): -0.00101, -0.00027,  0.00576
+Dipole moment(X, Y, Z, Debye): -0.00101, -0.00027,  0.00576
+converged SCF energy = -79.1921191822499
+Dipole moment(X, Y, Z, Debye): -0.00054, -0.00133,  0.00711
+converged SCF energy = -79.6827359214517
+**** MO energy ****
+MO #1   energy= -9.88262527749557  occ= 2
+MO #2   energy= -9.88170444037486  occ= 2
+MO #3   energy= -0.669320445656008 occ= 2
+MO #4   energy= -0.541049924153732 occ= 2
+MO #5   energy= -0.379535166517519 occ= 2
+MO #6   energy= -0.379107982658008 occ= 2
+MO #7   energy= -0.30740091148293  occ= 2
+MO #8   energy= -0.294371343733933 occ= 2
+MO #9   energy= -0.293894076294437 occ= 2
+MO #10  energy= 0.0753796339895967 occ= 0
+MO #11  energy= 0.12888098191839   occ= 0
+MO #12  energy= 0.132966179097199  occ= 0
+MO #13  energy= 0.133578606350186  occ= 0
+MO #14  energy= 0.156166897637782  occ= 0
+MO #15  energy= 0.15671915884055   occ= 0
+MO #16  energy= 0.190578568448569  occ= 0
+MO #17  energy= 0.513466967007197  occ= 0
+MO #18  energy= 0.539202651876544  occ= 0
+MO #19  energy= 0.539716944004884  occ= 0
+MO #20  energy= 0.608293424767809  occ= 0
+MO #21  energy= 0.608449919434619  occ= 0
+MO #22  energy= 0.608747181669534  occ= 0
+MO #23  energy= 0.827431276396905  occ= 0
+MO #24  energy= 0.866998077759974  occ= 0
+MO #25  energy= 0.868173542824918  occ= 0
+MO #26  energy= 0.90826053232863   occ= 0
+MO #27  energy= 0.918882695818065  occ= 0
+MO #28  energy= 0.920066774909249  occ= 0
+MO #29  energy= 1.04563156346901   occ= 0
+MO #30  energy= 1.39090489566177   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31091
+charge of  2H =      0.10439
+charge of  3H =      0.10439
+charge of  4H =      0.10434
+charge of  5H =      0.10441
+charge of  6H =      0.10304
+charge of  7H =      0.10317
+Dipole moment(X, Y, Z, Debye): -0.00051, -0.00125,  0.00603
+Dipole moment(X, Y, Z, Debye): -0.00051, -0.00125,  0.00603
+converged SCF energy = -79.1921191293703
+Dipole moment(X, Y, Z, Debye): -0.00105, -0.00054,  0.00739
+converged SCF energy = -79.6827358446203
+**** MO energy ****
+MO #1   energy= -9.8826251851539   occ= 2
+MO #2   energy= -9.8817044261078   occ= 2
+MO #3   energy= -0.669320499202758 occ= 2
+MO #4   energy= -0.541050141840805 occ= 2
+MO #5   energy= -0.379490916179442 occ= 2
+MO #6   energy= -0.379151719813158 occ= 2
+MO #7   energy= -0.307401336008617 occ= 2
+MO #8   energy= -0.294323991876688 occ= 2
+MO #9   energy= -0.29394118640437  occ= 2
+MO #10  energy= 0.0753794331211738 occ= 0
+MO #11  energy= 0.128880534075601  occ= 0
+MO #12  energy= 0.132973312549798  occ= 0
+MO #13  energy= 0.133572549391121  occ= 0
+MO #14  energy= 0.156196577238857  occ= 0
+MO #15  energy= 0.156688650975971  occ= 0
+MO #16  energy= 0.190579102260288  occ= 0
+MO #17  energy= 0.513467528282583  occ= 0
+MO #18  energy= 0.539144535376497  occ= 0
+MO #19  energy= 0.539773444992214  occ= 0
+MO #20  energy= 0.608318151792102  occ= 0
+MO #21  energy= 0.60849365364066   occ= 0
+MO #22  energy= 0.608680097313491  occ= 0
+MO #23  energy= 0.82742896564052   occ= 0
+MO #24  energy= 0.867009713412394  occ= 0
+MO #25  energy= 0.868164525042384  occ= 0
+MO #26  energy= 0.908254911232464  occ= 0
+MO #27  energy= 0.918982917964188  occ= 0
+MO #28  energy= 0.91997322423134   occ= 0
+MO #29  energy= 1.04563055322014   occ= 0
+MO #30  energy= 1.39090476224009   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31091
+charge of  2H =      0.10439
+charge of  3H =      0.10439
+charge of  4H =      0.10434
+charge of  5H =      0.10439
+charge of  6H =      0.10319
+charge of  7H =      0.10304
+Dipole moment(X, Y, Z, Debye): -0.00090, -0.00051,  0.00638
+Dipole moment(X, Y, Z, Debye): -0.00090, -0.00051,  0.00638
+converged SCF energy = -79.192164287585
+Dipole moment(X, Y, Z, Debye): -0.00059, -0.00111,  0.00637
+converged SCF energy = -79.6827520225437
+**** MO energy ****
+MO #1   energy= -9.88250690055712  occ= 2
+MO #2   energy= -9.88168528985804  occ= 2
+MO #3   energy= -0.669355061718362 occ= 2
+MO #4   energy= -0.541082216214831 occ= 2
+MO #5   energy= -0.379554007189297 occ= 2
+MO #6   energy= -0.379167958493623 occ= 2
+MO #7   energy= -0.307366851582184 occ= 2
+MO #8   energy= -0.294382515447007 occ= 2
+MO #9   energy= -0.293939567288255 occ= 2
+MO #10  energy= 0.0754132724534154 occ= 0
+MO #11  energy= 0.128961366077787  occ= 0
+MO #12  energy= 0.133098274484878  occ= 0
+MO #13  energy= 0.133617027270814  occ= 0
+MO #14  energy= 0.156217561189158  occ= 0
+MO #15  energy= 0.156736779717844  occ= 0
+MO #16  energy= 0.190578299952717  occ= 0
+MO #17  energy= 0.513443228542942  occ= 0
+MO #18  energy= 0.539194722614589  occ= 0
+MO #19  energy= 0.539675652862154  occ= 0
+MO #20  energy= 0.608314656834148  occ= 0
+MO #21  energy= 0.608326193711861  occ= 0
+MO #22  energy= 0.608733804256527  occ= 0
+MO #23  energy= 0.827613846654489  occ= 0
+MO #24  energy= 0.867190746615609  occ= 0
+MO #25  energy= 0.868245657307462  occ= 0
+MO #26  energy= 0.90848175147899   occ= 0
+MO #27  energy= 0.919056674045374  occ= 0
+MO #28  energy= 0.920117215529912  occ= 0
+MO #29  energy= 1.04572004365982   occ= 0
+MO #30  energy= 1.39097325077975   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31112
+charge of  2H =      0.10437
+charge of  3H =      0.10437
+charge of  4H =      0.10432
+charge of  5H =      0.10441
+charge of  6H =      0.10317
+charge of  7H =      0.10331
+Dipole moment(X, Y, Z, Debye): -0.00062, -0.00102,  0.00540
+Dipole moment(X, Y, Z, Debye): -0.00062, -0.00102,  0.00540
+converged SCF energy = -79.1921746889711
+Dipole moment(X, Y, Z, Debye): -0.00038, -0.00097,  0.00645
+converged SCF energy = -79.6827611828776
+**** MO energy ****
+MO #1   energy= -9.88250510889747  occ= 2
+MO #2   energy= -9.88169696979473  occ= 2
+MO #3   energy= -0.669343151511908 occ= 2
+MO #4   energy= -0.541109244564661 occ= 2
+MO #5   energy= -0.379514492151964 occ= 2
+MO #6   energy= -0.379161587422386 occ= 2
+MO #7   energy= -0.307411909130848 occ= 2
+MO #8   energy= -0.294353267270967 occ= 2
+MO #9   energy= -0.293955664541208 occ= 2
+MO #10  energy= 0.0754349245474562 occ= 0
+MO #11  energy= 0.128932867402274  occ= 0
+MO #12  energy= 0.133081307586509  occ= 0
+MO #13  energy= 0.133609645762252  occ= 0
+MO #14  energy= 0.156255690584802  occ= 0
+MO #15  energy= 0.156733135925586  occ= 0
+MO #16  energy= 0.190606061501653  occ= 0
+MO #17  energy= 0.513467690479978  occ= 0
+MO #18  energy= 0.53913551575944   occ= 0
+MO #19  energy= 0.53963313048587   occ= 0
+MO #20  energy= 0.608336781757435  occ= 0
+MO #21  energy= 0.608441502228607  occ= 0
+MO #22  energy= 0.608717214547547  occ= 0
+MO #23  energy= 0.827671394797525  occ= 0
+MO #24  energy= 0.867217319753657  occ= 0
+MO #25  energy= 0.86824914112583   occ= 0
+MO #26  energy= 0.908460153284392  occ= 0
+MO #27  energy= 0.919049006405325  occ= 0
+MO #28  energy= 0.920043648706611  occ= 0
+MO #29  energy= 1.04568750994594   occ= 0
+MO #30  energy= 1.39094608344463   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31113
+charge of  2H =      0.10439
+charge of  3H =      0.10438
+charge of  4H =      0.10433
+charge of  5H =      0.10439
+charge of  6H =      0.10317
+charge of  7H =      0.10330
+Dipole moment(X, Y, Z, Debye): -0.00038, -0.00083,  0.00551
+Dipole moment(X, Y, Z, Debye): -0.00038, -0.00083,  0.00551
+converged SCF energy = -79.1921087191814
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00067,  0.00731
+converged SCF energy = -79.6827266759794
+**** MO energy ****
+MO #1   energy= -9.88262698116715  occ= 2
+MO #2   energy= -9.88169276075075  occ= 2
+MO #3   energy= -0.669332369461678 occ= 2
+MO #4   energy= -0.541023210855184 occ= 2
+MO #5   energy= -0.379523690448743 occ= 2
+MO #6   energy= -0.379164710673103 occ= 2
+MO #7   energy= -0.307356700905892 occ= 2
+MO #8   energy= -0.294349118729116 occ= 2
+MO #9   energy= -0.293928848373403 occ= 2
+MO #10  energy= 0.0753576573717199 occ= 0
+MO #11  energy= 0.128910274372919  occ= 0
+MO #12  energy= 0.132992512574757  occ= 0
+MO #13  energy= 0.13357654679136   occ= 0
+MO #14  energy= 0.156158315447543  occ= 0
+MO #15  energy= 0.156692329502812  occ= 0
+MO #16  energy= 0.19055152145729   occ= 0
+MO #17  energy= 0.51344331745648   occ= 0
+MO #18  energy= 0.53918881358728   occ= 0
+MO #19  energy= 0.539830721902333  occ= 0
+MO #20  energy= 0.608305169527383  occ= 0
+MO #21  energy= 0.608386353494637  occ= 0
+MO #22  energy= 0.608679433906098  occ= 0
+MO #23  energy= 0.82737094320564   occ= 0
+MO #24  energy= 0.866982524963821  occ= 0
+MO #25  energy= 0.868162389853841  occ= 0
+MO #26  energy= 0.90827818797431   occ= 0
+MO #27  energy= 0.919000189999004  occ= 0
+MO #28  energy= 0.920035188469104  occ= 0
+MO #29  energy= 1.04566303212025   occ= 0
+MO #30  energy= 1.39093159921393   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31090
+charge of  2H =      0.10436
+charge of  3H =      0.10438
+charge of  4H =      0.10433
+charge of  5H =      0.10441
+charge of  6H =      0.10319
+charge of  7H =      0.10305
+Dipole moment(X, Y, Z, Debye): -0.00114, -0.00069,  0.00627
+Dipole moment(X, Y, Z, Debye): -0.00114, -0.00069,  0.00627
+converged SCF energy = -79.1921642345188
+Dipole moment(X, Y, Z, Debye): -0.00031, -0.00110,  0.00665
+converged SCF energy = -79.6827519457397
+**** MO energy ****
+MO #1   energy= -9.88250680895215  occ= 2
+MO #2   energy= -9.88168527534575  occ= 2
+MO #3   energy= -0.669355115857607 occ= 2
+MO #4   energy= -0.541082433079394 occ= 2
+MO #5   energy= -0.379503191042315 occ= 2
+MO #6   energy= -0.379218260919516 occ= 2
+MO #7   energy= -0.307367276644385 occ= 2
+MO #8   energy= -0.294330499880206 occ= 2
+MO #9   energy= -0.293991339578782 occ= 2
+MO #10  energy= 0.0754130722380344 occ= 0
+MO #11  energy= 0.128960986056333  occ= 0
+MO #12  energy= 0.133106209666003  occ= 0
+MO #13  energy= 0.133610091123036  occ= 0
+MO #14  energy= 0.156249777188963  occ= 0
+MO #15  energy= 0.156703742902264  occ= 0
+MO #16  energy= 0.190578833444658  occ= 0
+MO #17  energy= 0.513443789291872  occ= 0
+MO #18  energy= 0.539133110046434  occ= 0
+MO #19  energy= 0.539735651152489  occ= 0
+MO #20  energy= 0.608295556206058  occ= 0
+MO #21  energy= 0.608410413300982  occ= 0
+MO #22  energy= 0.608670063099245  occ= 0
+MO #23  energy= 0.827611519524106  occ= 0
+MO #24  energy= 0.867204175081007  occ= 0
+MO #25  energy= 0.868234886796389  occ= 0
+MO #26  energy= 0.908476153424001  occ= 0
+MO #27  energy= 0.919168522710697  occ= 0
+MO #28  energy= 0.920011985874887  occ= 0
+MO #29  energy= 1.04571903444918   occ= 0
+MO #30  energy= 1.39097311341221   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31112
+charge of  2H =      0.10437
+charge of  3H =      0.10437
+charge of  4H =      0.10432
+charge of  5H =      0.10439
+charge of  6H =      0.10319
+charge of  7H =      0.10331
+Dipole moment(X, Y, Z, Debye): -0.00027, -0.00101,  0.00576
+Dipole moment(X, Y, Z, Debye): -0.00027, -0.00101,  0.00576
+converged SCF energy = -79.1921191816236
+Dipole moment(X, Y, Z, Debye): -0.00132, -0.00054,  0.00711
+converged SCF energy = -79.682735920583
+**** MO energy ****
+MO #1   energy= -9.88262527681481  occ= 2
+MO #2   energy= -9.88170444028519  occ= 2
+MO #3   energy= -0.669320445397263 occ= 2
+MO #4   energy= -0.541049925584467 occ= 2
+MO #5   energy= -0.379535207955695 occ= 2
+MO #6   energy= -0.379107939968401 occ= 2
+MO #7   energy= -0.307400911379894 occ= 2
+MO #8   energy= -0.294371360073945 occ= 2
+MO #9   energy= -0.293894061435403 occ= 2
+MO #10  energy= 0.0753796340612285 occ= 0
+MO #11  energy= 0.128880956127455  occ= 0
+MO #12  energy= 0.132966076466607  occ= 0
+MO #13  energy= 0.133578739752646  occ= 0
+MO #14  energy= 0.156166837515767  occ= 0
+MO #15  energy= 0.156719214257416  occ= 0
+MO #16  energy= 0.190578570465771  occ= 0
+MO #17  energy= 0.513466971801016  occ= 0
+MO #18  energy= 0.539202403714777  occ= 0
+MO #19  energy= 0.539717184897967  occ= 0
+MO #20  energy= 0.608293329809788  occ= 0
+MO #21  energy= 0.608450868364851  occ= 0
+MO #22  energy= 0.608746327804654  occ= 0
+MO #23  energy= 0.827431279087554  occ= 0
+MO #24  energy= 0.866997760417168  occ= 0
+MO #25  energy= 0.868173843245056  occ= 0
+MO #26  energy= 0.908260628113676  occ= 0
+MO #27  energy= 0.918882571251057  occ= 0
+MO #28  energy= 0.920066826403903  occ= 0
+MO #29  energy= 1.0456315628402    occ= 0
+MO #30  energy= 1.39090490139603   occ= 0
+ ** Mulliken atomic charges  **
+charge of  0C =     -0.31283
+charge of  1C =     -0.31091
+charge of  2H =      0.10439
+charge of  3H =      0.10439
+charge of  4H =      0.10434
+charge of  5H =      0.10441
+charge of  6H =      0.10317
+charge of  7H =      0.10304
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00051,  0.00603
+Dipole moment(X, Y, Z, Debye): -0.00125, -0.00051,  0.00603
+/home/nbraunsc/.conda/envs/mim_env/lib/python3.7/site-packages/pyscf/lib/misc.py:46: H5pyDeprecationWarning: Using default_file_mode other than 'r' is deprecated. Pass the mode to h5py.File() instead.
+  h5py.get_config().default_file_mode = 'a'
+##################################this is from run_opt 79.682744171188 (240, 3)
+Temperary directoy: /home/nbraunsc/MIM/inputs/test240/frag1/frag1_210_.log.reap
