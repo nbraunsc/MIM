@@ -123,6 +123,7 @@ class Fragmentation():
                 if i not in uniquefrags:
                     uniquefrags.append(i)   
         self.unique_frag = uniquefrags
+
         #print(self.unique_frag)
         #print("len of unique:", len(self.unique_frag))
         #print("len of orig:", len(self.fragment))
@@ -130,7 +131,12 @@ class Fragmentation():
         #for frag in self.unique_frag:
         #    print(frag, len(frag))
         #total = []
-        #for i in self.unique_frag[65]:
+        #for frag in self.unique_frag:
+        #    atoms = []
+        #    for prim in frag:
+        #        atoms.extend(self.molecule.prims[prim].atoms)
+        #    for atom in atoms:
+        #        print(str(self.molecule.atomtable[atom]).replace("]", "").replace("[", "").replace(",", "").replace("'", ""))
         #    atoms = self.molecule.prims[i].atoms
         #    total.extend(atoms)
         #print(total)
@@ -337,6 +343,12 @@ class Fragmentation():
         
             self.frags.append(Fragment.Fragment(qc_fi, self.molecule, self.atomlist[fi], attachedlist, coeff=coeffi, step_size=step_size, local_coeff=local_coeff))
         print("done with initlaze frags")
+        for frag in self.frags:
+            inputlist = frag.build_xyz()
+            print("\nNew frag:\n")
+            for atom in inputlist:
+                print(str(atom).replace("]", "").replace("[", "").replace(",", "").replace("'", ""))
+        exit()
 
     def write_xyz(self, name):
         """ Writes an xyz file with the atom labels, number of atoms, and respective Cartesian coords for geom_opt().
@@ -443,6 +455,11 @@ class Fragmentation():
             for prim in j:
                 temp.extend(list(self.molecule.prims[prim].atoms))
             self.atomlist.append(temp)
+
+        #for derv in self.atomlist:
+        #    print("\nNew frag:", derv, "\n")
+        #    for atom in derv:
+        #        print(str(self.molecule.atomtable[atom]).replace("]", "").replace("[", "").replace(",", "").replace("'", ""))
         
         ### Counting # atoms in largest fragment
         count = []
