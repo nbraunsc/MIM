@@ -301,7 +301,7 @@ class Fragmentation():
         #    self.coefflist.append(derv_dict[key])
         #print(derivatives)
         #print(self.coefflist)
-        return derv
+        #return derv
 
     def initalize_Frag_objects(self, theory=None, basis=None, qc_backend=None, spin=None, tol=None, active_space=None, nelec=None, nelec_alpha=None, nelec_beta=None, max_memory=None, xc=None, charge=0, step_size=0.001, local_coeff=1):
         """ Initalizes the Fragment() objects
@@ -423,22 +423,22 @@ class Fragmentation():
         end = time.time()
         
         #pulling out all non zero coeff fragments
-        new_dervs = []
-        new_coeff = []
+        #new_dervs = []
+        #new_coeff = []
         for frag in list(derv_dict.keys()):
             value = derv_dict[frag]
             if value == 0:
                 continue
             else:
-                new_dervs.append(list(frag))
-                new_coeff.append(value)
+                self.derivs.append(list(frag))
+                self.coefflist.append(value)
 
-        self.coefflist = new_coeff 
-        self.derivs = new_dervs
+        #self.coefflist = new_coeff 
+        #self.derivs = new_dervs
 
         ### turning derivs into a list of atoms instead of a list of primitives
         self.atomlist = []
-        for j in new_dervs:
+        for j in self.derivs:
             temp = []
             for prim in j:
                 temp.extend(list(self.molecule.prims[prim].atoms))
@@ -454,7 +454,7 @@ class Fragmentation():
         print("With", len(self.atomlist[large]), "atoms\n")
         
         ### testing to make sure all atoms are only counted once
-        vec = test_atoms(self.atomlist, new_coeff, self.molecule.natoms)
+        vec = test_atoms(self.atomlist, self.coefflist, self.molecule.natoms)
         print("Vec should be all 1's:\n", vec)
         print("\nTime of pie:", end-start)
         print("Total # of dervs:", len(self.atomlist))
