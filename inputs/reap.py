@@ -27,10 +27,13 @@ apt = 0
 aptgrad = 0
 step = 0.001
 
+print("levels:", levels)
 for level in levels:
     os.chdir(level)
     frags = glob.glob('*.dill')
+    print("frags:", frags)
     for i in frags:
+    #for i in frags[1:]:
         #undill and run e, g, hess, apt etc
         infile = open(i, 'rb')
         new_class_loop = dill.load(infile)
