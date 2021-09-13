@@ -64,6 +64,15 @@ class Fragmentation():
             List of fragments containing index of primiatives that are within the value
         
         """
+        self.molecule.test_newmole()
+        exit()
+        self.molecule.build_primchart()
+        print(self.molecule.primchart, self.molecule.primchart.shape)
+        exit()
+        self.molecule.molchart = self.molecule.build_molmatrix(2)
+        self.molecule.prim_dist = self.molecule.build_prim_dist()
+        print(self.molecule.molchart, self.molcule.molchart.shape())
+        
         self.fragment = []
         if frag_type == 'graphical':
             self.molecule.molchart = self.molecule.build_molmatrix(2)

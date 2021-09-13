@@ -1,4 +1,5 @@
 import os
+import time
 import numpy as np
 import sys
 from sys import argv
@@ -243,19 +244,50 @@ class Molecule():
             Ndarray of shape (# of primitaves, # of primitaves)
         
         """
-        
-        self.primsleng = len(self.prims)
-        self.primchart = np.zeros( (self.primsleng,self.primsleng))
+        #start = time.time()
+        #self.x = np.zeros((len(self.prims),len(self.prims)))
+        #for prim1 in range(0, len(self.prims)):
+        #    for prim2 in range(prim1+1, len(self.prims)):
+        #        if self.x[prim1][prim2] == 0:
+        #            for atomi in self.prims[prim1].atoms:
+        #                for atomj in self.prims[prim2].atoms:
+        #                    if self.A[atomi][atomj] != 0:
+        #                        self.x[prim1][prim2] = 1
+        #                        self.x[prim2][prim1] = 1
+        #end = time.time()
+        #print(end-start)
+
+        self.primchart = np.zeros((len(self.prims),len(self.prims)))
         for prim1 in range(0, len(self.prims)):
             for atomi in self.prims[prim1].atoms:
-                for prim2 in range(0, len(self.prims)):
+                for prim2 in range(prim1+1, len(self.prims)):
                     for atomj in self.prims[prim2].atoms:
-                        if prim1 == prim2:
-                            continue
+                        #if prim1 == prim2:
+                        #    continue
                         if self.A[atomi][atomj] != 0:
                             self.primchart[prim1][prim2] = 1
                             self.primchart[prim2][prim1] = 1
         return self.primchart
+    
+    def test_newmole(self):
+        self.build_primchart()
+        new_mol = np.zeros((self.primchart.shape))
+        for i in range(0, new_mol.shape[0]):
+            seen = []
+            seen.append(i)
+            print("seen:", seen)
+            single = np.where(self.primchart[i] > 0)[0]
+            print(single)
+            for newprim in single:
+                seen.append(newprim)
+                print("seen:", seen)
+                print(newprim)
+                double = np.nonzero(self.primchart[newprim])[0]
+                print(double)
+                main_list = list(set(double) - set(seen))
+                print(main_list)
+                exit()
+        return new_mol
 
     def build_molmatrix(self, i):
         """ Builds the full connectivity array
