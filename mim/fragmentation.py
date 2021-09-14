@@ -64,41 +64,61 @@ class Fragmentation():
             List of fragments containing index of primiatives that are within the value
         
         """
-        self.molecule.test_newmole()
-        exit()
-        self.molecule.build_primchart()
-        print(self.molecule.primchart, self.molecule.primchart.shape)
-        exit()
-        self.molecule.molchart = self.molecule.build_molmatrix(2)
-        self.molecule.prim_dist = self.molecule.build_prim_dist()
-        print(self.molecule.molchart, self.molcule.molchart.shape())
-        
+
         self.fragment = []
+        
         if frag_type == 'graphical':
-            self.molecule.molchart = self.molecule.build_molmatrix(2)
-            for x in range(0, len(self.molecule.molchart)):
-                for y in range(0, len(self.molecule.molchart)):
-                    if self.molecule.molchart[x][y] <= value and self.molecule.molchart[x][y] != 0:
-                        if x not in self.fragment:
-                            self.fragment.append([x])
-                            self.fragment[-1].append(y)
-            for z in range(0, len(self.fragment)):
-                for w in range(0, len(self.fragment)):
-                    if z == w:
-                        continue
-                    if self.fragment[z][0] == self.fragment[w][0]:
-                        self.fragment[z].extend(self.fragment[w][:])    #combines all prims with frag connectivity <= eta
-            
+            self.molecule.build_molmatrix()
+            for prim in range(0, self.molecule.molchart.shape[0]):
+                x = list(np.where(self.molecule.molchart[prim] <= value)[0])
+                self.fragment.append(x)
+
         if frag_type == 'distance':
             self.molecule.prim_dist = self.molecule.build_prim_dist()
             for a in range(0, len(self.molecule.prims)):
-                #prim = list(self.molecule.prims[a])
-                arr = self.molecule.prim_dist[a]
-                self.fragment.append([a])
-                x = np.where(arr<=value)[0]
-                for i in x:
-                    if arr[i] != 0:
-                        self.fragment[a].extend([i])
+                y = list(np.where(self.molecule.prim_dist[a] <= value)[0])
+                self.fragment.append(y)
+        
+        #code for me to check stuff
+        #fragment = []
+        #self.molecule.build_molmatrix()
+        #for prim in range(0, self.molecule.molchart.shape[0]):
+        #    x = list(np.where(self.molecule.molchart[prim] <= 3)[0])
+        #    fragment.append(x)
+        
+        #for i in range(0, len(self.molecule.prims)):
+        #    print("distance:\n", self.fragment[i])
+        #    for prim in self.fragment[0]:
+        #        atoms = self.molecule.prims[prim].atoms
+        #        for atom in atoms:
+        #            print(str(self.molecule.atomtable[atom]).replace("[", "").replace("]", "").replace(",", "").replace("'", ""))
+        #    
+        #    print("bond order:\n", fragment[i])
+        #    for prim in fragment[0]:
+        #        atoms = self.molecule.prims[prim].atoms
+        #        for atom in atoms:
+        #            print(str(self.molecule.atomtable[atom]).replace("[", "").replace("]", "").replace(",", "").replace("'", ""))
+        #    exit()
+            
+            #if self.fragment[i] != fragment[i]:
+            #    print("Fragment #", i, "doesnt match")
+            #    #raise ValueError
+            #else:
+            #    print("matching!")
+            #    continue
+        #print("All match")
+        
+        #if frag_type == 'distance':
+        #    self.molecule.prim_dist = self.molecule.build_prim_dist()
+        #    for a in range(0, len(self.molecule.prims)):
+        #        #prim = list(self.molecule.prims[a])
+        #        arr = self.molecule.prim_dist[a]
+        #        self.fragment.append([a])
+        #        x = np.where(arr<=value)[0]
+        #        for i in x:
+        #            if arr[i] != 0:
+        #                self.fragment[a].extend([i])
+        
         
         # Now get list of unique frags, running compress_frags function below
         self.compress_frags()
@@ -132,6 +152,8 @@ class Fragmentation():
                 if i not in uniquefrags:
                     uniquefrags.append(i)   
         self.unique_frag = uniquefrags
+        print(len(self.fragment), len(self.unique_frag))
+        print("Diff:", len(self.fragment)-len(self.unique_frag))
 
         #print(self.unique_frag)
         #print("len of unique:", len(self.unique_frag))
@@ -352,11 +374,11 @@ class Fragmentation():
         
             self.frags.append(Fragment.Fragment(qc_fi, self.molecule, self.atomlist[fi], attachedlist, coeff=coeffi, step_size=step_size, local_coeff=local_coeff))
         print("done with initlaze frags")
-        for frag in self.frags:
-            inputlist = frag.build_xyz()
-            print("\nNew frag:\n")
-            for atom in inputlist:
-                print(str(atom).replace("]", "").replace("[", "").replace(",", "").replace("'", ""))
+        #for frag in self.frags:
+        #    inputlist = frag.build_xyz()
+        #    print("\nNew frag:\n")
+        #    for atom in inputlist:
+        #        print(str(atom).replace("]", "").replace("[", "").replace(",", "").replace("'", ""))
         exit()
 
     def write_xyz(self, name):
@@ -477,7 +499,7 @@ class Fragmentation():
         large = np.argmax(count)
         print("\nLargest deriv is frag #", large)
         
-        print("With", len(self.atomlist[large]), "atoms\n")
+        print("With", len(self.atomlist[large]), "atoms before adding link atoms\n")
         
         ### testing to make sure all atoms are only counted once
         vec = test_atoms(self.atomlist, self.coefflist, self.molecule.natoms)

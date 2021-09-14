@@ -268,41 +268,51 @@ class Molecule():
                             self.primchart[prim1][prim2] = 1
                             self.primchart[prim2][prim1] = 1
         return self.primchart
-    
-    def test_newmole(self):
-        self.build_primchart()
-        new_mol = np.zeros((self.primchart.shape))
-        for i in range(0, new_mol.shape[0]):
-            seen = []
-            seen.append(i)
-            print("seen:", seen)
-            single = np.where(self.primchart[i] > 0)[0]
-            print(single)
-            for newprim in single:
-                seen.append(newprim)
-                print("seen:", seen)
-                print(newprim)
-                double = np.nonzero(self.primchart[newprim])[0]
-                print(double)
-                main_list = list(set(double) - set(seen))
-                print(main_list)
-                exit()
-        return new_mol
 
-    def build_molmatrix(self, i):
+    def bfs(self, visited, graph, node, queue, count, new_mol):
+        """ Part of the build_molmatrix func. This is the code for the breath
+        first algorithm.
+        
+        Parameters
+        ----------
+        visited : list
+        graph : dictonary
+        node : int
+            current node to start the search
+        queue : list
+        count : int
+            the starting count value of 1
+        new_mol : ndarray
+            Numpy array of shape (#prims, #prims)
+        """
+        visited.append(node)
+        new = [node, count]
+        queue.append(new)
+        while queue:
+            x = queue.pop(0) 
+            s = x[0]
+            num = x[1]
+        
+            for neighbor in graph[str(s)]:
+                if neighbor not in visited:
+                    visited.append(neighbor)
+                    new_list = [neighbor, num+1]
+                    queue.append(new_list)
+                    new_mol[node][neighbor] = num+1
+                    new_mol[neighbor][node] = num+1
+
+    def build_molmatrix(self):
         """ Builds the full connectivity array
         
         Ndarray contains all connectivity between primitives. Thus row index and column index entry
         correspond to number of primiatives away column prim is from row prim. 
         This is used in the covalent network fragmentation scheme and not spheric scheme.
-        
-        Built through a series of matrix manipulations using self.primchart and self.molchart
+
+        This is done by doing a breath-first search and adding the number of bonds away each primitive is.
         
         Parameters
         ----------
-        i : int
-            This must be the value 2 to start the recursive funciton for the matrix manipulations. This
-            is set within the initalize_molecule() funciton
+        None
         
         Returns
         -------
@@ -310,41 +320,83 @@ class Molecule():
             Ndarray of shape (# of prims, # of prims)
         
         """
-        
         self.build_primchart()
-        eta = self.natoms
-        if i == 2:
-            self.molchart = self.primchart.dot(self.primchart)
-            np.fill_diagonal(self.molchart, 0)
-            for x in range(0, len(self.prims)):
-                for y in range(0, len(self.prims)):
-                    if self.molchart[x][y] != 0:
-                        self.molchart[x][y] = i
-            
-            for x in range(0, len(self.prims)):      #checkpoint
-                for y in range(0, len(self.prims)):
-                    if self.primchart[x][y] != 0:
-                        self.molchart[x][y] = 0
-            self.molchart = np.add(self.molchart, self.primchart)
-        self.molchartnew = []   
-        if i > 2:
-            self.molchartnew = self.molchart.dot(self.primchart)
-            np.fill_diagonal(self.molchartnew, 0)
-            for x in range(0, len(self.prims)):
-                for y in range(0, len(self.prims)):
-                    if self.molchartnew[x][y] != 0:
-                        self.molchartnew[x][y] = i
-            
-            for x in range(0, len(self.prims)):     #checkpoint 
-                for y in range(0, len(self.prims)):
-                    if self.molchart[x][y] != 0:
-                        self.molchartnew[x][y] = 0
-            self.molchart = np.add(self.molchart, self.molchartnew)
+        start = time.time()
+        new_mol = np.zeros((self.primchart.shape))
+        graph = {}
+        for i in range(0, new_mol.shape[0]):
+            single_list = list(np.nonzero(self.primchart[i])[0])
+            graph[str(i)] = single_list
 
-        if i < eta:     #recursive part of function
-            i = i+1
-            self.build_molmatrix(i)
-        return self.molchart
+        for node in range(0, new_mol.shape[0]):
+            visited = []
+            queue = []
+            count = 0
+            self.bfs(visited, graph, node, queue, count, new_mol)
+        end = time.time()
+        total_time = end-start
+        self.molchart = new_mol
+        #return new_mol
+
+    #def build_molmatrix_old(self, i):
+    #    """ Builds the full connectivity array
+    #    
+    #    Ndarray contains all connectivity between primitives. Thus row index and column index entry
+    #    correspond to number of primiatives away column prim is from row prim. 
+    #    This is used in the covalent network fragmentation scheme and not spheric scheme.
+    #    
+    #    Built through a series of matrix manipulations using self.primchart and self.molchart
+    #    
+    #    Parameters
+    #    ----------
+    #    i : int
+    #        This must be the value 2 to start the recursive funciton for the matrix manipulations. This
+    #        is set within the initalize_molecule() funciton
+    #    
+    #    Returns
+    #    -------
+    #    self.molchart : ndarray
+    #        Ndarray of shape (# of prims, # of prims)
+    #    
+    #    """
+    #    
+    #    self.build_primchart()
+    #    start = time.time()
+    #    eta = self.natoms
+    #    if i == 2:
+    #        self.molchart = self.primchart.dot(self.primchart)
+    #        np.fill_diagonal(self.molchart, 0)
+    #        for x in range(0, len(self.prims)):
+    #            for y in range(0, len(self.prims)):
+    #                if self.molchart[x][y] != 0:
+    #                    self.molchart[x][y] = i
+    #        
+    #        for x in range(0, len(self.prims)):      #checkpoint
+    #            for y in range(0, len(self.prims)):
+    #                if self.primchart[x][y] != 0:
+    #                    self.molchart[x][y] = 0
+    #        self.molchart = np.add(self.molchart, self.primchart)
+    #    self.molchartnew = []   
+    #    if i > 2:
+    #        self.molchartnew = self.molchart.dot(self.primchart)
+    #        np.fill_diagonal(self.molchartnew, 0)
+    #        for x in range(0, len(self.prims)):
+    #            for y in range(0, len(self.prims)):
+    #                if self.molchartnew[x][y] != 0:
+    #                    self.molchartnew[x][y] = i
+    #        
+    #        for x in range(0, len(self.prims)):     #checkpoint 
+    #            for y in range(0, len(self.prims)):
+    #                if self.molchart[x][y] != 0:
+    #                    self.molchartnew[x][y] = 0
+    #        self.molchart = np.add(self.molchart, self.molchartnew)
+
+    #    if i < eta:     #recursive part of function
+    #        i = i+1
+    #        self.build_molmatrix_old(i)
+    #    end = time.time()
+    #    total_time = end-start
+    #    return self.molchart
 
 if __name__ == "__main__":
     carbonylavo = Molecule()
