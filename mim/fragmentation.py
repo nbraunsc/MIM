@@ -11,6 +11,7 @@ import xml.etree.ElementTree as ET
 from itertools import cycle
 from mendeleev import element
 from atom_count import *
+import time
 
 #import mim
 #from mim import runpie, Molecule, fragmentation, Fragment, Pyscf, oldpie, newpie, newnewpie
@@ -78,7 +79,7 @@ class Fragmentation():
             for a in range(0, len(self.molecule.prims)):
                 y = list(np.where(self.molecule.prim_dist[a] <= value)[0])
                 self.fragment.append(y)
-        
+
         #code for me to check stuff
         #fragment = []
         #self.molecule.build_molmatrix()
