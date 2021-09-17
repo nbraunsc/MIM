@@ -1,1 +1,0 @@
-sbatch -e /home/nbraunsc/MIM/inputs/checker.error -J checker -o "/home/nbraunsc/MIM/inputs/checker.out" --export=FOLDER="/home/nbraunsc/MIM/inputs/test163/" slurm_geom_opt.sh
