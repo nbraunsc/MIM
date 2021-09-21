@@ -79,6 +79,30 @@ class Fragmentation():
             for a in range(0, len(self.molecule.prims)):
                 y = list(np.where(self.molecule.prim_dist[a] <= value)[0])
                 self.fragment.append(y)
+        
+        new_frag_list = []
+        for frag in self.fragment:
+            #get all connected prims
+            connected = []
+            for prim in frag:
+                connected.extend(list(np.where(self.molecule.primchart[prim] > 0)[0]))
+            
+            #find all duplicates in connected list
+            duplicates = set([x for x in connected if connected.count(x) > 1])
+            
+            #if there are duplicates, add in primitives that would have LA added in same position
+            if len(duplicates) == 0:
+                continue
+            else:
+                new_frag = self.fix_superposition(frag, duplicates)
+                new_frag_list.append(new_frag)
+        
+        
+        # Now get list of unique frags, running compress_frags function below
+        self.compress_frags(self.fragment)
+        #self.compress_frags(new_frag_list)
+        
+        #exit()
 
         #code for me to check stuff
         #fragment = []
@@ -109,22 +133,43 @@ class Fragmentation():
             #    continue
         #print("All match")
         
-        #if frag_type == 'distance':
-        #    self.molecule.prim_dist = self.molecule.build_prim_dist()
-        #    for a in range(0, len(self.molecule.prims)):
-        #        #prim = list(self.molecule.prims[a])
-        #        arr = self.molecule.prim_dist[a]
-        #        self.fragment.append([a])
-        #        x = np.where(arr<=value)[0]
-        #        for i in x:
-        #            if arr[i] != 0:
-        #                self.fragment[a].extend([i])
-        
-        
-        # Now get list of unique frags, running compress_frags function below
-        self.compress_frags()
 
-    def compress_frags(self): #takes full list of frags, compresses to unique frags
+    def fix_superposition(self, frag, duplicates):
+        """ Removes occurances where link atoms would be added in the same location
+
+        Parameters
+        ----------
+        frag : list
+            List of primitives in current fragment
+
+        Returns
+        -------
+        new_frag : list
+            New fragment with a list of primitives (longer list)
+
+        """
+        new_frag = []
+        for i in list(duplicates):
+            if i not in frag:
+                new_frag = frag + [i]
+            else:
+                continue 
+        
+        if len(new_frag) == 0:
+            return frag
+
+        new_connected = []
+        for prim in frag:
+            new_connected.extend(list(np.where(self.molecule.primchart[prim] > 0)[0]))
+        new_duplicates = set([x for x in new_connected if new_connected.count(x) > 1])
+        
+        #check if new fragment also has redundancy with link atoms
+        if duplicates != new_duplicates:
+            new_frag = self.fix_superposition(new_frag, new_duplicates)
+        
+        return new_frag
+
+    def compress_frags(self, frag_list): #takes full list of frags, compresses to unique frags
         """ Takes the full list of fragments and compresses them to only the unique fragments.
         
         This functions compresses self.fragment into self.uniquefrag. Deletes fragments that
@@ -140,12 +185,12 @@ class Fragmentation():
             List of sets containing only the unqie fragments 
         
         """
-        self.fragment = [set(i) for i in self.fragment]
+        frag_list = [set(i) for i in frag_list]
         sign = 1
         uniquefrags = []
-        for i in self.fragment:
+        for i in frag_list:
             add = True
-            for j in self.fragment:
+            for j in frag_list:
                 if i.issubset(j) and i != j:
                     add = False
            
@@ -153,8 +198,11 @@ class Fragmentation():
                 if i not in uniquefrags:
                     uniquefrags.append(i)   
         self.unique_frag = uniquefrags
-        print(len(self.fragment), len(self.unique_frag))
+        print(self.unique_frag)
+        print(frag_list)
+        print(len(frag_list), len(self.unique_frag))
         print("Diff:", len(self.fragment)-len(self.unique_frag))
+        exit()
 
         #print(self.unique_frag)
         #print("len of unique:", len(self.unique_frag))
