@@ -99,8 +99,8 @@ class Fragmentation():
         
         
         # Now get list of unique frags, running compress_frags function below
-        self.compress_frags(self.fragment)
-        #self.compress_frags(new_frag_list)
+        #self.compress_frags(self.fragment)
+        self.compress_frags(new_frag_list)
         
         #exit()
 
@@ -149,9 +149,10 @@ class Fragmentation():
 
         """
         new_frag = []
+        new_frag = frag
         for i in list(duplicates):
             if i not in frag:
-                new_frag = frag + [i]
+                new_frag = new_frag + [i]
             else:
                 continue 
         
@@ -159,7 +160,7 @@ class Fragmentation():
             return frag
 
         new_connected = []
-        for prim in frag:
+        for prim in new_frag:
             new_connected.extend(list(np.where(self.molecule.primchart[prim] > 0)[0]))
         new_duplicates = set([x for x in new_connected if new_connected.count(x) > 1])
         
@@ -201,9 +202,13 @@ class Fragmentation():
         print(self.unique_frag)
         print(frag_list)
         print(len(frag_list), len(self.unique_frag))
-        print("Diff:", len(self.fragment)-len(self.unique_frag))
-        exit()
+        print("Diff:", len(frag_list)-len(self.unique_frag))
 
+        for i in self.unique_frag[0]:
+            atoms = self.molecule.prims[i].atoms
+            for atom in atoms:
+                print(str(self.molecule.atomtable[atom]).replace("]", "").replace("[", "").replace(",", "").replace("'", ""))
+        
         #print(self.unique_frag)
         #print("len of unique:", len(self.unique_frag))
         #print("len of orig:", len(self.fragment))
@@ -428,7 +433,7 @@ class Fragmentation():
         #    print("\nNew frag:\n")
         #    for atom in inputlist:
         #        print(str(atom).replace("]", "").replace("[", "").replace(",", "").replace("'", ""))
-        exit()
+        #exit()
 
     def write_xyz(self, name):
         """ Writes an xyz file with the atom labels, number of atoms, and respective Cartesian coords for geom_opt().
@@ -536,10 +541,11 @@ class Fragmentation():
                 temp.extend(list(self.molecule.prims[prim].atoms))
             self.atomlist.append(temp)
 
-        #for derv in self.atomlist:
-        #    print("\nNew frag:", derv, "\n")
-        #    for atom in derv:
-        #        print(str(self.molecule.atomtable[atom]).replace("]", "").replace("[", "").replace(",", "").replace("'", ""))
+
+        for derv in self.atomlist:
+            print("\nNew frag:", derv, "\n")
+            for atom in derv:
+                print(str(self.molecule.atomtable[atom]).replace("]", "").replace("[", "").replace(",", "").replace("'", ""))
         
         ### Counting # atoms in largest fragment
         count = []
