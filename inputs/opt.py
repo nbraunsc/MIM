@@ -30,7 +30,7 @@ if software == 'Psi4':
     software = Psi4.Psi4
     
 if mim_levels == 1:
-    frag1 = fragmentation.Fragmentation(input_molecule)
+    frag1 = fragmentation.Fragmentation(input_molecule, folder)
     frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
     frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set_high, qc_backend=software, xc=None, step_size=stepsize, local_coeff=1)
     os.path.abspath(os.curdir)
@@ -53,7 +53,7 @@ if mim_levels == 1:
     
 if mim_levels == 2:
     #""" MIM high theory, small fragments"""
-    frag1 = fragmentation.Fragmentation(input_molecule)
+    frag1 = fragmentation.Fragmentation(input_molecule, folder)
     frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
     frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set_high, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
     os.path.abspath(os.curdir)
@@ -74,7 +74,7 @@ if mim_levels == 2:
     os.chdir('../')
     
     #""" MIM low theory, small fragments"""
-    frag2 = fragmentation.Fragmentation(input_molecule)
+    frag2 = fragmentation.Fragmentation(input_molecule, folder)
     frag2.do_fragmentation(fragtype=frag_type, value=frag_deg)
     frag2.initalize_Frag_objects(theory=low_theory, basis=basis_set_low, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=-1)
     os.mkdir('frag2')
@@ -89,7 +89,7 @@ if mim_levels == 2:
     os.chdir('../')
     
     #""" MIM low theory, large fragments (iniffloate system)"""
-    frag3 = fragmentation.Fragmentation(input_molecule)
+    frag3 = fragmentation.Fragmentation(input_molecule, folder)
     frag3.do_fragmentation(fragtype=frag_type, value=frag_deg_large)
     frag3.initalize_Frag_objects(theory=low_theory, basis=basis_set_low, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
     os.mkdir('frag3')

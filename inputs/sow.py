@@ -73,7 +73,7 @@ if opt == False:
     obj_list = []
     
     if mim_levels == 1:
-        frag1 = fragmentation.Fragmentation(input_molecule)
+        frag1 = fragmentation.Fragmentation(input_molecule, folder)
         frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
         frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set_high, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
         os.path.abspath(os.curdir)
@@ -99,7 +99,7 @@ if opt == False:
         
     if mim_levels == 2:
         #""" MIM high theory, small fragments"""
-        frag1 = fragmentation.Fragmentation(input_molecule)
+        frag1 = fragmentation.Fragmentation(input_molecule, folder)
         frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
         frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set_high, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
         os.path.abspath(os.curdir)
@@ -123,7 +123,7 @@ if opt == False:
         os.chdir('../')
         
         #""" MIM low theory, small fragments"""
-        frag2 = fragmentation.Fragmentation(input_molecule)
+        frag2 = fragmentation.Fragmentation(input_molecule, folder)
         frag2.do_fragmentation(fragtype=frag_type, value=frag_deg)
         frag2.initalize_Frag_objects(theory=low_theory, basis=basis_set_low, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=-1)
         print("done with initalize low theory small fragments")
@@ -142,7 +142,7 @@ if opt == False:
         os.chdir('../')
         
         #""" MIM low theory, large fragments (iniffloate system)"""
-        frag3 = fragmentation.Fragmentation(input_molecule)
+        frag3 = fragmentation.Fragmentation(input_molecule, folder)
         print("starting large fragments")
         frag3.do_fragmentation(fragtype=frag_type, value=frag_deg_large)
         print(frag3.derivs)

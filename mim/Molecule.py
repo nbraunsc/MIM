@@ -320,7 +320,7 @@ class Molecule():
             Ndarray of shape (# of prims, # of prims)
         
         """
-        self.build_primchart()
+        #self.build_primchart()
         start = time.time()
         new_mol = np.zeros((self.primchart.shape))
         graph = {}

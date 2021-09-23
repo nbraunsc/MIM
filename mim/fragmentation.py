@@ -26,9 +26,10 @@ class Fragmentation():
     the appropriate coefficients needed to reassemble expectation values of observables. 
     """
     
-    def __init__(self, molecule): 
+    def __init__(self, molecule, folder): 
         self.fragment = []
         self.molecule = molecule
+        self.folder = folder
         self.unique_frag = []
         self.derivs = []
         self.coefflist = []
@@ -69,10 +70,41 @@ class Fragmentation():
         self.fragment = []
         
         if frag_type == 'graphical':
-            self.molecule.build_molmatrix()
-            for prim in range(0, self.molecule.molchart.shape[0]):
-                x = list(np.where(self.molecule.molchart[prim] <= value)[0])
-                self.fragment.append(x)
+            self.molecule.build_primchart()
+
+            #do atom centric fragmentation
+            if (value).is_integer():
+                self.molecule.build_molmatrix()
+                for prim in range(0, self.molecule.molchart.shape[0]):
+                    x = list(np.where(self.molecule.molchart[prim] <= value)[0])
+                    self.fragment.append(x)
+
+            #do bond centric fragmention
+            else:
+                frag_list = []
+                for prim in range(0, self.molecule.primchart.shape[0]):
+                    x = list(np.where(self.molecule.primchart[prim] == 1)[0])
+                    for i in x:
+                        y = [prim, i]
+                        frag_list.append(y)
+                
+                if value == 0.5:
+                    self.fragment = frag_list
+                
+                if value > 0.5:
+                    self.molecule.build_molmatrix()
+                    bonds = value-0.5
+                    extend_fraglist = []
+                    #value = 0.5 -> only one bond, 1.5 -> one bond away from each prim in original frags
+                    for frag in frag_list:
+                        new_frag = frag
+                        primlist = list(frag)
+                        for prim in primlist:
+                            x = list(np.where(self.molecule.molchart[prim] <= bonds)[0])
+                            new_frag = new_frag + x
+                        extend_fraglist.append(set(new_frag))
+                    self.fragment = [list(i) for i in extend_fraglist]
+
 
         if frag_type == 'distance':
             self.molecule.prim_dist = self.molecule.build_prim_dist()
@@ -92,15 +124,16 @@ class Fragmentation():
             
             #if there are duplicates, add in primitives that would have LA added in same position
             if len(duplicates) == 0:
+                new_frag_list.append(frag)
                 continue
             else:
                 new_frag = self.fix_superposition(frag, duplicates)
                 new_frag_list.append(new_frag)
         
-        
         # Now get list of unique frags, running compress_frags function below
         #self.compress_frags(self.fragment)
         self.compress_frags(new_frag_list)
+        self.write_xyzfiles(self.unique_frag)
         
         #exit()
 
@@ -132,7 +165,40 @@ class Fragmentation():
             #    print("matching!")
             #    continue
         #print("All match")
-        
+
+    def write_xyzfiles(self, fraglist):
+        """ Write the xyz files for all fragments before derivatives are formed
+        """
+        path = os.getcwd()
+        loc = path + "/" + self.folder + "traj.xyz"
+        filename = open(loc, "w")
+        #filename.write(str(self.molecule.natoms)+"\n")
+        for frag in fraglist:
+            filename.write(str(self.molecule.natoms)+"\n")
+            filename.write("Fragment" + str(frag))
+            total_str = "" + "\n"
+            all_atoms = []
+            list_2 = list(range(0, self.molecule.natoms))
+            for prim in frag:
+                atoms = self.molecule.prims[prim].atoms
+                all_atoms.extend(atoms)
+                #build xyz for fragment
+                for atom in atoms:
+                    coords = self.molecule.atomtable[atom]
+                    string = str(coords).replace("'", "").replace("[", "").replace("]", "").replace(",", "") + "\n"
+                    total_str += string
+            
+            #build xyz for dummie atoms (label = Si)
+            main_list = list(set(list_2) - set(all_atoms))
+            for atomi in main_list:
+                dummie_coords = self.molecule.atomtable[atomi].copy()
+                dummie_coords[0] = 'X'
+                stringi = str(dummie_coords).replace("'", "").replace("[", "").replace("]", "").replace(",", "") + "\n"
+                total_str += stringi
+
+            filename.write(total_str)
+        filename.close()
+
 
     def fix_superposition(self, frag, duplicates):
         """ Removes occurances where link atoms would be added in the same location
@@ -542,10 +608,10 @@ class Fragmentation():
             self.atomlist.append(temp)
 
 
-        for derv in self.atomlist:
-            print("\nNew frag:", derv, "\n")
-            for atom in derv:
-                print(str(self.molecule.atomtable[atom]).replace("]", "").replace("[", "").replace(",", "").replace("'", ""))
+        #for derv in self.atomlist:
+        #    print("\nNew frag:", derv, "\n")
+        #    for atom in derv:
+        #        print(str(self.molecule.atomtable[atom]).replace("]", "").replace("[", "").replace(",", "").replace("'", ""))
         
         ### Counting # atoms in largest fragment
         count = []
