@@ -1,5 +1,6 @@
 import sys
 import os
+import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -18,16 +19,37 @@ mim2_ldalda_large = np.array([1.557761929,	1.55776184, 	1.557667308, 	1.55764768
 mim2_pbelda = np.array([1.527677447, 	1.527664784,	1.527631258,	1.527269683,	1.527227198,	1.527193494,	1.527137496,	1.527125096,	1.527062222,	1.527024491,	1.527012853,	1.527000796,	1.526886455,	1.526882622,	1.526823033,	1.526807072,	1.526793738,	1.525730494,	1.519562436,	1.519399408,	1.519079654,	1.519064237,	1.518731016,	1.51873036,	1.518696014])
 mim2_b3lda = np.array([1.525664135,	1.525656969,	1.525621466,	1.525114658,	1.525106586,	1.52483745,	1.52483174,	1.524794829,	1.524777524,	1.524765835,	1.524576181,	1.524528496,	1.524500609,	1.524353839,	1.524320717,	1.524310408,	1.524298574,	1.523027703,	1.517546071,	1.51737499,	1.517040143,	1.517024128,	1.516669812,	1.516669641,	1.516637493])
 
+
+mim1_half_lda = np.array([1.564653062, 	1.56464467,	1.564631, 	1.564630983,	1.564610658, 	1.564608188, 	1.564570437,	1.564056042,	1.55438769,	1.554352018,	1.554275502,	1.554272434,	1.554107746,	1.554107214,	1.554090236,	1.551248243,	1.55124568,	1.551236051,	1.551067179,	1.551065723,	1.551027941,	1.551026288,	1.550908704,	1.550905136,	1.550900112])
+
+mim1_large_lda = np.array([1.534601502,	1.534570343,	1.534528557,	1.534466129,	1.534430911,	1.534422501,	1.53440933,	1.533603497,	1.533587563,	1.533557072,	1.533205605,	1.533071627,	1.533062215,	1.532936696,	1.532932892,	1.532864068,	1.53284919,	1.53284083,	1.525527889,	1.52538034,	1.525117076,	1.525106334,	1.524812156,	1.524810865,	1.524777941])
+
+mim1_1_lda = np.array([1.555155486,	1.555152956,	1.555121455,	1.555120447,	1.555109835,	1.555105395,	1.555063069,	1.554615944,	1.54397241,	1.543962354,	1.543874685,	1.543873601,	1.543815464,	1.543812018,	1.543793794,	1.540724997,	1.540724995,	1.540710974,	1.540618105,	1.540616568,	1.54059256,	1.540586332,	1.540515947,	1.540514561,	1.54051344])
+
+mim1_half_pbe = np.array([1.557483626,	1.557478698,	1.557464626,	1.557461322,	1.55741213,	1.557409026,	1.557378625,	1.556962226,	1.548172734,	1.548147596,	1.548143413,	1.548140738,	1.548023666,	1.54802302,	1.548007554,	1.545427481,	1.545423369,	1.545415147,	1.545305393,	1.54530433,	1.545299341,	1.545298258,	1.545161864,	1.545159263,	1.545158164])
+mim1_half_b3lyp = np.array([1.554531108,	1.554529743,	1.554519408,	1.554515806,	1.554492202,	1.554490205,	1.554481746,	1.553914912,	1.545953115,	1.54592752,	1.545855917,	1.545849763,	1.545666701,	1.545663105,	1.545642654,	1.543506455,	1.543504349,	1.543490556,	1.543340406,	1.543338997,	1.543206904,	1.543205805,	1.543088824,	1.543086422,	1.543082532])
+mim1_large_pbe = 1.54
+
+full_b3lyp = np.array([1.554702561,	1.554699019,	1.554614136,	1.554613842,	1.554611394,	1.55455285,	1.554551417,	1.553365157,	1.540999691,	1.540968859,	1.540724217,	1.540711566,	1.540442528,	1.540440256,	1.540404321,	1.540337965,	1.54033165,	1.540307142,	1.540059519,	1.540058573,	1.539793647,	1.539788276,	1.539580978,	1.53957395,	1.539567103])
+
 #zero = 1.54
-data = [full_pbe, full_lda, one_pbe, one_lda, mim2_b3_pb, mim2_pbelda, mim2_b3lda, mim2_ldalda, mim2_ldalda_large, full_lda]
+data = [full_b3lyp, full_pbe, full_lda, mim2_ldalda, mim2_ldalda_large, mim2_b3_pb, mim2_pbelda, mim1_half_b3lyp, mim1_half_pbe, mim1_half_lda, one_pbe, mim1_1_lda, mim1_large_pbe, mim1_large_lda]
+#data = [full_pbe, full_lda, one_pbe, one_lda, mim1_half_b3lyp, mim1_half_pbe, mim1_half_lda, mim1_1_lda, mim1_large_pbe, mim1_large_lda, mim2_b3_pb, mim2_pbelda, mim2_b3lda, mim2_ldalda, mim2_ldalda_large, full_lda]
 
 fig7, ax7 = plt.subplots()
-ax7.set_title('Full vs One Bond Away vs Two Bonds Away')
-bplot=ax7.boxplot(data, patch_artist=True, medianprops=dict(color='red'), positions=[1, 1.6, 2.5, 3.1, 4.0, 4.6, 5.5, 6.2, 6.9, 7.6], labels=['Full PBE', 'Full LDA', 'One PBE', 'One LDA', 'b3lyp/pbe', 'pbe/lda', 'b3lyp/lda', 'lda0.5/ldafull', 'lda1.5/ldafull', 'fulllda(again)'])
-colors = ['lightgreen', 'lightblue', 'lightgreen', 'lightblue', 'lightgreen', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightgrey']
+ax7.set_title('58 Atom Tetrahedron Diamond')
+bplot=ax7.boxplot(data, patch_artist=True, medianprops=dict(color='red'), positions=[1, 1.6, 2.2, 2.8, 3.4, 4.0, 4.6, 5.2, 5.8, 6.4, 7.0, 7.6, 8.2, 8.8], labels=['Full B3lyp', 'Full PBE', 'Full LDA', 'lda/lda \n 0.5/full', 'lda/lda \n 1.5/full', 'b3lyp/pbe \n 0.5/1.5 \n MIM2', 'pbe/lda \n 0.5/1.5 \n MIM2', '0.5 b3lyp', '0.5 pbe', '0.5 lda', '1.0 pbe', '1.0 lda', '1.5 pbe', '1.5 lda'])
+colors = ['lightpink', 'lightgreen', 'lightblue', 'lightgrey', 'lightgrey', 'lightgrey', 'lightgrey', 'lightpink', 'lightgreen', 'lightblue', 'lightgreen', 'lightblue', 'lightgreen', 'lightblue']
 for patch, color in zip(bplot['boxes'], colors):
     patch.set_facecolor(color)
 #plt.xticks([1,2,3], ['Full', 'One Bond', 'Two Bonds'])
 plt.axhline(y = 1.54, color = 'grey', linestyle = '--')
 plt.ylabel('Bond Distance ($\AA$)')
+
+pink_patch = mpatches.Patch(color='lightpink', label='B3lyp')
+green_patch = mpatches.Patch(color='lightgreen', label='PBE')
+blue_patch = mpatches.Patch(color='lightblue', label='LDA')
+grey_patch = mpatches.Patch(color='lightgrey', label='MIM2')
+
+plt.legend(handles=[pink_patch, green_patch, blue_patch, grey_patch])
 plt.show()
