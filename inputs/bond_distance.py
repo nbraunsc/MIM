@@ -9,7 +9,7 @@ cml = sys.argv[2]
 
 with open(opt_coords) as f:
     lines = f.readlines()
-lines_new = lines[1:]
+lines_new = lines[2:]
 
 tree = ET.parse(cml)
 root = tree.getroot()
