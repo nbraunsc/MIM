@@ -7,7 +7,8 @@ from input_file import *
 #from sow import *
 import shutil
 import mim
-from mim import runpie, Molecule, fragmentation, Fragment, Pyscf, Psi4
+from mim import Molecule, fragmentation, Fragment, Pyscf, Psi4, newnewpie
+from atom_count import *
 import dill
 import glob
 import threading
@@ -31,7 +32,74 @@ if software == 'Psi4':
     
 if mim_levels == 1:
     frag1 = fragmentation.Fragmentation(input_molecule, folder)
-    frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
+    frag1.molecule.build_primchart()
+    frag1.molecule.build_molmatrix()
+    frag1.fragment = [[0,1,3,8,10,11,13,17,18,22], [1,4,5,9,13,15,16,17,20,25], [3,4,6,12,13,14,20,22,23,24], [1,2,3,4,10,15,19,21,23,7], [1,3,4,10,13,15,17,20,22,23]]
+    
+    new_frag_list = []
+    for frag in frag1.fragment:
+        #get all connected prims
+        connected = []
+        for prim in frag:
+            connected.extend(list(np.where(frag1.molecule.primchart[prim] > 0)[0]))
+        
+        #find all duplicates in connected list
+        duplicates = set([x for x in connected if connected.count(x) > 1])
+        
+        #if there are duplicates, add in primitives that would have LA added in same position
+        if len(duplicates) == 0:
+            new_frag_list.append(frag)
+            continue
+        else:
+            new_frag = frag1.fix_superposition(frag, duplicates)
+            new_frag_list.append(new_frag)
+    
+    frag1.compress_frags(new_frag_list)
+    frag1.write_xyzfiles(frag1.unique_frag)
+    att_dict = frag1.attached_frags(frag1.unique_frag)
+    derv_dict = newnewpie.start_pie(frag1.unique_frag, att_dict)
+        
+    for frag in list(derv_dict.keys()):
+        value = derv_dict[frag]
+        if value == 0:
+            continue
+        else:
+            frag1.derivs.append(list(frag))
+            frag1.coefflist.append(value)
+
+    ### turning derivs into a list of atoms instead of a list of primitives
+    frag1.atomlist = []
+    for j in frag1.derivs:
+        temp = []
+        for prim in j:
+            temp.extend(list(frag1.molecule.prims[prim].atoms))
+        frag1.atomlist.append(temp)
+         
+    ### Counting # atoms in largest fragment
+    count = []
+    for i in frag1.atomlist:
+        count.append(len(i))
+    large = np.argmax(count)
+    print("\nLargest deriv is frag #", large)
+    
+    print("With", len(frag1.atomlist[large]), "atoms before adding link atoms\n")
+    
+    ### testing to make sure all atoms are only counted once
+    vec = test_atoms(frag1.atomlist, frag1.coefflist, frag1.molecule.natoms)
+    print("Vec should be all 1's:\n", vec)
+    print("Total # of dervs:", len(frag1.atomlist))
+    summ = sum(vec)
+    if summ != len(vec):
+        raise ValueError("Not all atoms are counted only once!")
+     
+    frag1.find_attached()
+    print(len(new_frag_list))
+    print(len(frag1.unique_frag))
+    print(derv_dict)
+    exit()
+
+
+    #frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
     frag1.initalize_Frag_objects(theory=high_theory, basis=basis_set_high, qc_backend=software, xc=None, step_size=stepsize, local_coeff=1)
     os.path.abspath(os.curdir)
     os.chdir(folder)
