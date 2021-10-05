@@ -96,7 +96,6 @@ if mim_levels == 1:
     print(len(new_frag_list))
     print(len(frag1.unique_frag))
     print(derv_dict)
-    exit()
 
 
     #frag1.do_fragmentation(fragtype=frag_type, value=frag_deg)
@@ -139,12 +138,13 @@ if mim_levels == 2:
         outfile.close()
     obj_list.append(frag1)
     name_list.append('frag1')
-    os.chdir('../')
+    os.chdir('../../')
     
     #""" MIM low theory, small fragments"""
     frag2 = fragmentation.Fragmentation(input_molecule, folder)
     frag2.do_fragmentation(fragtype=frag_type, value=frag_deg)
     frag2.initalize_Frag_objects(theory=low_theory, basis=basis_set_low, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=-1)
+    os.chdir(folder)
     os.mkdir('frag2')
     os.chdir('frag2')
     for i in range(0, len(frag2.frags)):
@@ -154,12 +154,13 @@ if mim_levels == 2:
         outfile.close()
     obj_list.append(frag2)
     name_list.append('frag2')
-    os.chdir('../')
+    os.chdir('../../')
     
     #""" MIM low theory, large fragments (iniffloate system)"""
     frag3 = fragmentation.Fragmentation(input_molecule, folder)
     frag3.do_fragmentation(fragtype=frag_type, value=frag_deg_large)
     frag3.initalize_Frag_objects(theory=low_theory, basis=basis_set_low, qc_backend=software, xc=xc, step_size=stepsize, local_coeff=1)
+    os.chdir(folder)
     os.mkdir('frag3')
     os.chdir('frag3')
     for i in range(0, len(frag3.frags)):
